@@ -1,0 +1,4 @@
+
+> p07-1st-group-assignment@1.0.0 get:coverage
+> nyc report --reporter=text-lcov
+
