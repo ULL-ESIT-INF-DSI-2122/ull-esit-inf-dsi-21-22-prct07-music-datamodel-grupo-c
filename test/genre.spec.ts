@@ -7,7 +7,6 @@ const producers: string[] = ['Usher', 'TLC', 'Alicia Keys'];
 const albums: string[] = ['Confessions'];
 const songs: string[] = ['My Boo'];
 
-
 describe('Genre Class tests', () => {
   describe('Genre Constructor tests', () => {
     it('Genre Attributes', () => {
