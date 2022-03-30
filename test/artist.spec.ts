@@ -56,4 +56,10 @@ describe('Artist Class tests', () => {
       expect(tosinAbasi.getListeners()).to.be.equal(379947);
     });
   });
+  describe('Genre Class add Methods', () => {
+    it('addListeners method', () => {
+      tosinAbasi.addListeners(8497755);
+      expect(tosinAbasi.getListeners()).to.be.equal(8877702);
+    });
+  });
 });
