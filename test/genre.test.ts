@@ -60,4 +60,30 @@ describe('Genre Class tests', () => {
       expect(rnb.songs.at(-1)).to.be.eql('The Boy Is Mine');
     });
   });
+  describe('Genre Class remove Methods', () => {
+    it('remove artist method', () => {
+      rnb.removeArtist('Whitney Houston');
+      expect(rnb.artists.length).to.be.eql(5);
+      expect(rnb.artists.at(-1)).to.be.eql('R. Kelly');
+      rnb.removeArtistAt(0);
+      expect(rnb.artists.length).to.be.eql(4);
+      expect(rnb.artists.at(0)).to.be.eql('TLC');
+    });
+    it('remove albums method', () => {
+      rnb.removeAlbum('The diary of Alicia Keys');
+      expect(rnb.albums.length).to.be.eql(2);
+      expect(rnb.albums.at(-1)).to.be.eql('Confessions');
+      rnb.removeAlbumAt(0);
+      expect(rnb.albums.length).to.be.eql(1);
+      expect(rnb.albums.at(0)).to.be.eql('Confessions');
+    });
+    it('remove song method', () => {
+      rnb.removeSong('The Boy Is Mine');
+      expect(rnb.songs.length).to.be.eql(2);
+      expect(rnb.songs.at(-1)).to.be.eql('My Boo');
+      rnb.removeSongAt(0);
+      expect(rnb.songs.length).to.be.eql(1);
+      expect(rnb.songs.at(0)).to.be.eql('My Boo');
+    });
+  });
 });

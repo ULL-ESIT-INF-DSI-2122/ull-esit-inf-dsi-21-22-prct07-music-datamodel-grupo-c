@@ -38,4 +38,28 @@ export class Genre {
   public addAlbum(name: string): void { this._albums.push(name); }
 
   public addSong(name: string): void { this._songs.push(name); }
+
+  public removeArtist(name: string): void {
+    this._artists = this._artists.filter((el) => el !== name);
+  }
+
+  public removeArtistAt(pos: number): void {
+    this._artists = this._artists.filter((_, i) => i !== pos);
+  }
+
+  public removeSong(name: string): void {
+    this._songs = this._songs.filter((el) => el !== name);
+  }
+
+  public removeSongAt(pos: number): void {
+    this._songs = this._songs.filter((_, i) => i !== pos);
+  }
+
+  public removeAlbum(name: string): void {
+    this._albums = this._albums.filter((el) => el !== name);
+  }
+
+  public removeAlbumAt(pos: number): void {
+    this._albums = this._albums.filter((_, i) => i !== pos);
+  }
 }
