@@ -60,4 +60,18 @@ describe('Song Class tests', () => {
       expect(strobe.views).to.be.eql(59900000);
     });
   });
+  describe('Song Class add Methods', () => {
+    it('addGenre method', () => {
+      strobe.addGenre('Phonk');
+      expect(strobe.genres.length).to.be.eql(4);
+      expect(strobe.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient', 'Phonk']);
+    });
+  });
+  describe('Song CLass remove Methods', () => {
+    it('removeGenre method', () => {
+      strobe.removeGenre('Phonk');
+      expect(strobe.genres.length).to.be.eql(3);
+      expect(strobe.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient']);
+    });
+  });
 });
