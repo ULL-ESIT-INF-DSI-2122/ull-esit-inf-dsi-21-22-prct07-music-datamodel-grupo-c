@@ -10,7 +10,6 @@ const cuentaConmigo = new Song(
   false,
   2800000,
 );
-
 const strobe = new Song('Strobe');
 
 describe('Song Class tests', () => {
