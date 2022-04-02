@@ -45,19 +45,19 @@ describe('Song Class tests', () => {
     });
     it('Song Seconds setter', () => {
       strobe.seconds = 254;
-      expect(cuentaConmigo.seconds).to.be.eql(254);
+      expect(strobe.seconds).to.be.eql(254);
     });
     it('Song Genres setter', () => {
       strobe.genres = ['EDM', 'Progressive House', 'Ambient'];
-      expect(cuentaConmigo.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient']);
+      expect(strobe.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient']);
     });
     it('Song Single setter', () => {
       strobe.single = true;
-      expect(cuentaConmigo.single).to.be.eql(true);
+      expect(strobe.single).to.be.eql(true);
     });
     it('Song Views setter', () => {
       strobe.views = 59900000;
-      expect(cuentaConmigo.views).to.be.eql(59900000);
+      expect(strobe.views).to.be.eql(59900000);
     });
   });
 });
