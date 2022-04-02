@@ -26,4 +26,16 @@ export class Song {
     this._single = single;
     this._views = views;
   }
+
+  get name(): string { return this._name; }
+
+  get artist(): string { return this._artist; }
+
+  get seconds(): number { return this._seconds; }
+
+  get genres(): string[] { return this._genres; }
+
+  get single(): boolean { return this._single; }
+
+  get views(): number { return this._views; }
 }
