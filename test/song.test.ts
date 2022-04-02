@@ -18,6 +18,12 @@ const cuentaConmigo = new Song(
 describe('Song Class tests', () => {
   describe('Song Constructor tests', () => {
     it('Song Attributes', () => {
+      expect(cuentaConmigo.name).to.be.eql('Cuenta Conmigo');
+      expect(cuentaConmigo.artist).to.be.eql('Cruz Cafune');
+      expect(cuentaConmigo.duration).to.be.eql(188);
+      expect(cuentaConmigo.genre).to.be.eql(['Rap', 'Hip-Hop', 'Urban']);
+      expect(cuentaConmigo.single).to.be.eql(false);
+      expect(cuentaConmigo.views).to.be.eql(2800000);
     });
   });
 });
