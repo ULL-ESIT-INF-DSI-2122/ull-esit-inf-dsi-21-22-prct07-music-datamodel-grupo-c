@@ -31,11 +31,21 @@ export class Song {
 
   get artist(): string { return this._artist; }
 
+  set artist(value: string) { this._artist = value; }
+
   get seconds(): number { return this._seconds; }
+
+  set seconds(value: number) { this._seconds = value; }
 
   get genres(): string[] { return this._genres; }
 
+  set genres(value: string[]) { this._genres = value; }
+
   get single(): boolean { return this._single; }
 
+  set single(value: boolean) { this._single = value; }
+
   get views(): number { return this._views; }
+
+  set views(value: number) { this._views = value; }
 }
