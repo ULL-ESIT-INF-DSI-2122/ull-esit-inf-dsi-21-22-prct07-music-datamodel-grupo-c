@@ -1,18 +1,23 @@
 export class Song {
   private readonly _name: string;
+
   private _artist: string;
+
   private _seconds: number;
+
   private _genres: string[];
+
   private _single: boolean;
+
   private _views: number;
 
   constructor(
     name: string,
-    artist: string,
-    seconds: number,
-    genres: number,
-    single: boolean,
-    views: number,
+    artist: string = '',
+    seconds: number = 0,
+    genres: string[] = [],
+    single: boolean = false,
+    views: number = 0,
   ) {
     this._name = name;
     this._artist = artist;
