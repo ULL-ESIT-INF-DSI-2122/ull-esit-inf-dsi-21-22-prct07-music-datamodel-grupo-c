@@ -48,4 +48,12 @@ export class Song {
   get views(): number { return this._views; }
 
   set views(value: number) { this._views = value; }
+
+  addGenre(value: string): void {
+    this._genres.push(value);
+  }
+
+  removeGenre(value: string): void {
+    this._genres = this._genres.filter((item: string) => item !== value);
+  }
 }
