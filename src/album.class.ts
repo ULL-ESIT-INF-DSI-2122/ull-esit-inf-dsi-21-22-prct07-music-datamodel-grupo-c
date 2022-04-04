@@ -36,4 +36,8 @@ export class Album {
   get songs(): string[] { return this._songs; }
 
   set songs(songs: string[]) { this._songs = songs; }
+
+  public addGenre(genre: string): void { this._genres.push(genre); }
+
+  public addSong(song: string): void { this._songs.push(song); }
 }

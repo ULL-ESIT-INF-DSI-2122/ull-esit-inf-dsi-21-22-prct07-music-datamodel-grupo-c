@@ -38,4 +38,7 @@ describe('Album class tests', () => {
       expect(laPromesa.songs).to.be.eql(['La Amiga', 'Confesion', 'Vacio', 'Instagram']);
     });
   });
+  describe('Album class setters', () => {
+    
+  });
 });
