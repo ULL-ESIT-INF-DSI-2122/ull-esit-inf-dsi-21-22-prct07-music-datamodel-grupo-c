@@ -14,10 +14,10 @@ export class Album {
 
   constructor(
     name: string,
-    artist: string = '',
     year: number,
     genres: string[] = [],
     songs: string[] = [],
+    artist: string = '',
   ) {
     this._name = name;
     this._artist = artist;
