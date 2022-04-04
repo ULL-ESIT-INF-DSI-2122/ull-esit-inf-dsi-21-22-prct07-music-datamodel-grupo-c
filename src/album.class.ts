@@ -1,4 +1,4 @@
-export class album {
+export class Album {
   private readonly _name: string;
 
   private readonly _artist: string;
