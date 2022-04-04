@@ -10,7 +10,14 @@ const cuentaConmigo = new Song(
   false,
   2800000,
 );
-const strobe = new Song('Strobe');
+const strobe = new Song(
+  'Strobe',
+  'Deadmau5',
+  254,
+  ['EDM', 'Progressive House', 'Ambient'],
+  true,
+  59900000,
+  );
 
 describe('Song Class tests', () => {
   describe('Song Constructor tests', () => {
@@ -38,21 +45,9 @@ describe('Song Class tests', () => {
     });
   });
   describe('Song Class setters', () => {
-    it('Song Artist setter', () => {
-      strobe.artist = 'Deadmau5';
-      expect(strobe.artist).to.be.eql('Deadmau5');
-    });
-    it('Song Seconds setter', () => {
-      strobe.seconds = 254;
-      expect(strobe.seconds).to.be.eql(254);
-    });
     it('Song Genres setter', () => {
       strobe.genres = ['EDM', 'Progressive House', 'Ambient'];
       expect(strobe.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient']);
-    });
-    it('Song Single setter', () => {
-      strobe.single = true;
-      expect(strobe.single).to.be.eql(true);
     });
     it('Song Views setter', () => {
       strobe.views = 59900000;
@@ -65,6 +60,14 @@ describe('Song Class tests', () => {
       expect(strobe.genres.length).to.be.eql(4);
       expect(strobe.genres).to.be.eql(['EDM', 'Progressive House', 'Ambient', 'Phonk']);
     });
+    it('Add One View Method', () => {
+      expect(strobe.views).to.be.eql(59900000);
+      strobe.addOneView();
+      expect(strobe.views).to.be.eql(59900001);
+      
+      expect(cuentaConmigo.views).to.be.eql(2800000);
+      cuentaConmigo.addOneView();
+      expect(cuentaConmigo.views).to.be.eql(2800001);
   });
   describe('Song CLass remove Methods', () => {
     it('removeGenre method', () => {
