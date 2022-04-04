@@ -39,6 +39,13 @@ describe('Album class tests', () => {
     });
   });
   describe('Album class setters', () => {
-    
+    it('Album genres setter', () => {
+      laPromesa.genres = ['Instrumental', 'Pop', 'Urban'];
+      expect(laPromesa.genres).to.be.eql(['Instrumental', 'Pop', 'Urban']);
+    });
+    it('Album songs setter', () => {
+      laPromesa.songs = ['Buscandote', 'Envolver', 'Encendia'];
+      expect(laPromesa.songs).to.be.eql(['Buscandote', 'Envolver', 'Encendia']);
+    });
   });
 });
