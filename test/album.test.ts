@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import exp from 'constants';
 import { describe, it } from 'mocha';
 import { Album } from '../src/album.class';
 
@@ -9,6 +10,7 @@ const laPromesa = new Album(
   ['Urban', 'Pop', 'Reggaeton'],
   ['La Amiga', 'Confesion', 'Vacio', 'Instagram'],
 );
+
 describe('Album class tests', () => {
   describe('Album class add methods', () => {
     it('addGenre method', () => {
@@ -56,6 +58,18 @@ describe('Album class tests', () => {
     it('Album songs setter', () => {
       laPromesa.songs = ['Buscandote', 'Envolver', 'Encendia'];
       expect(laPromesa.songs).to.be.eql(['Buscandote', 'Envolver', 'Encendia']);
+    });
+  });
+  describe('Album remove methods', () => {
+    it('removeGenre method', () => {
+      laPromesa.removeGenre('Instrumental');
+      expect(laPromesa.genres.length).to.be.eql(2);
+      expect(laPromesa.genres).to.be.eql(['Pop', 'Urban']);
+    });
+    it('removeSong method', () => {
+      laPromesa.removeSong('Envolver');
+      expect(laPromesa.songs.length).to.be.eql(2);
+      expect(laPromesa.songs).to.be.eql(['Buscandote', 'Encendia']);
     });
   });
 });
