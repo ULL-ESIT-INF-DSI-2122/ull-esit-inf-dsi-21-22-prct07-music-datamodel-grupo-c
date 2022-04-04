@@ -21,5 +21,21 @@ describe('Album class tests', () => {
       expect(laPromesa.songs).to.be.eql(['La Amiga', 'Confesion', 'Vacio', 'Instagram']);
     });
   });
+  describe('Album class getters', () => {
+    it('Album name getter', () => {
+      expect(laPromesa.name).to.be.eql('La Promesa');
+    });
+    it('Album artist getter', () => {
+      expect(laPromesa.artist).to.be.eql('Justin Quiles');
+    });
+    it('Album year getter', () => {
+      expect(laPromesa.year).to.be.eql(2017);
+    });
+    it('Album genres getter', () => {
+      expect(laPromesa.genres).to.be.eql(['Urban', 'Pop', 'Reggaeton']);
+    });
+    it('Album songs getter', () => {
+      expect(laPromesa.songs).to.be.eql(['La Amiga', 'Confesion', 'Vacio', 'Instagram']);
+    });
   });
 });
