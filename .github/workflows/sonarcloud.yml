@@ -23,7 +23,7 @@ jobs:
       - name: Test
         run: npm run test:coverage
       - name: coverage info directory
-          run: mkdir coverage
+        run: mkdir coverage
       - name: Coverage ☔
         run: npm run get:coverage > coverage/lcov.info
       - name: SonarCloud Scan 📈
