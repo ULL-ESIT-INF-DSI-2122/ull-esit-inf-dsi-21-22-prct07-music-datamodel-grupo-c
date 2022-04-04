@@ -1,7 +1,5 @@
 import { expect } from 'chai';
-import exp from 'constants';
 import { describe, it } from 'mocha';
-import { isDataView } from 'util/types';
 import { Album } from '../src/album.class';
 
 const laPromesa = new Album(
@@ -60,5 +58,4 @@ describe('Album class tests', () => {
       expect(laPromesa.songs).to.be.eql(['Buscandote', 'Envolver', 'Encendia']);
     });
   });
-
 });
