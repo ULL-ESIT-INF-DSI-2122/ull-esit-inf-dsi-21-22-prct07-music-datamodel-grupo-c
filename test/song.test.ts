@@ -64,10 +64,11 @@ describe('Song Class tests', () => {
       expect(strobe.views).to.be.eql(59900000);
       strobe.addOneView();
       expect(strobe.views).to.be.eql(59900001);
-      
+
       expect(cuentaConmigo.views).to.be.eql(2800000);
       cuentaConmigo.addOneView();
-      expect(cuentaConmigo.views).to.be.eql(2800001);
+      expect(cuentaConmigo.views).to.be.eql(2800001); 
+    });
   });
   describe('Song CLass remove Methods', () => {
     it('removeGenre method', () => {

@@ -1,13 +1,13 @@
 export class Song {
   private readonly _name: string;
 
-  private _artist: string;
+  private readonly _artist: string;
 
-  private _seconds: number;
+  private readonly _seconds: number;
 
   private _genres: string[];
 
-  private _single: boolean;
+  private readonly _single: boolean;
 
   private _views: number;
 
@@ -31,11 +31,7 @@ export class Song {
 
   get artist(): string { return this._artist; }
 
-  set artist(value: string) { this._artist = value; }
-
   get seconds(): number { return this._seconds; }
-
-  set seconds(value: number) { this._seconds = value; }
 
   get genres(): string[] { return this._genres; }
 
@@ -43,14 +39,16 @@ export class Song {
 
   get single(): boolean { return this._single; }
 
-  set single(value: boolean) { this._single = value; }
-
   get views(): number { return this._views; }
 
   set views(value: number) { this._views = value; }
 
   addGenre(value: string): void {
     this._genres.push(value);
+  }
+
+  addOneView(): void {
+    this.views += 1;
   }
 
   removeGenre(value: string): void {
