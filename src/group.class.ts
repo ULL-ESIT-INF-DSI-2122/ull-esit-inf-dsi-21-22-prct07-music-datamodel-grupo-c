@@ -31,11 +31,19 @@ export class Group {
 
   get artists(): string[] { return this._artists; }
 
+  set artists(value: string[]) { this._artists = value; }
+
   get year(): number { return this._year; }
 
   get genres(): string[] { return this._genres; }
 
+  set genres(value: string[]) { this._genres = value; }
+
   get albums(): string[] { return this._albums; }
 
+  set albums(value: string[]) { this._albums = value; }
+
   get monthlyListeners(): number { return this._monthlyListeners; }
+
+  set monthlyListeners(value: number) { this._monthlyListeners = value; }
 } 

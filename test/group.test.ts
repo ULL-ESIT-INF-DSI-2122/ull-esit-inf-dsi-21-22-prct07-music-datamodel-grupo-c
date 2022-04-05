@@ -86,7 +86,7 @@ describe('Group class Tests', () => {
 
     it('monthlyListeners setter', () => {
       fitoYFitipaldis.monthlyListeners = 250;
-      expect(fitoYFitipaldis.albums).to.be.eql(250);
+      expect(fitoYFitipaldis.monthlyListeners).to.be.eql(250);
     });
   });
 });
