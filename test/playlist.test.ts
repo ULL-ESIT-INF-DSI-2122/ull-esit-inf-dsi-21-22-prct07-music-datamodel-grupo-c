@@ -9,5 +9,9 @@ const clasicsSpain = new Playlist(
   ['Pop', 'Rock', 'Punk', 'Urban', 'Instrumental']
 );
 
-
+describe('Playlist Class Tests', () => {
+  describe('Playlist getters test', () => {
+    
+  });
+});
 
