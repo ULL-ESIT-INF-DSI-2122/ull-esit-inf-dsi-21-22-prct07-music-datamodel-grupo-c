@@ -46,4 +46,10 @@ export class Group {
   get monthlyListeners(): number { return this._monthlyListeners; }
 
   set monthlyListeners(value: number) { this._monthlyListeners = value; }
+
+  addArtist(artist: string): void { this._artists.push(artist); }
+
+  addGenre(genre: string): void { this._genres.push(genre); }
+
+  addAlbums(albums: string): void { this._albums.push(albums); }
 } 
