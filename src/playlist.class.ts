@@ -49,7 +49,13 @@ export class Playlist {
 
   public addGenre(genre: string): void { this._genres.push(genre); }
 
+  public addSong(song: string): void { this._songs.push(song); }
+
   public removeGenre(genre: string) {
     this._genres = this._genres.filter((item: string) => item !== genre);
+  }
+
+  public removeSong(song: string) {
+    this._songs = this._songs.filter((item: string) => item !== song);
   }
 }
