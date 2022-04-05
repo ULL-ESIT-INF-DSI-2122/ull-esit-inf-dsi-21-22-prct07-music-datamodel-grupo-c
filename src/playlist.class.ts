@@ -20,8 +20,8 @@ export class Playlist {
     this._name = name;
     this._songs = songs;
     this._duration = duration;
-    this._hours = duration / 3600;
-    this._minutes = duration / 60;
+    this._hours = Number((duration / 3600).toFixed(1));
+    this._minutes = Number((duration / 60).toFixed(1));
     this._genres = genres;
   }
 
@@ -35,8 +35,8 @@ export class Playlist {
 
   set duration(duration: number) {
     this._duration  = duration;
-    this._hours = duration / 3600;
-    this._minutes = duration / 60;
+    this._hours = Number((duration / 3600).toFixed(1));
+    this._minutes = Number((duration / 60).toFixed(1));
   }
 
   get hours(): number { return this._hours; }
