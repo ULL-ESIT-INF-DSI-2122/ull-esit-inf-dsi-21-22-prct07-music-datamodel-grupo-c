@@ -58,4 +58,35 @@ describe('Group class Tests', () => {
       expect(elCantoDelLoco.monthlyListeners).to.be.eql(2622773);
     });    
   });
+
+  describe('Group class Setter', () => {
+    it('Artists Setter', () => {
+      fitoYFitipaldis.artists = ['test1', 'test2'];
+      expect(fitoYFitipaldis.artists).to.be.eql(['test1', 'test2']);
+      fitoYFitipaldis.artists = ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin'];
+      expect(fitoYFitipaldis.artists).to.be.eql(
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin']);
+    });
+
+    it('Genres Setter', () => {
+      fitoYFitipaldis.genres = ['test1', 'test2'];
+      expect(fitoYFitipaldis.genres).to.be.eql(['test1', 'test2']);
+      fitoYFitipaldis.genres = ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'];
+      expect(fitoYFitipaldis.genres).to.be.eql(
+        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly']);
+    });
+
+    it('Albums setter', () => {
+      fitoYFitipaldis.albums = ['test1', 'test2'];
+      expect(fitoYFitipaldis.albums).to.be.eql(['test1', 'test2']);
+      fitoYFitipaldis.albums = ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'];
+      expect(fitoYFitipaldis.albums).to.be.eql(
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas']);
+    });
+
+    it('monthlyListeners setter', () => {
+      fitoYFitipaldis.monthlyListeners = 250;
+      expect(fitoYFitipaldis.albums).to.be.eql(250);
+    });
+  });
 });
