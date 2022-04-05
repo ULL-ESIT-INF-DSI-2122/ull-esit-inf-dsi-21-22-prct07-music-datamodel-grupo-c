@@ -52,7 +52,7 @@ describe('Artist Class tests', () => {
       expect(tosinAbasi.listeners).to.be.equal(379947);
     });
   });
-  describe('Genre Class add Methods', () => {
+  describe('Artist Class add Method', () => {
     it('addListeners method', () => {
       tosinAbasi.addListeners(8497755);
       expect(tosinAbasi.listeners).to.be.equal(8877702);
