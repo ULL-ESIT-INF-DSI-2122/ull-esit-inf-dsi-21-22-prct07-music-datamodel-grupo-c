@@ -1,3 +1,14 @@
+/**
+ * # Playlist class.
+ * Playlist class containing all the songs to be played.
+ * 
+ * ## Properties
+ * - name | Playlist name.
+ * - songs | Name of the songs on the playlist.
+ * - duration | Duration in seconds of the playlist.
+ * - hours | Duration in hours of the playlist (it updates automatically).
+ * - minutes | Duration in 
+ */
 export class Playlist {
   private readonly _name: string;
 
@@ -21,7 +32,7 @@ export class Playlist {
     this._songs = songs;
     this._duration = duration;
     this._hours = Number((duration / 3600).toFixed(1));
-    this._minutes = Number((duration / 60).toFixed(1));
+    this._minutes = Number(((duration - this._hours * 3600) / 60).toFixed(1));
     this._genres = genres;
   }
 
@@ -36,7 +47,7 @@ export class Playlist {
   set duration(duration: number) {
     this._duration  = duration;
     this._hours = Number((duration / 3600).toFixed(1));
-    this._minutes = Number((duration / 60).toFixed(1));
+    this._minutes = Number(((duration - this._hours * 3600) / 60).toFixed(1));
   }
 
   get hours(): number { return this._hours; }
