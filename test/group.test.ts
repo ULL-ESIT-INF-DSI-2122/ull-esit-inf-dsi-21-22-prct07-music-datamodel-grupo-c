@@ -89,4 +89,24 @@ describe('Group class Tests', () => {
       expect(fitoYFitipaldis.monthlyListeners).to.be.eql(250);
     });
   });
+
+  describe('Add items methods', () => {
+    it('AddArtist method', () => {
+      fitoYFitipaldis.addArtist('test1');
+      expect(fitoYFitipaldis.artists).to.be.eql(
+        ['Pop rock', 'Pop punk', 'Pop', 'Power pop']);
+    });
+
+    it('AddGenre method', () => {
+      fitoYFitipaldis.addGenre('test1');
+      expect(fitoYFitipaldis.genres).to.be.eql(
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin', 'test1']);
+    });
+
+    it('AddAlbum method', () => {
+      fitoYFitipaldis.addAlbums('test1');
+      expect(fitoYFitipaldis.albums).to.be.eql(
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas']);
+    });
+  });
 });
