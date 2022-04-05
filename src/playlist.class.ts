@@ -6,8 +6,24 @@
  * - name | Playlist name.
  * - songs | Name of the songs on the playlist.
  * - duration | Duration in seconds of the playlist.
- * - hours | Duration in hours of the playlist (it updates automatically).
- * - minutes | Duration in 
+ * - hours | Hours of the playlist duration (it updates automatically).
+ * - minutes | Minutes of the playlist duration.
+ * - genres | Genres that appears in the playlist.
+ * 
+ * ## Methods
+ * - get name() | Returns Playlist name.
+ * - get songs() | Returns all the songs in the playlist.
+ * - set songs() | Set the songs on the playlist.
+ * - get duration() | Returns the playlist duration in seconds.
+ * - set duration(duration) | Set the duration (updates the hours and minutes automatically).
+ * - get hours() | Returns the duration in hours of the playlist.
+ * - get minutes() | Returns the minutes duration of the playlist.
+ * - get genres() | Returns the genres on the playlist.
+ * - set genres(genres) | Set the playlist genres.
+ * - addGenre(genre) | Add a genre to the playlist.
+ * - addSong(song) | Add a song to the playlist.
+ * - removeGenre(genre) | Remove a genre from the playlist.
+ * - removeSong(song) | Remove a song from the playlist.
  */
 export class Playlist {
   private readonly _name: string;
