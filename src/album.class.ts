@@ -1,5 +1,27 @@
 /**
- * Album Class.
+* # Album Class.
+* Album class that belongs to the collection of classes in the Playlist.
+* It stands for the albums that contains songs.
+ *
+ * ## Properties
+ * - name | Album name.
+ * - artist | Album artist.
+ * - year | Year when the album was published.
+ * - genres | Album genres.
+ * - songs | Songs on the album.
+ *
+ * ## Methods
+ * -  get name() | Returns the album name.
+ * -  get artist() | Returns the album artist.
+ * -  get year() | Returns the year when the album was published.
+ * -  get genres() | Returns the genres that belongs to the album.
+ * -  set genres() | Set the genres of the album.
+ * -  get songs() | Returns the songs on the album.
+ * -  set songs() | Set the songs on the album.
+ * -  addGenre(genre) | Add a new genre to the album.
+ * -  addSong(song) | Add a new song to the album.
+ * -  removeGenre(genre) | Remove a genre from the genre collecion.
+ * -  removeSong(song) | Remove a song from the song collecion.
  */
 export class Album {
   private readonly _name: string;
