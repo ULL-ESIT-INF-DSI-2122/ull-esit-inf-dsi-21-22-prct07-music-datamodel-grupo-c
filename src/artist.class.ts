@@ -7,12 +7,12 @@
  * - name | Artist name.
  * - groups | Groups where the artist belongs.
  * - genres | Genres the artist plays.
- * - albums | Arstis albums.
+ * - albums | Artist albums.
  * - songs | Artist songs.
  * - listeners | Is the sum of all the songs and the groups the artists belongs (monthly).
  *
  * ## Methods
- * -  get name() | Returns the artis name.
+ * -  get name() | Returns the artist name.
  * -  get groups() | Returns the groups where the artist participate.
  * -  set groups() | Set the groups where the artist participate.
  * -  get genres() | Returns the artist genres.
