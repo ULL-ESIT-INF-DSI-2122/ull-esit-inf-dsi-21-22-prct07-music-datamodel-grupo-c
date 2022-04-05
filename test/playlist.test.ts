@@ -57,5 +57,15 @@ describe('Playlist Class Tests', () => {
       expect(clasicsSpain.songs).to.be.eql(['La Deriva', 'Te entiendo', 'Tanto la Queria', 'Lento', 'No Dudaria']);
     });
   });
+  describe('Playlist remove methods', () => {
+    it('removeGenre method test', () => {
+      clasicsSpain.removeGenre('Punk');
+      expect(clasicsSpain.genres).to.be.eql([ 'Flamenco', 'Clasica', 'Salsa']);
+    });
+    it('removeSong method test', () => {
+      clasicsSpain.removeSong('Te entiendo');
+      expect(clasicsSpain.songs).to.be.eql(['La Deriva', 'Tanto la Queria', 'Lento', 'No Dudaria']);
+    });
+  });
 });
 
