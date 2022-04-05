@@ -25,7 +25,7 @@ describe('Playlist Class Tests', () => {
       expect(clasicsSpain.hours).to.be.eql(8);
     });
     it('Playlist minutes getter', () => {
-      expect(clasicsSpain.minutes).to.be.eql(480);
+      expect(clasicsSpain.minutes).to.be.eql(0);
     });
     it('Playlist genres getter', () => {
       expect(clasicsSpain.genres).to.be.eql(['Pop', 'Rock', 'Punk', 'Urban', 'Instrumental']);
@@ -39,8 +39,8 @@ describe('Playlist Class Tests', () => {
     it('Playlist duration setter (testing hours and minutes as well)', () => {
       clasicsSpain.duration = 30000;
       expect(clasicsSpain.duration).to.be.eql(30000);
-      expect(clasicsSpain.hours).to.be.eql(8.3);
-      expect(clasicsSpain.minutes).to.be.eql(500);
+      expect(clasicsSpain.hours).to.be.eql(8);
+      expect(clasicsSpain.minutes).to.be.eql(20);
     });
     it('Playlist genres setter', () => {
       clasicsSpain.genres = ['Flamenco', 'Clasica', 'Salsa'];
