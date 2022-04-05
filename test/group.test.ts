@@ -11,6 +11,15 @@ const fitoYFitipaldis = new Group(
   2044949
 )
 
+const elCantoDelLoco = new Group(
+  'El Canto del Loco',
+  ['Dani Martín', 'David Otero', 'Chema Ruiz', 'Jandro Velázquez', 'Iván Ganchegui'],
+  1994,
+  ['Pop rock', 'Pop punk', 'Pop', 'Power pop'],
+  ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'],
+  2622773
+)
+
 describe('Group class Tests', () => {
   describe('Group Class Getters', () => {
     it('', () => {
