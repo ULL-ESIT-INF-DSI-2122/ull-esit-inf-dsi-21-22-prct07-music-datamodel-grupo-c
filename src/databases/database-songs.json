@@ -1,0 +1,404 @@
+{
+    "songs": [
+        {
+            "name": "Adan y Eva",
+            "author": "Paulo Londra",
+            "duration": 139,
+            "genres": ["Reggaeton", "Urbano"],
+            "single": false,
+            "reproductions": 1000234
+        },
+        {
+            "name": "Vas a quedarte",
+            "author": "Aitana",
+            "duration": 120,
+            "genres": ["Urbano", "Pop"],
+            "single": false,
+            "reproductions": 1130234
+        },
+        {
+            "name": "Adictiva",
+            "author": "Daddy Yankee",
+            "duration": 250,
+            "genres": ["Reggaeton", "Urbano", "Underground"],
+            "single": true,
+            "reproductions": 3230234
+        },
+        {
+            "name": "Booty",
+            "author": "C. Tangana",
+            "duration": 237,
+            "genres": ["Pop", "Urbano"],
+            "single": false,
+            "reproductions": 781472
+        },
+        {
+            "name": "Taki Taki",
+            "author": "Dj Snake",
+            "duration": 123,
+            "genres": ["Techno", "House", "Reggaeton"],
+            "single": false,
+            "reproductions": 52853483
+        },
+        {
+            "name": "Imposible",
+            "author": "Luis Fonsi",
+            "duration": 354,
+            "genres": ["Urbano", "Bachata"],
+            "single": false,
+            "reproductions": 3008736
+        },
+        {
+            "name": "Solo de Mí",
+            "author": "Bad Bunny",
+            "duration": 189,
+            "genres": ["Reggaeton", "Urbano", "Pop"],
+            "single": false,
+            "reproductions": 7788234
+        },
+        {
+            "name": "120",
+            "author": "Bad Bunny",
+            "duration": 254,
+            "genres": ["Reggaeton", "Urbano", "Pop"],
+            "single": false,
+            "reproductions": 36273726
+        },
+        {
+            "name": "La Zona",
+            "author": "Bad Bunny",
+            "duration": 342,
+            "genres": ["Reggaeton", "Urbano", "Pop"],
+            "single": false,
+            "reproductions": 23472381
+        },
+        {
+            "name": "Calma (Remix)",
+            "author": "Farruko",
+            "duration": 234,
+            "genres": ["Urbano", "Underground"],
+            "single": false,
+            "reproductions": 98812312
+        },
+        {
+            "name": "Mujer Bruja",
+            "author": "Lola Indigo",
+            "duration": 432,
+            "genres": ["Pop", "Urbano"],
+            "single": false,
+            "reproductions": 8274134
+        },
+        {
+            "name": "Vivir mi Vida",
+            "author": "Marc Anthony",
+            "duration": 243,
+            "genres": ["Salsa"],
+            "single": false,
+            "reproductions": 283172414
+        },
+        {
+            "name": "Fix a Drink",
+            "author": "Chris Janson",
+            "duration": 214,
+            "genres": ["Country"],
+            "single": false,
+            "reproductions": 138184327
+        },
+        {
+            "name": "Jaula de Oro",
+            "author": "Foyone",
+            "duration": 352,
+            "genres": ["Rap", "Underground"],
+            "single": false,
+            "reproductions": 147136123
+        },
+        {
+            "name": "Whats Poppin",
+            "author": "Jack Harlow",
+            "duration": 265,
+            "genres": ["Trap", "Urbano"],
+            "single": false,
+            "reproductions": 91238142
+        },
+        {
+            "name": "Malamente",
+            "author": "Rosalia",
+            "duration": 145,
+            "genres": ["Flamenco"],
+            "single": false,
+            "reproductions": 1324234
+        },
+        {
+            "name": "Vaina Loca",
+            "author": "Ozuna",
+            "duration": 231,
+            "genres": ["Reggaeton", "Pop"],
+            "single": false,
+            "reproductions": 123140232
+        },
+        {
+            "name": "Lo siento",
+            "author": "Beret",
+            "duration": 196,
+            "genres": ["Rap", "Pop"],
+            "single": false,
+            "reproductions": 1237172
+        },
+        {
+            "name": "Ibiza",
+            "author": "Ozuna",
+            "duration": 276,
+            "genres": ["Bachata", "Reggaeton"],
+            "single": false,
+            "reproductions": 23141628
+        },
+        {
+            "name": "Sin Pijama",
+            "author": "Becky G",
+            "duration": 425,
+            "genres": ["Reggaeton", "Urbano", "Bachata"],
+            "single": false,
+            "reproductions": 71361247
+        },
+        {
+            "name": "Mocca",
+            "author": "Lalo Ebratt",
+            "duration": 274,
+            "genres": ["Pop"],
+            "single": false,
+            "reproductions": 1132234
+        },
+        {
+            "name": "Bajito",
+            "author": "Ana Guerra",
+            "duration": 127,
+            "genres": ["Urbano", "Pop"],
+            "single": false,
+            "reproductions": 23147212
+        },
+        {
+            "name": "Que tienes tu",
+            "author": "Dvicio",
+            "duration": 183,
+            "genres": ["Urbano"],
+            "single": false,
+            "reproductions": 91238234
+        },
+        {
+            "name": "Perdon",
+            "author": "David Bisbal",
+            "duration": 274,
+            "genres": ["Pop", "Funk"],
+            "single": false,
+            "reproductions": 78328384
+        },
+        {
+            "name": "Culpables",
+            "author": "Karol G",
+            "duration": 352,
+            "genres": ["Reggaeton", "Urbano"],
+            "single": false,
+            "reproductions": 87626934
+        },
+        {
+            "name": "Dejala que baile",
+            "author": "Melendi",
+            "duration": 362,
+            "genres": ["Pop", "Urbano"],
+            "single": false,
+            "reproductions": 72738271
+        },
+        {
+            "name": "Girls Like You",
+            "author": "Maroon 5",
+            "duration": 324,
+            "genres": ["Pop"],
+            "single": false,
+            "reproductions": 26726162
+        },
+        {
+            "name": "Cuando Nadie ve",
+            "author": "Morat",
+            "duration": 260,
+            "genres": ["Urbano"],
+            "single": false,
+            "reproductions": 26623712
+        },
+        {
+            "name": "No me Acuerdo",
+            "author": "Thalia",
+            "duration": 423,
+            "genres": ["Urbano"],
+            "single": false,
+            "reproductions": 72163126
+        },
+        {
+            "name": "Bohemian Rhapsody",
+            "author": "Queen",
+            "duration": 253,
+            "genres": ["Pop", "Punk"],
+            "single": false,
+            "reproductions": 32382887
+        },
+        {
+            "name": "Pienso en tu mirá",
+            "author": "Rosalia",
+            "duration": 352,
+            "genres": ["Urbano", "Flamenco"],
+            "single": false,
+            "reproductions": 126362476
+        },
+        {
+            "name": "Saoko",
+            "author": "Rosalia",
+            "duration": 243,
+            "genres": ["Urbano", "Reggaeton"],
+            "single": false,
+            "reproductions": 473682732
+        },
+        {
+            "name": "Bagdad",
+            "author": "Rosalia",
+            "duration": 542,
+            "genres": ["Urbano", "Reggaeton"],
+            "single": false,
+            "reproductions": 12371242
+        },
+        {
+            "name": "Thank U Next",
+            "author": "Ariana Grande",
+            "duration": 328,
+            "genres": ["Pop", "Urbano"],
+            "single": false,
+            "reproductions": 26623712
+        },
+        {
+            "name": "No te preocupes por mí",
+            "author": "Leiva",
+            "duration": 453,
+            "genres": ["Punk"],
+            "single": false,
+            "reproductions": 713274617
+        },
+        {
+            "name": "Refrigeraton Door",
+            "author": "Luke Combs",
+            "duration": 235,
+            "genres": ["Country"],
+            "single": false,
+            "reproductions": 34231662
+        },
+        {
+            "name": "Wisky Glasses",
+            "author": "Morgan Wallen",
+            "duration": 273,
+            "genres": ["Country", "Pop"],
+            "single": false,
+            "reproductions": 6352736
+        },
+        {
+            "name": "Beautiful Crazy",
+            "author": "Luke Combs",
+            "duration": 127,
+            "genres": ["Country"],
+            "single": false,
+            "reproductions": 37261723
+        },
+        {
+            "name": "Redneck Life",
+            "author": "Chris Janson",
+            "duration": 274,
+            "genres": ["Country"],
+            "single": false,
+            "reproductions": 713274617
+        },
+        {
+            "name": "Moon Over Mexico",
+            "author": "Luke Combs",
+            "duration": 323,
+            "genres": ["Country"],
+            "single": false,
+            "reproductions": 48372837
+        },
+        {
+            "name": "My girl",
+            "author": "The Temptations",
+            "duration": 256,
+            "genres": ["Funk"],
+            "single": false,
+            "reproductions": 874656874
+        },
+        {
+            "name": "Ain’t Too Proud to Beg",
+            "author": "The Temptations",
+            "duration": 189,
+            "genres": ["Funk"],
+            "single": false,
+            "reproductions": 4571563
+        },
+        {
+            "name": "Boogie Oogie Oogie",
+            "author": "A Taste of Honey",
+            "duration": 563,
+            "genres": ["Funk"],
+            "single": false,
+            "reproductions": 41235687
+        },
+        {
+            "name": "Bamboléo",
+            "author": "Gipsy Kings",
+            "duration": 236,
+            "genres": ["Flamenco"],
+            "single": false,
+            "reproductions": 4798125
+        },
+        {
+            "name": "Volare",
+            "author": "Gipsy Kings",
+            "duration": 133,
+            "genres": ["Flamenco"],
+            "single": false,
+            "reproductions": 563254
+        },
+        {
+            "name": "Ley De Gravedad",
+            "author": "Ojos de Brujo",
+            "duration": 423,
+            "genres": ["Flamenco"],
+            "single": true,
+            "reproductions": 8563214
+        },
+        {
+            "name": "Zambra",
+            "author": "Ojos de Brujo",
+            "duration": 125,
+            "genres": ["Flamenco"],
+            "single": false,
+            "reproductions": 96587423
+        },
+        {
+            "name": "I Want It That Way",
+            "author": "Backstreet Boys",
+            "duration": 235,
+            "genres": ["Pop"],
+            "single": false,
+            "reproductions": 45124789
+        },
+        {
+            "name": "As Long as You Love Me",
+            "author": "Backstreet Boys",
+            "duration": 326,
+            "genres": ["Pop"],
+            "single": false,
+            "reproductions": 25487965
+        },
+        {
+            "name": "Larger Than Life",
+            "author": "Backstreet Boys",
+            "duration": 254,
+            "genres": ["Pop"],
+            "single": false,
+            "reproductions": 365498354
+        }        
+    ]
+}
