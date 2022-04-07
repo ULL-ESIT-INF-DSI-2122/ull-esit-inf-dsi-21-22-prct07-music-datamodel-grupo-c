@@ -1,3 +1,10 @@
+/**
+ * # Genre Class
+ * This class determines which genres appear in songs, groups and artists.
+ * Joins with the set of classes that make up the Playlist.
+ *
+ * 
+ */
 export class Genre {
   private readonly _name: string;
 
