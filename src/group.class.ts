@@ -10,6 +10,18 @@
  * - genres | Genres related to the group.
  * - albums | Albums the group has released.
  * - monthlyListeners | Monthly listeners of the group.
+ *
+ * ## Methods
+ * - get name() | Returns group name.
+ * - get artists() | Returns the collection of artists of the group.
+ * - set artists(value) | Set the collection of artists (value) of the group.
+ * - get year() | Returns the year of creation of the group.
+ * - get genres() | Returns the collection of genres related to the group.
+ * - set genres(value) | Set the collection of genres related to the group.
+ * - get albums() | Returns the collection of albums the group has released.
+ * - set albums() | Set the collection of albums the group has released.
+ * - get monthlyListeners() | Returns the number of monthly listeners.
+ * - set monthlyListeners(value) | Set the number of monthly listeners.
  */
 export class Group {
   private readonly _name: string;
