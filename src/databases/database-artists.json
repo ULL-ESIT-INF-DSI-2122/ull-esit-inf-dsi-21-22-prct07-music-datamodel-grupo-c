@@ -1,6 +1,5 @@
 {
-    "artists": [
-        {
+    "Luke Combs": {
             "name": "Luke Combs",
             "groups": [],
             "genres": ["Country", "Pop"],
@@ -8,7 +7,7 @@
             "songs": ["Beatiful Crazy", "Refrigeraton Door", "Moon Over Mexico"],
             "listeners": 0
         },
-        {
+        "Bad Bunny": {
             "name": "Bad Bunny",
             "groups": [],
             "genres": ["Reggaeton", "Pop", "Trap", "Rap"],
@@ -16,7 +15,7 @@
             "songs": ["Solo de Mí", "120", "La Zona"],
             "listeners": 0
         },
-        {
+        "Rosalía": {
             "name": "Rosalía",
             "groups": [],
             "genres": ["Reggaeton", "Pop", "Trap", "Urbano"],
@@ -24,7 +23,7 @@
             "songs": ["Malamente", "Pienso en tu mirá", "Saoko", "Bagdad"],
             "listeners": 0
         },
-        {
+        "Romeo Santos": {
             "name": "Romeo Santos",
             "groups": ["Aventura"],
             "genres": ["Reggaeton", "Bachata", "Urbano"],
@@ -32,7 +31,7 @@
             "songs": ["Carita de Inocente", "Volví", "Saoko", "Bagdad"],
             "listeners": 0
         },
-        {
+        "Melendi": {
             "name": "Melendi",
             "groups": [],
             "genres": ["Pop", "Flamenco"],
@@ -40,7 +39,7 @@
             "songs": ["Dejala que baile", "El Arrepentido", "Con la luna llena", "Caminando por la vida"],
             "listeners": 0
         },
-        {
+        "David Bisbal": {
             "name": "David Bisbal",
             "groups": [],
             "genres": ["Pop"],
@@ -48,5 +47,4 @@
             "songs": ["Perdon", "A partir de hoy", "Esclavo de tus besos", "Dame tu amor"],
             "listeners": 0
         }
-    ]
 }
