@@ -1,3 +1,8 @@
+/**
+ * # Group Class
+ * This class is in charge of managing the groups objects.
+ * Group join the set of classes that make up the entire structure of a Playlist.
+ */
 export class Group {
   private readonly _name: string;
 
