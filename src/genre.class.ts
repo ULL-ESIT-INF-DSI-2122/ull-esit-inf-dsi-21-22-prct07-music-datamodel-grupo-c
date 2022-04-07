@@ -8,6 +8,24 @@
  * - artists | Artists related to the genre.
  * - songs | Songs related to the genre.
  * - albums | Albums related to the genre.
+ *
+ * ## Methods
+ * - get name() | Returns the genre name.
+ * - get artists() | Returns the artists related to the genre.
+ * - set artists(value) | Set the artists related to the genre.
+ * - get songs() | Returns the songs related to the genre.
+ * - set songs(value) | Set the songs related to the genre.
+ * - get albums() | Returns the albums related to the genre.
+ * - set albums(value) | Set the albums related to the genre.
+ * - addArtist(name) | Add an artist to the collection of artists related to the genre.
+ * - addAlbum(name) | Add an album to the collection of albums related to the genre.
+ * - addSong(name) | Add a song to the collection of songs related to the genre.
+ * - removeArtist(name) | Remove an artist from the collection of artists related to the genre.
+ * - removeArtistAt(pos) | Remove an artist from a position in the collection.
+ * - removeSong(name) | Remove a song from the collection of songs related to the genre.
+ * - removeSongAt(pos) | Remove a song in from a position.
+ * - removeAlbum(name) | Remove an album from the collection of albums related to the genre.
+ * - removeAlbumAt(pos) | Remove a album in from a position.
  */
 export class Genre {
   private readonly _name: string;
