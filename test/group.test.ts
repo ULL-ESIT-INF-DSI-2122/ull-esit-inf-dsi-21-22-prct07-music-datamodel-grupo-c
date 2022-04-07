@@ -8,8 +8,8 @@ const fitoYFitipaldis = new Group(
   1998,
   ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'],
   ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi'],
-  2044949
-)
+  2044949,
+);
 
 const elCantoDelLoco = new Group(
   'El Canto del Loco',
@@ -17,46 +17,52 @@ const elCantoDelLoco = new Group(
   1994,
   ['Pop rock', 'Pop punk', 'Pop', 'Power pop'],
   ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'],
-  2622773
-)
+  2622773,
+);
 
 describe('Group class Tests', () => {
   describe('Group Class Getters', () => {
     it('Name getter', () => {
       expect(fitoYFitipaldis.name).to.be.eql('Fito y Fitipaldis');
       expect(elCantoDelLoco.name).to.be.eql('El Canto del Loco');
-    });    
-    
+    });
+
     it('Artists getter', () => {
       expect(fitoYFitipaldis.artists).to.be.eql(
-        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin']);
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin'],
+      );
       expect(elCantoDelLoco.artists).to.be.eql(
-        ['Dani Martín', 'David Otero', 'Chema Ruiz', 'Jandro Velázquez', 'Iván Ganchegui']);
+        ['Dani Martín', 'David Otero', 'Chema Ruiz', 'Jandro Velázquez', 'Iván Ganchegui'],
+      );
     });
 
     it('Year getter', () => {
       expect(fitoYFitipaldis.year).to.be.eql(1998);
       expect(elCantoDelLoco.year).to.be.eql(1994);
-    });    
+    });
 
     it('Genres getter', () => {
       expect(fitoYFitipaldis.genres).to.be.eql(
-        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly']);
+        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'],
+      );
       expect(elCantoDelLoco.genres).to.be.eql(
-        ['Pop rock', 'Pop punk', 'Pop', 'Power pop']);
+        ['Pop rock', 'Pop punk', 'Pop', 'Power pop'],
+      );
     });
-    
+
     it('Albums getter', () => {
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi']);
+        ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi'],
+      );
       expect(elCantoDelLoco.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas']);
-    });    
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'],
+      );
+    });
 
     it('monthlyListeners getter', () => {
       expect(fitoYFitipaldis.monthlyListeners).to.be.eql(2044949);
       expect(elCantoDelLoco.monthlyListeners).to.be.eql(2622773);
-    });    
+    });
   });
 
   describe('Group class Setter', () => {
@@ -65,7 +71,8 @@ describe('Group class Tests', () => {
       expect(fitoYFitipaldis.artists).to.be.eql(['test1', 'test2']);
       fitoYFitipaldis.artists = ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin'];
       expect(fitoYFitipaldis.artists).to.be.eql(
-        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin']);
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin'],
+      );
     });
 
     it('Genres Setter', () => {
@@ -73,7 +80,8 @@ describe('Group class Tests', () => {
       expect(fitoYFitipaldis.genres).to.be.eql(['test1', 'test2']);
       fitoYFitipaldis.genres = ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'];
       expect(fitoYFitipaldis.genres).to.be.eql(
-        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly']);
+        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'],
+      );
     });
 
     it('Albums setter', () => {
@@ -81,7 +89,8 @@ describe('Group class Tests', () => {
       expect(fitoYFitipaldis.albums).to.be.eql(['test1', 'test2']);
       fitoYFitipaldis.albums = ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'];
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas']);
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'],
+      );
     });
 
     it('monthlyListeners setter', () => {
@@ -94,19 +103,45 @@ describe('Group class Tests', () => {
     it('AddArtist method', () => {
       fitoYFitipaldis.addArtist('test1');
       expect(fitoYFitipaldis.artists).to.be.eql(
-        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin', 'test1']);
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin', 'test1'],
+      );
     });
 
     it('AddGenre method', () => {
       fitoYFitipaldis.addGenre('test1');
       expect(fitoYFitipaldis.genres).to.be.eql(
-        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly', 'test1']);
+        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly', 'test1'],
+      );
     });
 
     it('AddAlbum method', () => {
       fitoYFitipaldis.addAlbums('test1');
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas', 'test1']);
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas', 'test1'],
+      );
+    });
+  });
+
+  describe('delete items methods', () => {
+    it('deleteArtist method', () => {
+      fitoYFitipaldis.deleteArtist('test1');
+      expect(fitoYFitipaldis.artists).to.be.eql(
+        ['Adolfo Cabrales', 'Javier Alzola', 'Joserra Senperena', 'Carlos Raya', 'Alejandro Climent', 'Daniel Griffin'],
+      );
+    });
+
+    it('deleteGenre method', () => {
+      fitoYFitipaldis.deleteGenre('test1');
+      expect(fitoYFitipaldis.genres).to.be.eql(
+        ['Rock and roll', 'Blues rock', 'Pop rock', 'Rockabilly'],
+      );
+    });
+
+    it('deleteAlbum method', () => {
+      fitoYFitipaldis.deleteAlbums('test1');
+      expect(fitoYFitipaldis.albums).to.be.eql(
+        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas', 'test1'],
+      );
     });
   });
 });
