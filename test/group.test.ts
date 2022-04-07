@@ -87,9 +87,9 @@ describe('Group class Tests', () => {
     it('Albums setter', () => {
       fitoYFitipaldis.albums = ['test1', 'test2'];
       expect(fitoYFitipaldis.albums).to.be.eql(['test1', 'test2']);
-      fitoYFitipaldis.albums = ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'];
+      fitoYFitipaldis.albums = ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi'];
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas'],
+        ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi'],
       );
     });
 
@@ -117,7 +117,7 @@ describe('Group class Tests', () => {
     it('AddAlbum method', () => {
       fitoYFitipaldis.addAlbums('test1');
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas', 'test1'],
+        ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi', 'test1'],
       );
     });
   });
@@ -138,9 +138,9 @@ describe('Group class Tests', () => {
     });
 
     it('deleteAlbum method', () => {
-      fitoYFitipaldis.deleteAlbums('test1');
+      fitoYFitipaldis.deleteAlbum('test1');
       expect(fitoYFitipaldis.albums).to.be.eql(
-        ['El Canto del Loco', 'A contracorriente', 'Estados de ánimo', 'Zapatillas', 'Personas', 'test1'],
+        ['A puerta cerrada', 'Los sueños locos', 'Lo más lejos a tu lado', 'Por la boca vive el pez', 'Huyendo contigo de mi'],
       );
     });
   });

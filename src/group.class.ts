@@ -52,4 +52,16 @@ export class Group {
   addGenre(genre: string): void { this._genres.push(genre); }
 
   addAlbums(albums: string): void { this._albums.push(albums); }
+
+  deleteArtist(artist: string) {
+    this._artists = this._artists.filter((element: string) => element !== artist);
+  }
+
+  deleteGenre(genre: string) {
+    this._genres = this._genres.filter((element: string) => element !== genre);
+  }
+
+  deleteAlbum(album: string) {
+    this._albums = this._albums.filter((element: string) => element !== album);
+  }
 } 
