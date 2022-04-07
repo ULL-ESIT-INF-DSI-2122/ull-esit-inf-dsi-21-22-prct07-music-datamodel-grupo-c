@@ -1,15 +1,28 @@
 /**
  * # Song Class
  * This class is in charge of managing the song objects,
- * Which are joined to the set of classes to form the playlist.
+ * which are joined to the set of classes to form the playlist.
  *
  * ## Properties
  * - name | Song name.
  * - artist | Song artist.
  * - seconds | Duration in seconds of the song.
- * - genres | Genres on the song, it could be more than one.
+ * - genres | Genres related to the song, it could be more than one.
  * - single | If the song is a single or appear in a album.
- * - views | Song number of viwes.
+ * - views | Song number of views.
+ *
+ * ## Methods
+ * - get name() | Returns song name.
+ * - get artist() | Returns song artist.
+ * - get seconds() | Returns song duration in seconds.
+ * - get genres() | Returns all the genres related to the song.
+ * - set genres(value) | Set the genres (in value) related to the song.
+ * - get single() | Returns true if the song is a single, and false if is not.
+ * - get views() | Returns the number of views of the song.
+ * - set views() | Set the song number of views.
+ * - addGenre(value) | Add on genre (value) to the collection of genres related to the song.
+ * - addOneView() | Add one view to the total of views.
+ * - removeGenre(value) | Remove a genre from the collection of genres related to the song.
  */
 export class Song {
   private readonly _name: string;
