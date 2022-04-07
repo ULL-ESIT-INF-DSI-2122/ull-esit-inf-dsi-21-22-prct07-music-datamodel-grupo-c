@@ -2,6 +2,14 @@
  * # Group Class
  * This class is in charge of managing the groups objects.
  * Group join the set of classes that make up the entire structure of a Playlist.
+ *
+ * ## Properties
+ * - name | Group name.
+ * - artists | Artists in the group.
+ * - year | Year of creation of the group.
+ * - genres | Genres related to the group.
+ * - albums | Albums the group has released.
+ * - monthlyListeners | Monthly listeners of the group.
  */
 export class Group {
   private readonly _name: string;
