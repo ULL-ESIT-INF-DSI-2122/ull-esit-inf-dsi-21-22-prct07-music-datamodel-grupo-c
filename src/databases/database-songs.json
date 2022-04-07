@@ -1,6 +1,5 @@
 {
-    "songs": [
-        {
+    "Adan y Eva": {
             "name": "Adan y Eva",
             "author": "Paulo Londra",
             "duration": 139,
@@ -8,7 +7,7 @@
             "single": false,
             "reproductions": 1000234
         },
-        {
+    "Vas a quedarte": {
             "name": "Vas a quedarte",
             "author": "Aitana",
             "duration": 120,
@@ -16,7 +15,7 @@
             "single": false,
             "reproductions": 1130234
         },
-        {
+    "Adictiva": {
             "name": "Adictiva",
             "author": "Daddy Yankee",
             "duration": 250,
@@ -24,7 +23,7 @@
             "single": true,
             "reproductions": 3230234
         },
-        {
+    "Booty": {
             "name": "Booty",
             "author": "C. Tangana",
             "duration": 237,
@@ -32,7 +31,7 @@
             "single": false,
             "reproductions": 781472
         },
-        {
+    "Taki Taki": {
             "name": "Taki Taki",
             "author": "Dj Snake",
             "duration": 123,
@@ -40,7 +39,7 @@
             "single": false,
             "reproductions": 52853483
         },
-        {
+    "Imposible": {
             "name": "Imposible",
             "author": "Luis Fonsi",
             "duration": 354,
@@ -48,7 +47,7 @@
             "single": false,
             "reproductions": 3008736
         },
-        {
+    "Solo de Mí": {
             "name": "Solo de Mí",
             "author": "Bad Bunny",
             "duration": 189,
@@ -56,7 +55,7 @@
             "single": false,
             "reproductions": 7788234
         },
-        {
+    "120": {
             "name": "120",
             "author": "Bad Bunny",
             "duration": 254,
@@ -64,7 +63,7 @@
             "single": false,
             "reproductions": 36273726
         },
-        {
+    "La Zona": {
             "name": "La Zona",
             "author": "Bad Bunny",
             "duration": 342,
@@ -72,7 +71,7 @@
             "single": false,
             "reproductions": 23472381
         },
-        {
+    "Calma (Remix)": {
             "name": "Calma (Remix)",
             "author": "Farruko",
             "duration": 234,
@@ -80,7 +79,7 @@
             "single": false,
             "reproductions": 98812312
         },
-        {
+    "Mujer Bruja": {
             "name": "Mujer Bruja",
             "author": "Lola Indigo",
             "duration": 432,
@@ -88,7 +87,7 @@
             "single": false,
             "reproductions": 8274134
         },
-        {
+    "Vivir mi Vida": {
             "name": "Vivir mi Vida",
             "author": "Marc Anthony",
             "duration": 243,
@@ -96,7 +95,7 @@
             "single": false,
             "reproductions": 283172414
         },
-        {
+    "Fix a Drink": {
             "name": "Fix a Drink",
             "author": "Chris Janson",
             "duration": 214,
@@ -104,7 +103,7 @@
             "single": false,
             "reproductions": 138184327
         },
-        {
+    "Jaula de Oro": {
             "name": "Jaula de Oro",
             "author": "Foyone",
             "duration": 352,
@@ -112,7 +111,7 @@
             "single": false,
             "reproductions": 147136123
         },
-        {
+    "Whats Poppin": {
             "name": "Whats Poppin",
             "author": "Jack Harlow",
             "duration": 265,
@@ -120,7 +119,7 @@
             "single": false,
             "reproductions": 91238142
         },
-        {
+    "Malamente": {
             "name": "Malamente",
             "author": "Rosalia",
             "duration": 145,
@@ -128,7 +127,7 @@
             "single": false,
             "reproductions": 1324234
         },
-        {
+    "Vaina Loca": {
             "name": "Vaina Loca",
             "author": "Ozuna",
             "duration": 231,
@@ -136,7 +135,7 @@
             "single": false,
             "reproductions": 123140232
         },
-        {
+    "Lo siento": {
             "name": "Lo siento",
             "author": "Beret",
             "duration": 196,
@@ -144,7 +143,7 @@
             "single": false,
             "reproductions": 1237172
         },
-        {
+    "Ibiza": {
             "name": "Ibiza",
             "author": "Ozuna",
             "duration": 276,
@@ -152,7 +151,7 @@
             "single": false,
             "reproductions": 23141628
         },
-        {
+    "Sin Pijama": {
             "name": "Sin Pijama",
             "author": "Becky G",
             "duration": 425,
@@ -160,7 +159,7 @@
             "single": false,
             "reproductions": 71361247
         },
-        {
+    "Mocca": {
             "name": "Mocca",
             "author": "Lalo Ebratt",
             "duration": 274,
@@ -168,7 +167,7 @@
             "single": false,
             "reproductions": 1132234
         },
-        {
+    "Bajito": {
             "name": "Bajito",
             "author": "Ana Guerra",
             "duration": 127,
@@ -176,7 +175,7 @@
             "single": false,
             "reproductions": 23147212
         },
-        {
+    "Que tienes tu": {
             "name": "Que tienes tu",
             "author": "Dvicio",
             "duration": 183,
@@ -184,7 +183,7 @@
             "single": false,
             "reproductions": 91238234
         },
-        {
+    "Perdon": {
             "name": "Perdon",
             "author": "David Bisbal",
             "duration": 274,
@@ -192,7 +191,7 @@
             "single": false,
             "reproductions": 78328384
         },
-        {
+    "Culpables": {
             "name": "Culpables",
             "author": "Karol G",
             "duration": 352,
@@ -200,7 +199,7 @@
             "single": false,
             "reproductions": 87626934
         },
-        {
+    "Dejala que baile": {
             "name": "Dejala que baile",
             "author": "Melendi",
             "duration": 362,
@@ -208,7 +207,7 @@
             "single": false,
             "reproductions": 72738271
         },
-        {
+    "Girls Like You": {
             "name": "Girls Like You",
             "author": "Maroon 5",
             "duration": 324,
@@ -216,7 +215,7 @@
             "single": false,
             "reproductions": 26726162
         },
-        {
+    "Cuando Nadie ve": {
             "name": "Cuando Nadie ve",
             "author": "Morat",
             "duration": 260,
@@ -224,7 +223,7 @@
             "single": false,
             "reproductions": 26623712
         },
-        {
+    "No me Acuerdo": {
             "name": "No me Acuerdo",
             "author": "Thalia",
             "duration": 423,
@@ -232,7 +231,7 @@
             "single": false,
             "reproductions": 72163126
         },
-        {
+    "Bohemian Rhapsody": {
             "name": "Bohemian Rhapsody",
             "author": "Queen",
             "duration": 253,
@@ -240,7 +239,7 @@
             "single": false,
             "reproductions": 32382887
         },
-        {
+    "Pienso en tu mirá": {
             "name": "Pienso en tu mirá",
             "author": "Rosalia",
             "duration": 352,
@@ -248,7 +247,7 @@
             "single": false,
             "reproductions": 126362476
         },
-        {
+    "Saoko": {
             "name": "Saoko",
             "author": "Rosalia",
             "duration": 243,
@@ -256,7 +255,7 @@
             "single": false,
             "reproductions": 473682732
         },
-        {
+    "Bagdad": {
             "name": "Bagdad",
             "author": "Rosalia",
             "duration": 542,
@@ -264,7 +263,7 @@
             "single": false,
             "reproductions": 12371242
         },
-        {
+    "Thank U Next": {
             "name": "Thank U Next",
             "author": "Ariana Grande",
             "duration": 328,
@@ -272,7 +271,7 @@
             "single": false,
             "reproductions": 26623712
         },
-        {
+    "No te preocupes por mí": {
             "name": "No te preocupes por mí",
             "author": "Leiva",
             "duration": 453,
@@ -280,7 +279,7 @@
             "single": false,
             "reproductions": 713274617
         },
-        {
+    "Refrigeraton Door": {
             "name": "Refrigeraton Door",
             "author": "Luke Combs",
             "duration": 235,
@@ -288,7 +287,7 @@
             "single": false,
             "reproductions": 34231662
         },
-        {
+    "Wisky Glasses": {
             "name": "Wisky Glasses",
             "author": "Morgan Wallen",
             "duration": 273,
@@ -296,7 +295,7 @@
             "single": false,
             "reproductions": 6352736
         },
-        {
+    "Beautiful Crazy": {
             "name": "Beautiful Crazy",
             "author": "Luke Combs",
             "duration": 127,
@@ -304,7 +303,7 @@
             "single": false,
             "reproductions": 37261723
         },
-        {
+    "Redneck Life": {
             "name": "Redneck Life",
             "author": "Chris Janson",
             "duration": 274,
@@ -312,7 +311,7 @@
             "single": false,
             "reproductions": 713274617
         },
-        {
+    "Moon Over Mexico": {
             "name": "Moon Over Mexico",
             "author": "Luke Combs",
             "duration": 323,
@@ -320,7 +319,7 @@
             "single": false,
             "reproductions": 48372837
         },
-        {
+    "My girl": {
             "name": "My girl",
             "author": "The Temptations",
             "duration": 256,
@@ -328,7 +327,7 @@
             "single": false,
             "reproductions": 874656874
         },
-        {
+    "Ain’t Too Proud to Beg": {
             "name": "Ain’t Too Proud to Beg",
             "author": "The Temptations",
             "duration": 189,
@@ -336,7 +335,7 @@
             "single": false,
             "reproductions": 4571563
         },
-        {
+    "Boogie Oogie Oogie": {
             "name": "Boogie Oogie Oogie",
             "author": "A Taste of Honey",
             "duration": 563,
@@ -344,7 +343,7 @@
             "single": false,
             "reproductions": 41235687
         },
-        {
+    "Bamboléo": {
             "name": "Bamboléo",
             "author": "Gipsy Kings",
             "duration": 236,
@@ -352,7 +351,7 @@
             "single": false,
             "reproductions": 4798125
         },
-        {
+    "Volare": {
             "name": "Volare",
             "author": "Gipsy Kings",
             "duration": 133,
@@ -360,7 +359,7 @@
             "single": false,
             "reproductions": 563254
         },
-        {
+    "Ley De Gravedad": {
             "name": "Ley De Gravedad",
             "author": "Ojos de Brujo",
             "duration": 423,
@@ -368,7 +367,7 @@
             "single": true,
             "reproductions": 8563214
         },
-        {
+    "Zambra": {
             "name": "Zambra",
             "author": "Ojos de Brujo",
             "duration": 125,
@@ -376,7 +375,7 @@
             "single": false,
             "reproductions": 96587423
         },
-        {
+    "I Want It That Way": {
             "name": "I Want It That Way",
             "author": "Backstreet Boys",
             "duration": 235,
@@ -384,7 +383,7 @@
             "single": false,
             "reproductions": 45124789
         },
-        {
+    "As Long as You Love Me": {
             "name": "As Long as You Love Me",
             "author": "Backstreet Boys",
             "duration": 326,
@@ -392,7 +391,7 @@
             "single": false,
             "reproductions": 25487965
         },
-        {
+    "Larger Than Life": {
             "name": "Larger Than Life",
             "author": "Backstreet Boys",
             "duration": 254,
@@ -400,5 +399,4 @@
             "single": false,
             "reproductions": 365498354
         }        
-    ]
 }
