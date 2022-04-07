@@ -1,3 +1,10 @@
+/**
+ * # Song Class.
+ * This class is in charge of managing the song objects,
+ * Which are joined to the set of classes to form the playlist.
+ *
+ * 
+ */
 export class Song {
   private readonly _name: string;
 
