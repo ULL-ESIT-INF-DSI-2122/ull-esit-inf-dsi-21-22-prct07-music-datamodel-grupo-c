@@ -1,0 +1,52 @@
+{
+    "artists": [
+        {
+            "name": "Luke Combs",
+            "groups": [],
+            "genres": ["Country", "Pop"],
+            "albums": ["What you see is what you get", "What you see ain't always what you get"],
+            "songs": ["Beatiful Crazy", "Refrigeraton Door", "Moon Over Mexico"],
+            "listeners": 0
+        },
+        {
+            "name": "Bad Bunny",
+            "groups": [],
+            "genres": ["Reggaeton", "Pop", "Trap", "Rap"],
+            "albums": ["YHLQMDLG", "World's last tour"],
+            "songs": ["Solo de Mí", "120", "La Zona"],
+            "listeners": 0
+        },
+        {
+            "name": "Rosalía",
+            "groups": [],
+            "genres": ["Reggaeton", "Pop", "Trap", "Urbano"],
+            "albums": ["Motomami", "El mal querer"],
+            "songs": ["Malamente", "Pienso en tu mirá", "Saoko", "Bagdad"],
+            "listeners": 0
+        },
+        {
+            "name": "Romeo Santos",
+            "groups": ["Aventura"],
+            "genres": ["Reggaeton", "Bachata", "Urbano"],
+            "albums": ["Formula Vol 2", "Great Hits"],
+            "songs": ["Carita de Inocente", "Volví", "Saoko", "Bagdad"],
+            "listeners": 0
+        },
+        {
+            "name": "Melendi",
+            "groups": [],
+            "genres": ["Pop", "Flamenco"],
+            "albums": ["Ahora", "Yo me veo contigo"],
+            "songs": ["Dejala que baile", "El Arrepentido", "Con la luna llena", "Caminando por la vida"],
+            "listeners": 0
+        },
+        {
+            "name": "David Bisbal",
+            "groups": [],
+            "genres": ["Pop"],
+            "albums": ["En tus planes", "Sin mirar atras"],
+            "songs": ["Perdon", "A partir de hoy", "Esclavo de tus besos", "Dame tu amor"],
+            "listeners": 0
+        }
+    ]
+}
