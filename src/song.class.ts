@@ -1,9 +1,15 @@
 /**
- * # Song Class.
+ * # Song Class
  * This class is in charge of managing the song objects,
  * Which are joined to the set of classes to form the playlist.
  *
- * 
+ * ## Properties
+ * - name | Song name.
+ * - artist | Song artist.
+ * - seconds | Duration in seconds of the song.
+ * - genres | Genres on the song, it could be more than one.
+ * - single | If the song is a single or appear in a album.
+ * - views | Song number of viwes.
  */
 export class Song {
   private readonly _name: string;
