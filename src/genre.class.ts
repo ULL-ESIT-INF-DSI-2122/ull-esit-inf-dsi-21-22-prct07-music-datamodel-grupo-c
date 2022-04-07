@@ -3,7 +3,11 @@
  * This class determines which genres appear in songs, groups and artists.
  * Joins with the set of classes that make up the Playlist.
  *
- * 
+ * ## Properties
+ * - name | Genre name.
+ * - artists | Artists related to the genre.
+ * - songs | Songs related to the genre.
+ * - albums | Albums related to the genre.
  */
 export class Genre {
   private readonly _name: string;
