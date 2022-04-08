@@ -17,7 +17,7 @@ export class Group {
     year: number = 0,
     genres: string[] = [],
     albums: string[] = [],
-    monthlyListeners: number = 0
+    monthlyListeners: number = 0,
   ) {
     this._name = name;
     this._artists = artists;
@@ -64,4 +64,4 @@ export class Group {
   deleteAlbum(album: string) {
     this._albums = this._albums.filter((element: string) => element !== album);
   }
-} 
+}
