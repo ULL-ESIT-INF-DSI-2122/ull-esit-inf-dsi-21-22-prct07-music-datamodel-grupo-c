@@ -101,6 +101,7 @@ describe('Gold Age HipHop playlist test', () => {
         + ' \tNas\n'
         + '\n',
       );
+      console.log(goldAgeHipHop.toString());
     });
   });
 });

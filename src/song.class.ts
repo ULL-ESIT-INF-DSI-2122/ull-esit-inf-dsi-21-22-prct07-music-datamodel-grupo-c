@@ -50,7 +50,6 @@ export class Song {
       + `${this._seconds % 60}`;
   }
 
-
   addGenre(value: string): void {
     this._genres.push(value);
   }

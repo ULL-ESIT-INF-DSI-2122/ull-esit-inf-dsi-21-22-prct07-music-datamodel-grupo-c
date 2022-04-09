@@ -62,17 +62,21 @@ export class Album {
 
   get songs(): Song[] { return this._songs; }
 
-  set songs(songs: Song[]) { this._songs = songs; }
+  get songListNames(): string[] { return this._songs.map((el) => el.name); }
 
   public addGenre(genre: string): void { this._genres.push(genre); }
 
-  public addSong(song: Song): void { this._songs.push(song); }
+  public addSong(song: Song): void {
+    if (!this._songs.includes(song)) {
+      this._songs.push(song);
+    }
+  }
 
   public removeGenre(genre: string): void {
     this._genres = this._genres.filter((item: string) => item !== genre);
   }
 
-  public removeSong(song: Song): void {
-    this._songs = this._songs.filter((item: Song) => item.name !== song.name);
+  public removeSong(song: string): void {
+    this._songs = this._songs.filter((item: Song) => item.name !== song);
   }
 }
