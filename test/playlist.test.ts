@@ -1,70 +1,106 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { Playlist } from '../src/playlist.class';
+import Playlist from '../src/playlist.class';
+import { Song } from '../src/song.class';
 
-const clasicsSpain = new Playlist(
-  'Clasicos España',
-  ['Princesas', 'Pajaros de Barro', 'Cero', 'Quiero Ser', 'Caminando por la vida', 'Eras Tu', '90 Minutos', 'Son de Amores'],
-  28800,
-  ['Pop', 'Rock', 'Punk', 'Urban', 'Instrumental']
+const goldAgeHipHop = new Playlist('Golden Age Hip Hop');
+
+// ['Princesas', 'Pajaros de Barro', 'Cero', 'Quiero Ser', 'Caminando por la vida', 'Eras Tu',
+// '90 Minutos', 'Son de Amores'],
+//   28800,
+//   ['Pop', 'Rock', 'Punk', 'Urban', 'Instrumental']
+const shoutouts: Song = new Song(
+  'Shoutouts',
+  'Nas',
+  (3 * 60) + 46,
+  ['hip-hop', 'RAP', 'urban'],
 );
-
-describe('Playlist Class Tests', () => {
-  describe('Playlist getters tests', () => {
+const theMessage: Song = new Song(
+  'The Message',
+  'Nas',
+  (3 * 60) + 54,
+  ['hip-hop', 'RAP', 'urban'],
+);
+describe('Gold Age HipHop playlist test', () => {
+  describe('Class build tests | props, getters and setters established', () => {
     it('Playlist name getter', () => {
-      expect(clasicsSpain.name).to.be.eql('Clasicos España');
+      expect(goldAgeHipHop.name).to.be.eql('Golden Age Hip Hop');
     });
     it('Playlist songs getter', () => {
-      expect(clasicsSpain.songs).to.be.eql(['Princesas', 'Pajaros de Barro', 'Cero', 'Quiero Ser', 'Caminando por la vida', 'Eras Tu', '90 Minutos', 'Son de Amores']);
+      expect(goldAgeHipHop.songs).to.be.eql([]);
+    });
+    it('Playlist albums getter', () => {
+      expect(goldAgeHipHop.albums).to.be.eql([]);
     });
     it('Playlist duration getter', () => {
-      expect(clasicsSpain.duration).to.be.eql(28800);
+      expect(goldAgeHipHop.duration).to.be.eql({ h: 0, m: 0, s: 0 });
+    });
+    it('Playlist songs names can be accessed directly', () => {
+      expect(goldAgeHipHop.allSongsNames).to.be.eql([]);
+    });
+    it('Playlist group names can be accessed directly', () => {
+      expect(goldAgeHipHop.allGroupNames).to.be.eql([]);
+    });
+    it('Playlist album names can be accessed directly', () => {
+      expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
     });
     it('Playlist hours getter', () => {
-      expect(clasicsSpain.hours).to.be.eql(8);
+      expect(goldAgeHipHop.hours).to.be.eql(0);
     });
     it('Playlist minutes getter', () => {
-      expect(clasicsSpain.minutes).to.be.eql(0);
+      expect(goldAgeHipHop.minutes).to.be.eql(0);
+    });
+    it('Playlist seconds getter', () => {
+      expect(goldAgeHipHop.seconds).to.be.eql(0);
+    });
+    it('Playlist duration to string', () => {
+      expect(goldAgeHipHop.durationString).to.be.eql('0 hr 0 min 0 sec');
     });
     it('Playlist genres getter', () => {
-      expect(clasicsSpain.genres).to.be.eql(['Pop', 'Rock', 'Punk', 'Urban', 'Instrumental']);
+      expect(goldAgeHipHop.genres).to.be.eql([]);
     });
   });
-  describe('Playlist setters tests', () => {
-    it('Playlist songs setter', () => {
-      clasicsSpain.songs = ['La Deriva', 'Te entiendo', 'Tanto la Queria', 'Lento'];
-      expect(clasicsSpain.songs).to.be.eql(['La Deriva', 'Te entiendo', 'Tanto la Queria', 'Lento']);
+  describe('Playlist manipulation tests', () => {
+    describe('Playlist add and remove song methods', () => {
+
+      it('addSong method test', () => {
+        goldAgeHipHop.addSong(shoutouts);
+        goldAgeHipHop.addSong(theMessage);
+        expect(goldAgeHipHop.length).to.be.eql(2);
+        expect(goldAgeHipHop.songs).to.be.eql([shoutouts, theMessage]);
+        expect(goldAgeHipHop.allSongsNames).to.be.eql(['Shoutouts', 'The Message']);
+        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+        expect(goldAgeHipHop.duration).to.be.eql({ h: 0, m: 7, s: 40 });
+        expect(goldAgeHipHop.durationString).to.be.eql('0 hr 7 min 40 sec');
+      });
+      it('removeSong method test', () => {
+        goldAgeHipHop.removeSong('Shoutouts');
+        expect(goldAgeHipHop.length).to.be.eql(1);
+        expect(goldAgeHipHop.songs).to.be.eql([theMessage]);
+        expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message']);
+        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+      });
     });
-    it('Playlist duration setter (testing hours and minutes as well)', () => {
-      clasicsSpain.duration = 30000;
-      expect(clasicsSpain.duration).to.be.eql(30000);
-      expect(clasicsSpain.hours).to.be.eql(8);
-      expect(clasicsSpain.minutes).to.be.eql(20);
-    });
-    it('Playlist genres setter', () => {
-      clasicsSpain.genres = ['Flamenco', 'Clasica', 'Salsa'];
-      expect(clasicsSpain.genres).to.be.eql(['Flamenco', 'Clasica', 'Salsa']);
+    describe('Playlist remove methods', () => {
     });
   });
-  describe('Playlist add methods', () => {
-    it('addGenre method test', () => {
-      clasicsSpain.addGenre('Punk');
-      expect(clasicsSpain.genres).to.be.eql([ 'Flamenco', 'Clasica', 'Salsa', 'Punk' ]);
-    });
-    it('addSong method test', () => {
-      clasicsSpain.addSong('No Dudaria');
-      expect(clasicsSpain.songs).to.be.eql(['La Deriva', 'Te entiendo', 'Tanto la Queria', 'Lento', 'No Dudaria']);
-    });
-  });
-  describe('Playlist remove methods', () => {
-    it('removeGenre method test', () => {
-      clasicsSpain.removeGenre('Punk');
-      expect(clasicsSpain.genres).to.be.eql([ 'Flamenco', 'Clasica', 'Salsa']);
-    });
-    it('removeSong method test', () => {
-      clasicsSpain.removeSong('Te entiendo');
-      expect(clasicsSpain.songs).to.be.eql(['La Deriva', 'Tanto la Queria', 'Lento', 'No Dudaria']);
+  describe('Playlist can be turned into string', () => {
+    it('Playlist with two songs', () => {
+      goldAgeHipHop.addSong(shoutouts);
+      goldAgeHipHop.addSong(theMessage);
+      expect(goldAgeHipHop.toString()).to.be.eql(
+        'GOLDEN AGE HIP HOP\n'
+        + '\t(hip-hop, RAP, urban)\n'
+        + '2 songs | 0 hr 7 min 40 sec\n\n'
+        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
+        + '1\tThe Message\t\tno album\t3:54\n'
+        + ' \tNas\n'
+        + '2\tShoutouts\t\tno album\t3:46\n'
+        + ' \tNas\n'
+        + '\n',
+      );
     });
   });
 });
-

@@ -33,6 +33,8 @@ export class Song {
 
   get seconds(): number { return this._seconds; }
 
+  get minutes(): number { return this._seconds / 60; }
+
   get genres(): string[] { return this._genres; }
 
   set genres(value: string[]) { this._genres = value; }
@@ -42,6 +44,12 @@ export class Song {
   get views(): number { return this._views; }
 
   set views(value: number) { this._views = value; }
+
+  get durationString(): string {
+    return `${Math.floor(this.minutes)}:`
+      + `${this._seconds % 60}`;
+  }
+
 
   addGenre(value: string): void {
     this._genres.push(value);

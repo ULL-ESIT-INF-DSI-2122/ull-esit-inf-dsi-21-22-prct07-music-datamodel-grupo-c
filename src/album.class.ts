@@ -23,6 +23,8 @@
  * -  removeGenre(genre) | Remove a genre from the genre collecion.
  * -  removeSong(song) | Remove a song from the song collecion.
  */
+import { Song } from './song.class';
+
 export class Album {
   private readonly _name: string;
 
@@ -32,14 +34,14 @@ export class Album {
 
   private _genres: string[];
 
-  private _songs: string[];
+  private _songs: Song[];
 
   constructor(
     name: string,
     artist: string,
     year: number,
     genres: string[] = [],
-    songs: string[] = []
+    songs: Song[] = [],
   ) {
     this._name = name;
     this._artist = artist;
@@ -58,19 +60,19 @@ export class Album {
 
   set genres(genres: string[]) { this._genres = genres; }
 
-  get songs(): string[] { return this._songs; }
+  get songs(): Song[] { return this._songs; }
 
-  set songs(songs: string[]) { this._songs = songs; }
+  set songs(songs: Song[]) { this._songs = songs; }
 
   public addGenre(genre: string): void { this._genres.push(genre); }
 
-  public addSong(song: string): void { this._songs.push(song); }
+  public addSong(song: Song): void { this._songs.push(song); }
 
   public removeGenre(genre: string): void {
     this._genres = this._genres.filter((item: string) => item !== genre);
   }
 
-  public removeSong(song: string): void {
-    this._songs = this._songs.filter((item: string) => item !== song);
+  public removeSong(song: Song): void {
+    this._songs = this._songs.filter((item: Song) => item.name !== song.name);
   }
 }
