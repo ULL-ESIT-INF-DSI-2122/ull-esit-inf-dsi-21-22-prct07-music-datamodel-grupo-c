@@ -109,6 +109,18 @@ export default class Playlist {
 
   get length(): number { return this.songs.length; }
 
+  private addArtist(artist: string): void {
+    if (!this.artists.includes(artist)) {
+      this.artists.push(artist);
+    }
+  }
+
+  private addGenre(genre: string): void {
+    if (!this.genres.includes(genre)) {
+      this.genres.push(genre);
+    }
+  }
+
   public addSong(newSong: Song): void {
     if (!this.songs.find((el) => el === newSong)) {
       this.songs.push(newSong);
@@ -138,6 +150,20 @@ export default class Playlist {
         .forEach((song) => {
           this.removeSong(song.name);
         });
+
+      this._artists = this.artists
+        .filter(// @ts-ignore
+          (artist) => artist !== this
+            .albums
+            .find((album) => album.name === albumName)
+            .artist,
+        );
+      this.songs.forEach((song) => {
+        this.addArtist(song.artist);
+        song.genres.forEach((genre) => {
+          this.addGenre(genre);
+        });
+      });
       this._albums = this.albums.filter((album) => album.name !== albumName);
     }
   }
