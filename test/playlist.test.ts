@@ -135,7 +135,6 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
         expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
         goldAgeHipHop.removeSong('The Message');
-
       });
     });
     describe('Playlist add and remove album methods', () => {
@@ -179,6 +178,10 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
       });
     });
+  });
+  describe('Playlist searching tests', () => {
+  });
+  describe('Playlist sorting tests', () => {
   });
   describe('Playlist can be turned into string', () => {
     it('Playlist with two songs', () => {

@@ -1,8 +1,6 @@
 import * as uuid from 'uuid';
 import { Song } from './song.class';
-import { Genre } from './genre.class';
 import { Album } from './album.class';
-import { Artist } from './artist.class';
 import { Group } from './group.class';
 
 /**
