@@ -137,7 +137,30 @@ export default class Playlist {
 
   public removeSong(songName: string): void {
     if (this.songs.find((song) => song.name === songName)) {
+      // @ts-ignore
+      this.songs
+        .find((song) => song.name === songName)
+        .genres
+        .forEach((genre) => {
+          this._genres = this._genres.filter((el) => el !== genre);
+        });
       this._songs = this.songs.filter((song) => song.name !== songName);
+    }
+  }
+
+  public addAlbum(newAlbum: Album): void {
+    if (!this.albums.find((album) => album === newAlbum)) {
+      this.albums.push(newAlbum);
+      this.addArtist(newAlbum.artist);
+      newAlbum.songs.forEach((song) => {
+        if (
+          this.songs.includes(song)
+          && this.searchAlbumBySong(song) === undefined
+        ) {
+          song.single = false; // eslint-disable-line
+        }
+        this.addSong(song);
+      });
     }
   }
 
@@ -168,21 +191,6 @@ export default class Playlist {
     }
   }
 
-  public addAlbum(newAlbum: Album): void {
-    if (!this.albums.find((album) => album === newAlbum)) {
-      this.albums.push(newAlbum);
-      this.addArtist(newAlbum.artist);
-      newAlbum.songs.forEach((song) => {
-        if (
-          this.songs.includes(song)
-          && this.searchAlbumBySong(song) === undefined
-        ) {
-          song.single = false; // eslint-disable-line
-        }
-        this.addSong(song);
-      });
-    }
-  }
 
   public searchAlbumBySong(song: Song): Album | undefined {
     return this.albums.find((album) => album.songs.includes(song));
@@ -252,7 +260,7 @@ export default class Playlist {
     this.songs.forEach((song, inx) => {
       playListString += `${inx + 1}\t${song.name}\t\t`
         + `${this.searchAlbumBySong(song) === undefined
-          ? 'no album'
+          ? song.name
           // @ts-ignore
           : this.searchAlbumBySong(song).name}\t`
         + `${song.durationString}\n`;

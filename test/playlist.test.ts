@@ -219,7 +219,7 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.songs).to.be.eql([theMessage]);
         expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message']);
         expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
-        expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+        expect(goldAgeHipHop.genres).to.be.eql([]);
         goldAgeHipHop.removeSong('The Message');
       });
     });
@@ -254,31 +254,31 @@ describe('Gold Age HipHop playlist test', () => {
   describe('Playlist sorting tests', () => {
     it('Playlist songs can be sorted by song name', () => {
       goldAgeHipHop.sortBySongName();
-      expect(goldAgeHipHop.allSongsNames).to.be.eql(['It Was A Good Day', 'It Was A Good Day']);
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['Gettin Up', 'It Was A Good Day']);
       expect(goldAgeHipHop.toString()).to.be.eql(
         'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban)\n'
+        + '\t(hip-hop)\n'
         + '2 songs | 0 hr 7 min 38 sec\n\n'
         + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tGettin Up\t\tno album\t3:18\n'
+        + '1\tGettin Up\t\tGettin Up\t3:18\n'
         + ' \tQ-Tip\n'
-        + '2\tIt Was A Good Day\t\tno album\t4:20\n'
+        + '2\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
         + ' \tIce Cube\n'
         + '\n',
       );
     });
     it('Playlist songs can be sorted reversely by song name', () => {
       goldAgeHipHop.sortBySongName(true);
-      expect(goldAgeHipHop.allSongsNames).to.be.eql(['It Was A Good Day', 'It Was A Good Day']);
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['It Was A Good Day', 'Gettin Up']);
       expect(goldAgeHipHop.toString()).to.be.eql(
         'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban)\n'
+        + '\t(hip-hop)\n'
         + '2 songs | 0 hr 7 min 38 sec\n\n'
         + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tGettin Up\t\tno album\t3:18\n'
-        + ' \tQ-Tip\n'
-        + '2\tIt Was A Good Day\t\tno album\t4:20\n'
+        + '1\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
         + ' \tIce Cube\n'
+        + '2\tGettin Up\t\tGettin Up\t3:18\n'
+        + ' \tQ-Tip\n'
         + '\n',
       );
       goldAgeHipHop.sortBySongName();
@@ -287,35 +287,15 @@ describe('Gold Age HipHop playlist test', () => {
       goldAgeHipHop.addAlbum(itWasWritten);
       goldAgeHipHop.addAlbum(iShineUShine);
       goldAgeHipHop.sortByAlbumName();
-      expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message', 'Shoutouts']);
-      expect(goldAgeHipHop.toString()).to.be.eql(
-        'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban)\n'
-        + '2 songs | 0 hr 7 min 40 sec\n\n'
-        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tThe Message\t\tno album\t3:54\n'
-        + ' \tNas\n'
-        + '2\tShoutouts\t\tno album\t3:46\n'
-        + ' \tNas\n'
-        + '\n',
-      );
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
     });
     it('Playlist can be sorted reverselly by album name', () => {
       goldAgeHipHop.addAlbum(itWasWritten);
       goldAgeHipHop.addAlbum(iShineUShine);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
       goldAgeHipHop.sortByAlbumName(true);
-      expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message', 'Shoutouts']);
-      expect(goldAgeHipHop.toString()).to.be.eql(
-        'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban)\n'
-        + '2 songs | 0 hr 7 min 40 sec\n\n'
-        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tThe Message\t\tno album\t3:54\n'
-        + ' \tNas\n'
-        + '2\tShoutouts\t\tno album\t3:46\n'
-        + ' \tNas\n'
-        + '\n',
-      );
       goldAgeHipHop.removeAlbum('It Was Written');
       goldAgeHipHop.removeAlbum('I Shine U Shine');
     });
@@ -324,13 +304,13 @@ describe('Gold Age HipHop playlist test', () => {
     it('Playlist with two songs', () => {
       expect(goldAgeHipHop.toString()).to.be.eql(
         'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban, soul, rnb)\n'
-        + '18 songs | 1 hr 12 min 45 sec\n\n'
+        + '\t(hip-hop)\n'
+        + '2 songs | 0 hr 7 min 38 sec\n\n'
         + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '9\tThe Message\t\tIt Was Written\t3:54\n'
-        + ' \tNas\n'
-        + '10\tShoutouts\t\tIt Was Written\t3:46\n'
-        + ' \tNas\n'
+        + '1\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
+        + ' \tIce Cube\n'
+        + '2\tGettin Up\t\tGettin Up\t3:18\n'
+        + ' \tQ-Tip\n'
         + '\n',
       );
     });
