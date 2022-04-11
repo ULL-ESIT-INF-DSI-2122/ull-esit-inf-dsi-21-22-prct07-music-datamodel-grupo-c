@@ -182,7 +182,7 @@ export default class Playlist {
   }
 
   public sortBySongName(reverse: boolean = false): void {
-    this._songs = reverse
+    this._songs = !reverse
       ? this._songs
         .sort((songA: Song, songB: Song) => {
           const a = songA.name.toLowerCase();

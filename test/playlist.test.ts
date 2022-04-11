@@ -179,6 +179,41 @@ describe('Gold Age HipHop playlist test', () => {
       });
     });
   });
+  describe('Playlist searching tests', () => {
+  });
+  describe('Playlist sorting tests', () => {
+    it('Playlist songs can be sorted by song name', () => {
+      goldAgeHipHop.sortBySongName();
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['Shoutouts', 'The Message']);
+      expect(goldAgeHipHop.toString()).to.be.eql(
+        'GOLDEN AGE HIP HOP\n'
+        + '\t(hip-hop, RAP, urban)\n'
+        + '2 songs | 0 hr 7 min 40 sec\n\n'
+        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
+        + '1\tShoutouts\t\tno album\t3:46\n'
+        + ' \tNas\n'
+        + '2\tThe Message\t\tno album\t3:54\n'
+        + ' \tNas\n'
+        + '\n',
+      );
+    });
+    it('Playlist songs can be sorted reversely by song name', () => {
+      goldAgeHipHop.sortBySongName(true);
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message', 'Shoutouts']);
+      expect(goldAgeHipHop.toString()).to.be.eql(
+        'GOLDEN AGE HIP HOP\n'
+        + '\t(hip-hop, RAP, urban)\n'
+        + '2 songs | 0 hr 7 min 40 sec\n\n'
+        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
+        + '1\tThe Message\t\tno album\t3:54\n'
+        + ' \tNas\n'
+        + '2\tShoutouts\t\tno album\t3:46\n'
+        + ' \tNas\n'
+        + '\n',
+      );
+      goldAgeHipHop.sortBySongName();
+    });
+  });
   describe('Playlist can be turned into string', () => {
     it('Playlist with two songs', () => {
       expect(goldAgeHipHop.toString()).to.be.eql(
