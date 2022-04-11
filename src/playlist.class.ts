@@ -254,6 +254,23 @@ export default class Playlist {
         .reverse();
   }
 
+  public sortBySongViews(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.views;
+          const b = songB.views;
+          return a - b;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.views;
+          const b = songB.views;
+          return a - b;
+        })
+        .reverse();
+  }
+
   public sortByAlbumName(reverse: boolean = false): void {
     this._songs = !reverse
       ? this._songs
