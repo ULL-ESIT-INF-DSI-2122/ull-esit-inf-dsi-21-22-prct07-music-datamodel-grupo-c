@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "name": "Animals As Leaders",
+      "artists": [""],
+      "year": 2007,
+      "genres": ["Progressive Metal"],
+      "albums": ["Parrhesia"],
+      "monthlyListeners": 426947
+    },
+    {
+      "name": "Norma Jean",
+      "artists": [""],
+      "year": 1997,
+      "genres": ["Metalcore"],
+      "albums": ["All Hail"],
+      "monthlyListeners": 169607
+    },
+    {
+      "name": "Artic Monkeys",
+      "artists": [""],
+      "year": 2002,
+      "genres": ["Indie"],
+      "albums": ["Favourite Worst Nightmare"],
+      "monthlyListeners": 25329651
+    },
+    {
+      "name": "Billy Talent",
+      "artists": [""],
+      "year": 1993,
+      "genres": ["Punk Rock"],
+      "albums": ["Crisis Of Faith"],
+      "monthlyListeners": 2729095
+    },
+    {
+      "name": "The Dillinger Escape Plan",
+      "artists": [""],
+      "year": 1997,
+      "genres": ["Mathcore"],
+      "albums": ["Dissociation"],
+      "monthlyListeners": 222786
+    }
+  ]
+}

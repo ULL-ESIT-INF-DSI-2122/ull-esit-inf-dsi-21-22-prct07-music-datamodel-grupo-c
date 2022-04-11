@@ -1,8 +1,6 @@
 import * as uuid from 'uuid';
 import { Song } from './song.class';
-import { Genre } from './genre.class';
 import { Album } from './album.class';
-import { Artist } from './artist.class';
 import { Group } from './group.class';
 
 /**
@@ -141,6 +139,15 @@ export default class Playlist {
     }
   }
 
+  public addAlbum(newAlbum: Album): void {
+    if (!this.albums.find((album) => album === newAlbum)) {
+      this.albums.push(newAlbum);
+      newAlbum.songs.forEach((song) => {
+        this.addSong(song);
+      });
+    }
+  }
+
   public removeAlbum(albumName: string): void {
     if (this.albums.find((album) => album.name === albumName)) {
       // @ts-ignore
@@ -165,15 +172,6 @@ export default class Playlist {
         });
       });
       this._albums = this.albums.filter((album) => album.name !== albumName);
-    }
-  }
-
-  public addAlbum(newAlbum: Album): void {
-    if (!this.albums.find((album) => album === newAlbum)) {
-      this.albums.push(newAlbum);
-      newAlbum.songs.forEach((song) => {
-        this.addSong(song);
-      });
     }
   }
 
