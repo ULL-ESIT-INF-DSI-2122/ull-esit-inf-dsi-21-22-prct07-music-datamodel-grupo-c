@@ -69,6 +69,41 @@
       "year": 2016,
       "genres": ["Mathcore"],
       "songs": ["Limerent Death", "Symptom of Terminal Illness", "Wanting Not so Much to as To", "Fugue", "Low Feels Blvd"]
+    },
+    {
+      "name": "Adictiva",
+      "artist": "Daddy Yankee",
+      "year": 2018,
+      "genres": ["Reggaeton"],
+      "songs": ["Adictiva"]
+    },
+    {
+      "name": "MÉTELE AL PERREO",
+      "artist": "Daddy Yankee",
+      "year": 2021,
+      "genres": ["Reggaeton"],
+      "songs": ["MÉTELE AL PERREO"]
+    },
+    {
+      "name": "Sal y Perrea (Remix)",
+      "artist": "Daddy Yankee",
+      "year": 2021,
+      "genres": ["Reggaeton"],
+      "songs": ["Sal y Perrea (Remix)"]
+    },
+    {
+      "name": "EL PONY",
+      "artist": "Daddy Yankee",
+      "year": 2021,
+      "genres": ["Reggaeton"],
+      "songs": ["EL PONY"]
+    },
+    {
+      "name": "Don Don (Remix)",
+      "artist": "Daddy Yankee",
+      "year": 2020,
+      "genres": ["Reggaeton"],
+      "songs": ["Don Don (Remix)"]
     }
   ]
 }
