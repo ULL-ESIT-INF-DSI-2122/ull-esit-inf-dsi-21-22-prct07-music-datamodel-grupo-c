@@ -103,7 +103,7 @@ export default class Playlist {
 
   get durationString(): string {
     return `${Math.round(this.hours)} hr `
-         + `${Math.round(this.minutes)} min `
+         + `${Math.round(this.minutes % 60)} min `
          + `${Math.round(this.seconds % 60)} sec`;
   }
 
@@ -171,7 +171,14 @@ export default class Playlist {
   public addAlbum(newAlbum: Album): void {
     if (!this.albums.find((album) => album === newAlbum)) {
       this.albums.push(newAlbum);
+      this.addArtist(newAlbum.artist);
       newAlbum.songs.forEach((song) => {
+        if (
+          this.songs.includes(song)
+          && this.searchAlbumBySong(song) === undefined
+        ) {
+          song.single = false; // eslint-disable-line
+        }
         this.addSong(song);
       });
     }
@@ -195,6 +202,41 @@ export default class Playlist {
         .sort((songA: Song, songB: Song) => {
           const a = songA.name.toLowerCase();
           const b = songB.name.toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
+  public sortByAlbumName(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = this.searchAlbumBySong(songA) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).name;
+          const b = this.searchAlbumBySong(songB) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).name;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = this.searchAlbumBySong(songA) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).name;
+          const b = this.searchAlbumBySong(songB) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).name;
+
           if (a < b) { return -1; }
           if (a > b) { return 1; }
           return 0;

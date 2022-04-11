@@ -7,7 +7,7 @@ export class Song {
 
   private _genres: string[];
 
-  private readonly _single: boolean;
+  private _single: boolean;
 
   private _views: number;
 
@@ -40,6 +40,8 @@ export class Song {
   set genres(value: string[]) { this._genres = value; }
 
   get single(): boolean { return this._single; }
+
+  set single(status: boolean) { this._single = status; }
 
   get views(): number { return this._views; }
 
