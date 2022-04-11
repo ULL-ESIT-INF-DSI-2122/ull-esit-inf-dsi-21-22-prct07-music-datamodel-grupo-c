@@ -181,6 +181,27 @@ export default class Playlist {
     return this.albums.find((album) => album.songs.includes(song));
   }
 
+  public sortBySongName(reverse: boolean = false): void {
+    this._songs = reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.name.toLowerCase();
+          const b = songB.name.toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.name.toLowerCase();
+          const b = songB.name.toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
   public toString(): string {
     let playListString: string = `${this.name.toUpperCase()}\n`;
     playListString += `\t(${this.genres.join(', ')})\n`;
