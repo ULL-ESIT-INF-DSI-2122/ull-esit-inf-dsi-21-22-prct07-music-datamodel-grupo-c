@@ -319,6 +319,86 @@
             "genres": ["Punk Rock"],
             "single": false,
             "views": 800206
+        },
+        {
+            "name": "Hola Soledad",
+            "artist": "Rolando Laserie",
+            "seconds": 171,
+            "genres": ["Jazz Latino"],
+            "single": false,
+            "views": 10105213
+        },
+        {
+            "name": "Cuba Linda",
+            "artist": "Rolando Laserie",
+            "seconds": 209,
+            "genres": ["Jazz Latino"],
+            "single": false,
+            "views": 77464
+        },
+        {
+            "name": "Sobre Una Tumba Rumba",
+            "artist": "Rolando Laserie",
+            "seconds": 190,
+            "genres": ["Jazz Latino"],
+            "single": false,
+            "views": 27069
+        },
+        {
+            "name": "La Primera Piedra",
+            "artist": "Rolando Laserie",
+            "seconds": 134,
+            "genres": ["Jazz Latino"],
+            "single": false,
+            "views": 64905
+        },
+        {
+            "name": "La Palma De Coco",
+            "artist": "Rolando Laserie",
+            "seconds": 154,
+            "genres": ["Jazz Latino"],
+            "single": false,
+            "views": 46088
+        },
+        {
+            "name": "Limerent Death",
+            "artist": "The Dillinger Escape Plan",
+            "seconds": 246,
+            "genres": ["Mathcore"],
+            "single": false,
+            "views": 1956985
+        },
+        {
+            "name": "Symptom of Terminal Illness",
+            "artist": "The Dillinger Escape Plan",
+            "seconds": 243,
+            "genres": ["Mathcore"],
+            "single": false,
+            "views": 3797976
+        },
+        {
+            "name": "Wanting Not so Much to as To",
+            "artist": "The Dillinger Escape Plan",
+            "seconds": 323,
+            "genres": ["Mathcore"],
+            "single": false,
+            "views": 957695
+        },
+        {
+            "name": "Fugue",
+            "artist": "The Dillinger Escape Plan",
+            "seconds": 229,
+            "genres": ["Mathcore"],
+            "single": false,
+            "views": 599241
+        },
+        {
+            "name": "Low Feels Blvd",
+            "artist": "The Dillinger Escape Plan",
+            "seconds": 244,
+            "genres": ["Mathcore"],
+            "single": false,
+            "views": 660410
         }
     ]
 }
