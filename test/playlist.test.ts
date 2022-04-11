@@ -304,9 +304,32 @@ describe('Gold Age HipHop playlist test', () => {
       goldAgeHipHop.sortByAlbumRelease(true);
       expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('The Morning');
       expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Watch Them Niggas');
+    });
+
+    it('Playlist can be sorted by song duration', () => {
+      goldAgeHipHop.sortBySongDuration();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Album Intro');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Affirmative Action (feat AZ, Cormega & Foxy Brown)');
+    });
+    it('Playlist can be sorted reversely by song duration', () => {
+      goldAgeHipHop.sortBySongDuration(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Nas Is Coming (feat Dr.Dre)');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('I Gave You Power');
+      goldAgeHipHop.sortBySongDuration();
+    });it('Playlist can be sorted by song genres', () => {
+      goldAgeHipHop.sortByGenre();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Album Intro');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('The Message');
+    });
+    it('Playlist can be sorted reversely by genres', () => {
+      goldAgeHipHop.sortByGenre(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('never learned how to coupe');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('It Was A Good Day');
+      goldAgeHipHop.sortBySongDuration();
       goldAgeHipHop.removeAlbum('It Was Written');
       goldAgeHipHop.removeAlbum('I Shine U Shine');
     });
+
   });
   describe('Playlist can be turned into string', () => {
     it('Playlist with two songs', () => {

@@ -216,6 +216,44 @@ export default class Playlist {
         .reverse();
   }
 
+  public sortBySongDuration(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.seconds;
+          const b = songB.seconds;
+          return a - b;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.seconds;
+          const b = songB.seconds;
+          return a - b;
+        })
+        .reverse();
+  }
+
+  public sortByGenre(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.genres.join('').toLowerCase();
+          const b = songB.genres.join('').toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.genres.join('').toLowerCase();
+          const b = songB.genres.join('').toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
   public sortByAlbumName(reverse: boolean = false): void {
     this._songs = !reverse
       ? this._songs
