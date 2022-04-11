@@ -59,6 +59,12 @@
             "artists": ["The Dillinger Escape Plan"],
             "songs": ["Limerent Death", "Symptom of Terminal Illness", "Wanting Not so Much to as To", "Fugue", "Low Feels Blvd"],
             "albums": ["Dissociation"]
+        },
+        {
+            "name": "Reggaeton",
+            "artists": ["Daddy Yankee"],
+            "songs": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
+            "albums": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"]
         }
     ]
 }

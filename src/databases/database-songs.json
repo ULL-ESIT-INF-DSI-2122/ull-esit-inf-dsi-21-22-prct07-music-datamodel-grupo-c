@@ -399,6 +399,46 @@
             "genres": ["Mathcore"],
             "single": false,
             "views": 660410
+        },
+        {
+            "name": "Adictiva",
+            "author": "Daddy Yankee",
+            "duration": 207,
+            "genres": ["Reggaeton"],
+            "single": true,
+            "reproductions": 359174774
+        },
+        {
+            "name": "MÉTELE AL PERREO",
+            "author": "Daddy Yankee",
+            "duration": 223,
+            "genres": ["Reggaeton"],
+            "single": true,
+            "reproductions": 25182392
+        },
+        {
+            "name": "Sal y Perrea (Remix)",
+            "author": "Daddy Yankee",
+            "duration": 226,
+            "genres": ["Reggaeton"],
+            "single": true,
+            "reproductions": 41350082
+        },
+        {
+            "name": "EL PONY",
+            "author": "Daddy Yankee",
+            "duration": 212,
+            "genres": ["Reggaeton"],
+            "single": true,
+            "reproductions": 38763222
+        },
+        {
+            "name": "Don Don (Remix)",
+            "author": "Daddy Yankee",
+            "duration": 255,
+            "genres": ["Reggaeton"],
+            "single": true,
+            "reproductions": 6050114
         }
     ]
 }

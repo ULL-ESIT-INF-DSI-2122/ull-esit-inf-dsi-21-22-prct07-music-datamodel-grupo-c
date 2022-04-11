@@ -39,6 +39,14 @@
             "albums": ["Todo el Tiempo..."],
             "songs": ["Hola Soledad", "Cuba Linda", "Sobre Una Tumba Rumba", "La Primera Piedra", "La Palma De Coco"],
             "listeners": 261460
+        },
+        {
+            "name": "Daddy Yankee",
+            "groups": [""],
+            "genres": ["Reggaeton"],
+            "albums": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
+            "songs": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
+            "listeners": 43090002
         }
     ]
 }
