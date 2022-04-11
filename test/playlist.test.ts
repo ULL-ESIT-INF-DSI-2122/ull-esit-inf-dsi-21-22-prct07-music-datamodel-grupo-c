@@ -299,6 +299,22 @@ describe('Gold Age HipHop playlist test', () => {
       goldAgeHipHop.removeAlbum('It Was Written');
       goldAgeHipHop.removeAlbum('I Shine U Shine');
     });
+    it('Playlist can be sorted by album name', () => {
+      goldAgeHipHop.addAlbum(itWasWritten);
+      goldAgeHipHop.addAlbum(iShineUShine);
+      goldAgeHipHop.sortByAlbumName();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
+    });
+    it('Playlist can be sorted reverselly by album name', () => {
+      goldAgeHipHop.addAlbum(itWasWritten);
+      goldAgeHipHop.addAlbum(iShineUShine);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
+      goldAgeHipHop.sortByAlbumName(true);
+      goldAgeHipHop.removeAlbum('It Was Written');
+      goldAgeHipHop.removeAlbum('I Shine U Shine');
+    });
   });
   describe('Playlist can be turned into string', () => {
     it('Playlist with two songs', () => {

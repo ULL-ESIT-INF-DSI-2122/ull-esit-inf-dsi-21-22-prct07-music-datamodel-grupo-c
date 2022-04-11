@@ -252,6 +252,41 @@ export default class Playlist {
         .reverse();
   }
 
+  public sortByAlbumRelease(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a: number = this.searchAlbumBySong(songA) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).year;
+          const b: number = this.searchAlbumBySong(songB) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).year;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = this.searchAlbumBySong(songA) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).name;
+          const b = this.searchAlbumBySong(songB) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).name;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
   public toString(): string {
     let playListString: string = `${this.name.toUpperCase()}\n`;
     playListString += `\t(${this.genres.join(', ')})\n`;
