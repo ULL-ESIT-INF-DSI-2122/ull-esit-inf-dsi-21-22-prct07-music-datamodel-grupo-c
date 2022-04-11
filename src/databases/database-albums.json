@@ -1,0 +1,74 @@
+{
+  "albums": [
+    {
+      "name": "Parrhesia",
+      "artist": "Animals As Leaders",
+      "year": 2022,
+      "genres": ["Progressive Metal"],
+      "songs": ["Monomyth", "Red Miso", "Gestaltzerfall", "Asahi", "The Problem Of Other Minds"]
+    },
+    {
+      "name": "EL ÚLTIMO TOUR DEL MUNDO",
+      "artist": "Bad Bunny",
+      "year": 2020,
+      "genres": ["Trap Latino"],
+      "songs": ["EL MUNDO ES MÍO", "TE MUDASTE", "HOY COBRÉ", "MALDITA POBREZA", "LA NOCHE DE ANOCHE"]
+    },
+    {
+      "name": "Digital Tears",
+      "artist": "RIMON",
+      "year": 2021,
+      "genres": ["R&B"],
+      "songs": ["Been Around The Globe", "Feed Me", "iClout", "Digital Tears", "Mountain Views"]
+    },
+    {
+      "name": "All Hail",
+      "artist": "Norma Jean",
+      "year": 2019,
+      "genres": ["Metalcore"],
+      "songs": ["Orphan Twin", "[Mind over Mind]", "Safety Last", "Volunteer Tooth Filing", "Landslide Defeater"]
+    },
+    {
+      "name": "VISIÓN TÚNEL",
+      "artist": "Cruz Cafuné",
+      "year": 2020,
+      "genres": ["Hip-Hop"],
+      "songs": ["VISIÓN TÚNEL", "GHOSTÉAME", "CARTIER DE MADERA", "STONE ISLAND", "TLC"]
+    },
+    {
+      "name": "Selected Works 94-96",
+      "artist": "Wax Doctor",
+      "year": 1998,
+      "genres": ["Drum n Bass"],
+      "songs": ["Brianstorm", "Teddy Picker", "Fluorescent Adolescent", "Old Yellow Bricks", "505"]
+    },
+    {
+      "name": "Favourite Worst Nightmare",
+      "artist": "Artic Monkeys",
+      "year": 2007,
+      "genres": ["Indie"],
+      "songs": ["Brianstorm", "Teddy Picker", "Fluorescent Adolescent", "Old Yellow Bricks", "505"]
+    },
+    {
+      "name": "Crisis Of Faith",
+      "artist": "Billy Talent",
+      "year": 2022,
+      "genres": ["Punk Rock"],
+      "songs": ["Forgiveness I + II", "Reckless Paradise", "I Beg To Differ (This Will Get Better)", "The Wolf", "Reactor"]
+    },
+    {
+      "name": "Todo el Tiempo...",
+      "artist": "Rolando Laserie",
+      "year": 1999,
+      "genres": ["Jazz Latino"],
+      "songs": ["Hola Soledad", "Cuba Linda", "Sobre Una Tumba Rumba", "La Primera Piedra", "La Palma De Coco"]
+    },
+    {
+      "name": "Dissociation",
+      "artist": "The Dillinger Escape Plan",
+      "year": 2016,
+      "genres": ["Mathcore"],
+      "songs": ["Limerent Death", "Symptom of Terminal Illness", "Wanting Not so Much to as To", "Fugue", "Low Feels Blvd"]
+    }
+  ]
+}
