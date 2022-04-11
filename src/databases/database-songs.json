@@ -1,402 +1,324 @@
 {
-    "Adan y Eva": {
-            "name": "Adan y Eva",
-            "author": "Paulo Londra",
-            "duration": 139,
-            "genres": ["Reggaeton", "Urbano"],
+    "songs": [
+        {
+            "name": "Monomyth",
+            "artist": "Animals As Leaders",
+            "seconds": 206,
+            "genres": ["Progressive Metal"],
             "single": false,
-            "reproductions": 1000234
+            "views": 2213306
         },
-    "Vas a quedarte": {
-            "name": "Vas a quedarte",
-            "author": "Aitana",
-            "duration": 120,
-            "genres": ["Urbano", "Pop"],
+        {
+            "name": "Red Miso",
+            "artist": "Animals As Leaders",
+            "seconds": 271,
+            "genres": ["Progressive Metal"],
             "single": false,
-            "reproductions": 1130234
+            "views": 338184
         },
-    "Adictiva": {
-            "name": "Adictiva",
-            "author": "Daddy Yankee",
-            "duration": 250,
-            "genres": ["Reggaeton", "Urbano", "Underground"],
-            "single": true,
-            "reproductions": 3230234
-        },
-    "Booty": {
-            "name": "Booty",
-            "author": "C. Tangana",
-            "duration": 237,
-            "genres": ["Pop", "Urbano"],
+        {
+            "name": "Gestaltzerfall",
+            "artist": "Animals As Leaders",
+            "seconds": 286,
+            "genres": ["Progressive Metal"],
             "single": false,
-            "reproductions": 781472
+            "views": 2213306
         },
-    "Taki Taki": {
-            "name": "Taki Taki",
-            "author": "Dj Snake",
-            "duration": 123,
-            "genres": ["Techno", "House", "Reggaeton"],
+        {
+            "name": "Asahi",
+            "artist": "Animals As Leaders",
+            "seconds": 111,
+            "genres": ["Progressive Metal"],
             "single": false,
-            "reproductions": 52853483
+            "views": 230292
         },
-    "Imposible": {
-            "name": "Imposible",
-            "author": "Luis Fonsi",
-            "duration": 354,
-            "genres": ["Urbano", "Bachata"],
+        {
+            "name": "The Problem of Other Minds",
+            "artist": "Animals As Leaders",
+            "seconds": 152,
+            "genres": ["Progressive Metal"],
             "single": false,
-            "reproductions": 3008736
+            "views": 1330289
         },
-    "Solo de Mí": {
-            "name": "Solo de Mí",
-            "author": "Bad Bunny",
-            "duration": 189,
-            "genres": ["Reggaeton", "Urbano", "Pop"],
+        {
+            "name": "EL MUNDO ES MÍO",
+            "artist": "Bad Bunny",
+            "seconds": 165,
+            "genres": ["Trap Latino"],
             "single": false,
-            "reproductions": 7788234
+            "views": 68185125
         },
-    "120": {
-            "name": "120",
-            "author": "Bad Bunny",
-            "duration": 254,
-            "genres": ["Reggaeton", "Urbano", "Pop"],
+        {
+            "name": "TE MUDASTE",
+            "artist": "Bad Bunny",
+            "seconds": 130,
+            "genres": ["Trap Latino"],
             "single": false,
-            "reproductions": 36273726
+            "views": 397643777
         },
-    "La Zona": {
-            "name": "La Zona",
-            "author": "Bad Bunny",
-            "duration": 342,
-            "genres": ["Reggaeton", "Urbano", "Pop"],
+        {
+            "name": "HOY COBRÉ",
+            "artist": "Bad Bunny",
+            "seconds": 162,
+            "genres": ["Trap Latino"],
             "single": false,
-            "reproductions": 23472381
+            "views": 103003418
         },
-    "Calma (Remix)": {
-            "name": "Calma (Remix)",
-            "author": "Farruko",
-            "duration": 234,
-            "genres": ["Urbano", "Underground"],
+        {
+            "name": "MALDITA POBREZA",
+            "artist": "Bad Bunny",
+            "seconds": 213,
+            "genres": ["Trap Latino"],
             "single": false,
-            "reproductions": 98812312
+            "views": 76107473
         },
-    "Mujer Bruja": {
-            "name": "Mujer Bruja",
-            "author": "Lola Indigo",
-            "duration": 432,
-            "genres": ["Pop", "Urbano"],
+        {
+            "name": "LA NOCHE DE ANOCHE",
+            "artist": "Bad Bunny",
+            "seconds": 203,
+            "genres": ["Trap Latino"],
             "single": false,
-            "reproductions": 8274134
+            "views": 663146682
         },
-    "Vivir mi Vida": {
-            "name": "Vivir mi Vida",
-            "author": "Marc Anthony",
-            "duration": 243,
-            "genres": ["Salsa"],
+        {
+            "name": "Been Around The Globe",
+            "artist": "RIMON",
+            "seconds": 228,
+            "genres": ["R&B"],
             "single": false,
-            "reproductions": 283172414
+            "views": 60742
         },
-    "Fix a Drink": {
-            "name": "Fix a Drink",
-            "author": "Chris Janson",
-            "duration": 214,
-            "genres": ["Country"],
+        {
+            "name": "Feed Me",
+            "artist": "RIMON",
+            "seconds": 284,
+            "genres": ["R&B"],
             "single": false,
-            "reproductions": 138184327
+            "views": 800918
         },
-    "Jaula de Oro": {
-            "name": "Jaula de Oro",
-            "author": "Foyone",
-            "duration": 352,
-            "genres": ["Rap", "Underground"],
+        {
+            "name": "iClout",
+            "artist": "RIMON",
+            "seconds": 262,
+            "genres": ["R&B"],
             "single": false,
-            "reproductions": 147136123
+            "views": 60742
         },
-    "Whats Poppin": {
-            "name": "Whats Poppin",
-            "author": "Jack Harlow",
-            "duration": 265,
-            "genres": ["Trap", "Urbano"],
+        {
+            "name": "Digital Tears",
+            "artist": "RIMON",
+            "seconds": 280,
+            "genres": ["R&B"],
             "single": false,
-            "reproductions": 91238142
+            "views": 65113
         },
-    "Malamente": {
-            "name": "Malamente",
-            "author": "Rosalia",
-            "duration": 145,
-            "genres": ["Flamenco"],
+        {
+            "name": "Mountain Views",
+            "artist": "RIMON",
+            "seconds": 192,
+            "genres": ["R&B"],
             "single": false,
-            "reproductions": 1324234
+            "views": 69772
         },
-    "Vaina Loca": {
-            "name": "Vaina Loca",
-            "author": "Ozuna",
-            "duration": 231,
-            "genres": ["Reggaeton", "Pop"],
+        {
+            "name": "Orphan Twin",
+            "artist": "Norma Jean",
+            "seconds": 116,
+            "genres": ["Metalcore"],
             "single": false,
-            "reproductions": 123140232
+            "views": 1315745
         },
-    "Lo siento": {
-            "name": "Lo siento",
-            "author": "Beret",
-            "duration": 196,
-            "genres": ["Rap", "Pop"],
+        {
+            "name": "[Mind over Mind]",
+            "artist": "Norma Jean",
+            "seconds": 158,
+            "genres": ["Metalcore"],
             "single": false,
-            "reproductions": 1237172
+            "views": 2300009
         },
-    "Ibiza": {
-            "name": "Ibiza",
-            "author": "Ozuna",
-            "duration": 276,
-            "genres": ["Bachata", "Reggaeton"],
+        {
+            "name": "Safety Last",
+            "artist": "Norma Jean",
+            "seconds": 224,
+            "genres": ["Metalcore"],
             "single": false,
-            "reproductions": 23141628
+            "views": 1163269
         },
-    "Sin Pijama": {
-            "name": "Sin Pijama",
-            "author": "Becky G",
-            "duration": 425,
-            "genres": ["Reggaeton", "Urbano", "Bachata"],
+        {
+            "name": "Volunteer Tooth Filing",
+            "artist": "Norma Jean",
+            "seconds": 41,
+            "genres": ["Metalcore"],
             "single": false,
-            "reproductions": 71361247
+            "views": 521678
         },
-    "Mocca": {
-            "name": "Mocca",
-            "author": "Lalo Ebratt",
-            "duration": 274,
-            "genres": ["Pop"],
+        {
+            "name": "Landslide Defeater",
+            "artist": "Norma Jean",
+            "seconds": 199,
+            "genres": ["Metalcore"],
             "single": false,
-            "reproductions": 1132234
+            "views": 1531515
         },
-    "Bajito": {
-            "name": "Bajito",
-            "author": "Ana Guerra",
-            "duration": 127,
-            "genres": ["Urbano", "Pop"],
+        {
+            "name": "VISIÓN TÚNEL",
+            "artist": "Cruz Cafuné",
+            "seconds": 183,
+            "genres": ["Hip-Hop"],
             "single": false,
-            "reproductions": 23147212
+            "views": 2632735
         },
-    "Que tienes tu": {
-            "name": "Que tienes tu",
-            "author": "Dvicio",
-            "duration": 183,
-            "genres": ["Urbano"],
+        {
+            "name": "GHOSTÉAME",
+            "artist": "Cruz Cafuné",
+            "seconds": 187,
+            "genres": ["Hip-Hop"],
             "single": false,
-            "reproductions": 91238234
+            "views": 4559074
         },
-    "Perdon": {
-            "name": "Perdon",
-            "author": "David Bisbal",
-            "duration": 274,
-            "genres": ["Pop", "Funk"],
+        {
+            "name": "CARTIER DE MADERA",
+            "artist": "Cruz Cafuné",
+            "seconds": 181,
+            "genres": ["Hip-Hop"],
             "single": false,
-            "reproductions": 78328384
+            "views": 1790625
         },
-    "Culpables": {
-            "name": "Culpables",
-            "author": "Karol G",
-            "duration": 352,
-            "genres": ["Reggaeton", "Urbano"],
+        {
+            "name": "STONE ISLAND",
+            "artist": "Cruz Cafuné",
+            "seconds": 156,
+            "genres": ["Hip-Hop"],
             "single": false,
-            "reproductions": 87626934
+            "views": 1652832
         },
-    "Dejala que baile": {
-            "name": "Dejala que baile",
-            "author": "Melendi",
-            "duration": 362,
-            "genres": ["Pop", "Urbano"],
+        {
+            "name": "TLC",
+            "artist": "Cruz Cafuné",
+            "seconds": 206,
+            "genres": ["Hip-Hop"],
             "single": false,
-            "reproductions": 72738271
+            "views": 4315963
         },
-    "Girls Like You": {
-            "name": "Girls Like You",
-            "author": "Maroon 5",
-            "duration": 324,
-            "genres": ["Pop"],
+        {
+            "name": "Atmospheric Funk",
+            "artist": "Wax Doctor",
+            "seconds": 560,
+            "genres": ["Drum n Base"],
             "single": false,
-            "reproductions": 26726162
+            "views": 66194
         },
-    "Cuando Nadie ve": {
-            "name": "Cuando Nadie ve",
-            "author": "Morat",
-            "duration": 260,
-            "genres": ["Urbano"],
+        {
+            "name": "All I Need",
+            "artist": "Wax Doctor",
+            "seconds": 610,
+            "genres": ["Drum n Base"],
             "single": false,
-            "reproductions": 26623712
+            "views": 61081
         },
-    "No me Acuerdo": {
-            "name": "No me Acuerdo",
-            "author": "Thalia",
-            "duration": 423,
-            "genres": ["Urbano"],
+        {
+            "name": "Step",
+            "artist": "Wax Doctor",
+            "seconds": 434,
+            "genres": ["Drum n Base"],
             "single": false,
-            "reproductions": 72163126
+            "views": 30884
         },
-    "Bohemian Rhapsody": {
-            "name": "Bohemian Rhapsody",
-            "author": "Queen",
-            "duration": 253,
-            "genres": ["Pop", "Punk"],
+        {
+            "name": "Spectrum",
+            "artist": "Wax Doctor",
+            "seconds": 506,
+            "genres": ["Drum n Base"],
             "single": false,
-            "reproductions": 32382887
+            "views": 46627
         },
-    "Pienso en tu mirá": {
-            "name": "Pienso en tu mirá",
-            "author": "Rosalia",
-            "duration": 352,
-            "genres": ["Urbano", "Flamenco"],
+        {
+            "name": "Finer Things",
+            "artist": "Wax Doctor",
+            "seconds": 510,
+            "genres": ["Drum n Base"],
             "single": false,
-            "reproductions": 126362476
+            "views": 62944
         },
-    "Saoko": {
-            "name": "Saoko",
-            "author": "Rosalia",
-            "duration": 243,
-            "genres": ["Urbano", "Reggaeton"],
+        {
+            "name": "Brianstorm",
+            "artist": "Artic Monkeys",
+            "seconds": 172,
+            "genres": ["Indie"],
             "single": false,
-            "reproductions": 473682732
+            "views": 139898352
         },
-    "Bagdad": {
-            "name": "Bagdad",
-            "author": "Rosalia",
-            "duration": 542,
-            "genres": ["Urbano", "Reggaeton"],
+        {
+            "name": "Teddy Picker",
+            "artist": "Artic Monkeys",
+            "seconds": 165,
+            "genres": ["Indie"],
             "single": false,
-            "reproductions": 12371242
+            "views": 121755303
         },
-    "Thank U Next": {
-            "name": "Thank U Next",
-            "author": "Ariana Grande",
-            "duration": 328,
-            "genres": ["Pop", "Urbano"],
+        {
+            "name": "Fluorescent Adolescent",
+            "artist": "Artic Monkeys",
+            "seconds": 183,
+            "genres": ["Indie"],
             "single": false,
-            "reproductions": 26623712
+            "views": 513805764
         },
-    "No te preocupes por mí": {
-            "name": "No te preocupes por mí",
-            "author": "Leiva",
-            "duration": 453,
-            "genres": ["Punk"],
+        {
+            "name": "Old Yellow Bricks",
+            "artist": "Artic Monkeys",
+            "seconds": 193,
+            "genres": ["Indie"],
             "single": false,
-            "reproductions": 713274617
+            "views": 110117185
         },
-    "Refrigeraton Door": {
-            "name": "Refrigeraton Door",
-            "author": "Luke Combs",
-            "duration": 235,
-            "genres": ["Country"],
+        {
+            "name": "505",
+            "artist": "Artic Monkeys",
+            "seconds": 253,
+            "genres": ["Indie"],
             "single": false,
-            "reproductions": 34231662
+            "views": 565419450
         },
-    "Wisky Glasses": {
-            "name": "Wisky Glasses",
-            "author": "Morgan Wallen",
-            "duration": 273,
-            "genres": ["Country", "Pop"],
+        {
+            "name": "Forgiveness I + II",
+            "artist": "Billy Talent",
+            "seconds": 401,
+            "genres": ["Punk Rock"],
             "single": false,
-            "reproductions": 6352736
+            "views": 5892335
         },
-    "Beautiful Crazy": {
-            "name": "Beautiful Crazy",
-            "author": "Luke Combs",
-            "duration": 127,
-            "genres": ["Country"],
+        {
+            "name": "Reckless Paradise",
+            "artist": "Billy Talent",
+            "seconds": 204,
+            "genres": ["Punk Rock"],
             "single": false,
-            "reproductions": 37261723
+            "views": 24138075
         },
-    "Redneck Life": {
-            "name": "Redneck Life",
-            "author": "Chris Janson",
-            "duration": 274,
-            "genres": ["Country"],
+        {
+            "name": "I Beg To Differ (This Will Get Better)",
+            "artist": "Billy Talent",
+            "seconds": 216,
+            "genres": ["Punk Rock"],
             "single": false,
-            "reproductions": 713274617
+            "views": 11752098
         },
-    "Moon Over Mexico": {
-            "name": "Moon Over Mexico",
-            "author": "Luke Combs",
-            "duration": 323,
-            "genres": ["Country"],
+        {
+            "name": "The Wolf",
+            "artist": "Billy Talent",
+            "seconds": 227,
+            "genres": ["Punk Rock"],
             "single": false,
-            "reproductions": 48372837
+            "views": 1062221
         },
-    "My girl": {
-            "name": "My girl",
-            "author": "The Temptations",
-            "duration": 256,
-            "genres": ["Funk"],
+        {
+            "name": "Reactor",
+            "artist": "Billy Talent",
+            "seconds": 229,
+            "genres": ["Punk Rock"],
             "single": false,
-            "reproductions": 874656874
-        },
-    "Ain’t Too Proud to Beg": {
-            "name": "Ain’t Too Proud to Beg",
-            "author": "The Temptations",
-            "duration": 189,
-            "genres": ["Funk"],
-            "single": false,
-            "reproductions": 4571563
-        },
-    "Boogie Oogie Oogie": {
-            "name": "Boogie Oogie Oogie",
-            "author": "A Taste of Honey",
-            "duration": 563,
-            "genres": ["Funk"],
-            "single": false,
-            "reproductions": 41235687
-        },
-    "Bamboléo": {
-            "name": "Bamboléo",
-            "author": "Gipsy Kings",
-            "duration": 236,
-            "genres": ["Flamenco"],
-            "single": false,
-            "reproductions": 4798125
-        },
-    "Volare": {
-            "name": "Volare",
-            "author": "Gipsy Kings",
-            "duration": 133,
-            "genres": ["Flamenco"],
-            "single": false,
-            "reproductions": 563254
-        },
-    "Ley De Gravedad": {
-            "name": "Ley De Gravedad",
-            "author": "Ojos de Brujo",
-            "duration": 423,
-            "genres": ["Flamenco"],
-            "single": true,
-            "reproductions": 8563214
-        },
-    "Zambra": {
-            "name": "Zambra",
-            "author": "Ojos de Brujo",
-            "duration": 125,
-            "genres": ["Flamenco"],
-            "single": false,
-            "reproductions": 96587423
-        },
-    "I Want It That Way": {
-            "name": "I Want It That Way",
-            "author": "Backstreet Boys",
-            "duration": 235,
-            "genres": ["Pop"],
-            "single": false,
-            "reproductions": 45124789
-        },
-    "As Long as You Love Me": {
-            "name": "As Long as You Love Me",
-            "author": "Backstreet Boys",
-            "duration": 326,
-            "genres": ["Pop"],
-            "single": false,
-            "reproductions": 25487965
-        },
-    "Larger Than Life": {
-            "name": "Larger Than Life",
-            "author": "Backstreet Boys",
-            "duration": 254,
-            "genres": ["Pop"],
-            "single": false,
-            "reproductions": 365498354
-        }        
+            "views": 800206
+        }
+    ]
 }
