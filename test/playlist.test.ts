@@ -290,28 +290,20 @@ describe('Gold Age HipHop playlist test', () => {
       expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
       expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
     });
-    it('Playlist can be sorted reverselly by album name', () => {
-      goldAgeHipHop.addAlbum(itWasWritten);
-      goldAgeHipHop.addAlbum(iShineUShine);
-      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
-      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
+    it('Playlist can be sorted reversely by album name', () => {
       goldAgeHipHop.sortByAlbumName(true);
-      goldAgeHipHop.removeAlbum('It Was Written');
-      goldAgeHipHop.removeAlbum('I Shine U Shine');
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('The Set Up (feat Havoc)');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('never learned how to coupe');
     });
-    it('Playlist can be sorted by album name', () => {
-      goldAgeHipHop.addAlbum(itWasWritten);
-      goldAgeHipHop.addAlbum(iShineUShine);
-      goldAgeHipHop.sortByAlbumName();
-      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
-      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
+    it('Playlist can be sorted by album release date', () => {
+      goldAgeHipHop.sortByAlbumRelease();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('It Was A Good Day');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Shoutouts');
     });
-    it('Playlist can be sorted reverselly by album name', () => {
-      goldAgeHipHop.addAlbum(itWasWritten);
-      goldAgeHipHop.addAlbum(iShineUShine);
-      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
-      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
-      goldAgeHipHop.sortByAlbumName(true);
+    it('Playlist can be sorted reversely by album release date', () => {
+      goldAgeHipHop.sortByAlbumRelease(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('The Morning');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Watch Them Niggas');
       goldAgeHipHop.removeAlbum('It Was Written');
       goldAgeHipHop.removeAlbum('I Shine U Shine');
     });
@@ -323,10 +315,10 @@ describe('Gold Age HipHop playlist test', () => {
         + '\t(hip-hop)\n'
         + '2 songs | 0 hr 7 min 38 sec\n\n'
         + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
-        + ' \tIce Cube\n'
-        + '2\tGettin Up\t\tGettin Up\t3:18\n'
+        + '1\tGettin Up\t\tGettin Up\t3:18\n'
         + ' \tQ-Tip\n'
+        + '2\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
+        + ' \tIce Cube\n'
         + '\n',
       );
     });

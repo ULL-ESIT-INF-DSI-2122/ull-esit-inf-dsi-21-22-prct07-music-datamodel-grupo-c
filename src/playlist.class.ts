@@ -191,7 +191,6 @@ export default class Playlist {
     }
   }
 
-
   public searchAlbumBySong(song: Song): Album | undefined {
     return this.albums.find((album) => album.songs.includes(song));
   }
@@ -271,14 +270,14 @@ export default class Playlist {
         })
       : this._songs
         .sort((songA: Song, songB: Song) => {
-          const a = this.searchAlbumBySong(songA) === undefined
-            ? ''
+          const a: number = this.searchAlbumBySong(songA) === undefined
+            ? 0
             // @ts-ignore
-            : this.searchAlbumBySong(songA).name;
-          const b = this.searchAlbumBySong(songB) === undefined
-            ? ''
+            : this.searchAlbumBySong(songA).year;
+          const b: number = this.searchAlbumBySong(songB) === undefined
+            ? 0
             // @ts-ignore
-            : this.searchAlbumBySong(songB).name;
+            : this.searchAlbumBySong(songB).year;
 
           if (a < b) { return -1; }
           if (a > b) { return 1; }
