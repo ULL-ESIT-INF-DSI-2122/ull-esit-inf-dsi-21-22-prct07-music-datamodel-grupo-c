@@ -93,7 +93,7 @@ describe('Gold Age HipHop playlist test', () => {
       expect(goldAgeHipHop.allSongsNames).to.be.eql([]);
     });
     it('Playlist group names can be accessed directly', () => {
-      expect(goldAgeHipHop.allGroupNames).to.be.eql([]);
+      expect(goldAgeHipHop.groups).to.be.eql([]);
     });
     it('Playlist album names can be accessed directly', () => {
       expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
