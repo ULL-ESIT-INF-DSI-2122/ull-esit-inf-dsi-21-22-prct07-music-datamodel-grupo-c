@@ -1,0 +1,70 @@
+{
+    "genres": [
+        {
+            "name": "Progressive Metal",
+            "artists": ["Animals As Leaders"],
+            "songs": ["Monomyth", "Red Miso", "Gestaltzerfall", "Asahi", "The Problem Of Other Minds"],
+            "albums": ["Parrhesia"]
+        },
+        {
+            "name": "Trap Latino",
+            "artists": ["Bad Bunny"],
+            "songs": ["EL MUNDO ES MÍO", "TE MUDASTE", "HOY COBRÉ", "MALDITA POBREZA", "LA NOCHE DE ANOCHE"],
+            "albums": ["EL ÚLTIMO TOUR DEL MUNDO"]
+        },
+        {
+            "name": "R&B",
+            "artists": ["RIMON"],
+            "songs": ["Been Around The Globe", "Feed Me", "iClout", "Digital Tears", "Mountain Views"],
+            "albums": ["Digital Tears"]
+        },
+        {
+            "name": "Metalcore",
+            "artists": ["Norma Jean"],
+            "songs": ["Orphan Twin", "[Mind over Mind]", "Safety Last", "Volunteer Tooth Filing", "Landslide Defeater"],
+            "albums": ["All Hail"]
+        },
+        {
+            "name": "Hip-Hop",
+            "artists": ["Cruz Cafuné"],
+            "songs": ["VISIÓN TÚNEL", "GHOSTÉAME", "CARTIER DE MADERA", "STONE ISLAND", "TLC"],
+            "albums": ["VISIÓN TÚNEL"]
+        },
+        {
+            "name": "Drum n Bass",
+            "artists": ["Wax Doctor"],
+            "songs": ["Atmospheric Funk", "All I Need", "Step", "Spectrum", "Finer Things"],
+            "albums": ["Selected Works 94-96"]
+        },
+        {
+            "name": "Indie",
+            "artists": ["Artic Monkeys"],
+            "songs": ["Brianstorm", "Teddy Picker", "Fluorescent Adolescent", "Old Yellow Bricks", "505"],
+            "albums": ["Favourite Worst Nightmare"]
+        },
+        {
+            "name": "Punk Rock",
+            "artists": ["Billy Talent"],
+            "songs": ["Forgiveness I + II", "Reckless Paradise", "I Beg To Differ (This Will Get Better)", "The Wolf", "Reactor"],
+            "albums": ["Crisis Of Faith"]
+        },
+        {
+            "name": "Jazz Latino",
+            "artists": ["Rolando Laserie"],
+            "songs": ["Hola Soledad", "Cuba Linda", "Sobre Una Tumba Rumba", "La Primera Piedra", "La Palma De Coco"],
+            "albums": ["Todo el Tiempo..."]
+        },
+        {
+            "name": "Mathcore",
+            "artists": ["The Dillinger Escape Plan"],
+            "songs": ["Limerent Death", "Symptom of Terminal Illness", "Wanting Not so Much to as To", "Fugue", "Low Feels Blvd"],
+            "albums": ["Dissociation"]
+        },
+        {
+            "name": "Reggaeton",
+            "artists": ["Daddy Yankee"],
+            "songs": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
+            "albums": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"]
+        }
+    ]
+}
