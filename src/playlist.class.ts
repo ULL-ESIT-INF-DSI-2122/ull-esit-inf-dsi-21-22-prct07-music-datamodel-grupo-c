@@ -2,6 +2,8 @@ import * as uuid from 'uuid';
 import { Song } from './song.class';
 import { Album } from './album.class';
 import { Group } from './group.class';
+import { Genre } from './genre.class';
+import { Artist } from './artist.class';
 
 /**
  * # Playlist class.
@@ -40,9 +42,9 @@ export default class Playlist {
 
   private _albums: Album[];
 
-  private _genres: string[];
+  private _genres: Genre[];
 
-  private _artists: string[];
+  private _artists: Artist[];
 
   private _groups: Group[];
 
