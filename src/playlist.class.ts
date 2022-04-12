@@ -66,6 +66,14 @@ export default class Playlist {
 
   get songs(): Song[] { return this._songs; }
 
+  get songsName(): string[] {
+    const names: string [] = [];
+    this.songs.forEach((song) => {
+      names.push(song.name);
+    });
+    return names;
+  }
+
   get allSongsNames(): string[] { return this.songs.map((el) => el.name); }
 
   get albums(): Album[] { return this._albums; }
@@ -74,23 +82,11 @@ export default class Playlist {
 
   get genres(): Genre[] { return this._genres; }
 
-  get genresName(): string[] {
-    const names: string [] = [];
-    this.genres.forEach((genre) => {
-      names.push(genre.name);
-    });
-    return names;
-  }
+  get genresName(): string[] { return this.genres.map((el) => el.name); }
 
   get artists(): Artist[] { return this._artists; }
 
-  get artistsName(): string[] {
-    const names: string [] = [];
-    this.artists.forEach((artist) => {
-      names.push(artist.name);
-    });
-    return names;
-  }
+  get artistsName(): string[] { return this.artists.map((el) => el.name); }
 
   get groups(): Group[] { return this._groups; }
 
@@ -126,13 +122,13 @@ export default class Playlist {
   get length(): number { return this.songs.length; }
 
   private addArtist(artist: Artist): void {
-    if (!this.artistsName.includes(artist.name)) {
+    if (!this.artists.find((el) => el.name === artist.name)) {
       this.artists.push(artist);
     }
   }
 
   private addGenre(genre: Genre): void {
-    if (!this.genres.includes(genre)) {
+    if (!this.genres.find((el) => el.name === genre.name)) {
       this.genres.push(genre);
     }
   }
@@ -143,11 +139,6 @@ export default class Playlist {
       if (!this.artists.find((artist) => artist.name === newSong.artist)) {
         this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
       }
-      this.artists.forEach((artist) => {
-        if (!(newSong.artist === artist.name)) {
-          this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
-        }
-      });
       newSong.genres.forEach((genre) => {
         if (!this.genres.find((el) => el.name === genre)) {
           this.genres.push(new Genre(genre, []));
@@ -185,6 +176,33 @@ export default class Playlist {
     }
   }
 
+  // public removeAlbum(albumName: string): void {
+  //   if (this.albums.find((album) => album.name === albumName)) {
+  //     // @ts-ignore
+  //     this.albums
+  //       .find((album) => album.name === albumName)
+  //       .songs
+  //       .forEach((song) => {
+  //         this.removeSong(song.name);
+  //       });
+
+  //     this._artists = this.artists
+  //       .filter(// @ts-ignore
+  //         (artist) => artist !== this
+  //           .albums
+  //           .find((album) => album.name === albumName)
+  //           .artist,
+  //       );
+  //     this.songs.forEach((song) => {
+  //       this.addArtist(new Artist(song.artist, [], [], [], [], 0));
+  //       song.genres.forEach((genre) => {
+  //         this.addGenre(new Genre(genre, []));
+  //       });
+  //     });
+  //     this._albums = this.albums.filter((album) => album.name !== albumName);
+  //   }
+  // }
+
   public removeAlbum(albumName: string): void {
     if (this.albums.find((album) => album.name === albumName)) {
       // @ts-ignore
@@ -197,7 +215,7 @@ export default class Playlist {
 
       this._artists = this.artists
         .filter(// @ts-ignore
-          (artist) => artist !== this
+          (artist) => artist.name !== this
             .albums
             .find((album) => album.name === albumName)
             .artist,
@@ -364,7 +382,7 @@ export default class Playlist {
 
   public toString(): string {
     let playListString: string = `${this.name.toUpperCase()}\n`;
-    playListString += `\t(${this.genres.join(', ')})\n`;
+    playListString += `\t(${this.genresName.join(', ')})\n`;
     playListString += `${this.length} songs | ${this.durationString}\n\n`;
     playListString += '#\tTitle\t\t\tAlbum\t\tDuration\n';
     this.songs.forEach((song, inx) => {
