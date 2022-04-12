@@ -74,7 +74,23 @@ export default class Playlist {
 
   get genres(): Genre[] { return this._genres; }
 
+  get genresName(): string[] {
+    const names: string [] = [];
+    this.genres.forEach((genre) => {
+      names.push(genre.name);
+    });
+    return names;
+  }
+
   get artists(): Artist[] { return this._artists; }
+
+  get artistsName(): string[] {
+    const names: string [] = [];
+    this.artists.forEach((artist) => {
+      names.push(artist.name);
+    });
+    return names;
+  }
 
   get groups(): Group[] { return this._groups; }
 
@@ -110,7 +126,7 @@ export default class Playlist {
   get length(): number { return this.songs.length; }
 
   private addArtist(artist: Artist): void {
-    if (!this.artists.includes(artist)) {
+    if (!this.artistsName.includes(artist.name)) {
       this.artists.push(artist);
     }
   }

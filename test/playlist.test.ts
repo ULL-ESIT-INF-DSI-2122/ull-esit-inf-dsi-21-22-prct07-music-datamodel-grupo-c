@@ -208,8 +208,10 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.length).to.be.eql(2);
         expect(goldAgeHipHop.songs).to.be.eql([shoutouts, theMessage]);
         expect(goldAgeHipHop.allSongsNames).to.be.eql(['Shoutouts', 'The Message']);
-        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
-        expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+        // expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.artistsName).to.be.eql(['Nas']);
+        // expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+        expect(goldAgeHipHop.genresName).to.be.eql(['hip-hop', 'RAP', 'urban']);
         expect(goldAgeHipHop.duration).to.be.eql({ h: 0, m: 7, s: 40 });
         expect(goldAgeHipHop.durationString).to.be.eql('0 hr 7 min 40 sec');
       });
@@ -218,8 +220,10 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.length).to.be.eql(1);
         expect(goldAgeHipHop.songs).to.be.eql([theMessage]);
         expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message']);
-        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
-        expect(goldAgeHipHop.genres).to.be.eql([]);
+        // expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.artistsName).to.be.eql(['Nas']);
+        // expect(goldAgeHipHop.genres).to.be.eql([]);
+        expect(goldAgeHipHop.genresName).to.be.eql([]);
         goldAgeHipHop.removeSong('The Message');
       });
     });
@@ -227,13 +231,15 @@ describe('Gold Age HipHop playlist test', () => {
       it('addAlbum method test', () => {
         goldAgeHipHop.addAlbum(itWasWritten);
         expect(goldAgeHipHop.length).to.be.eq(10);
-        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        // expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.artistsName).to.be.eql(['Nas']);
         expect(goldAgeHipHop.allAlbumNames).to.be.eql(['It Was Written']);
       });
       it('removeAlbum method test', () => {
         goldAgeHipHop.removeAlbum('It Was Written');
         expect(goldAgeHipHop.length).to.be.eq(0);
-        expect(goldAgeHipHop.artists).to.be.eql([]);
+        // expect(goldAgeHipHop.artists).to.be.eql([]);
+        expect(goldAgeHipHop.artistsName).to.be.eql([]);
         expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
       });
 
@@ -244,7 +250,8 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.length).to.be.eq(12);
         goldAgeHipHop.removeAlbum('It Was Written');
         expect(goldAgeHipHop.length).to.be.eq(2);
-        expect(goldAgeHipHop.artists).to.be.eql(['Ice Cube', 'Q-Tip']);
+        // expect(goldAgeHipHop.artists).to.be.eql(['Ice Cube', 'Q-Tip']);
+        expect(goldAgeHipHop.artistsName).to.be.eql(['Ice Cube', 'Q-Tip']);
         expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
       });
     });
