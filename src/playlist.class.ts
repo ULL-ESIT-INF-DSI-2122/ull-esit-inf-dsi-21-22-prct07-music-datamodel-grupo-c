@@ -156,7 +156,7 @@ export default class Playlist {
   public addAlbum(newAlbum: Album): void {
     if (!this.albums.find((album) => album === newAlbum)) {
       this.albums.push(newAlbum);
-      this.addArtist(newAlbum.artist);
+      this.addArtist(new Artist(newAlbum.artist, [], [], [], [], 0));
       newAlbum.songs.forEach((song) => {
         if (
           this.songs.includes(song)
