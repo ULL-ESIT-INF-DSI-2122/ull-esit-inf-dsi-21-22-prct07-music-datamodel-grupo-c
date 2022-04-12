@@ -16,16 +16,21 @@ import { Artist } from './artist.class';
  * - hours | Hours of the playlist duration (it updates automatically).
  * - minutes | Minutes of the playlist duration.
  * - genres | Genres that appears in the playlist.
+ * - artists | Artits featured in the playlist.
  *
  * ## Methods
  * - get name() | Returns Playlist name.
  * - get songs() | Returns all the songs in the playlist.
+ * - get songsName() | Returns the names (strings) of the songs in the playlist.
  * - set songs() | Set the songs on the playlist.
  * - get duration() | Returns the playlist duration in seconds.
  * - set duration(duration) | Set the duration (updates the hours and minutes automatically).
  * - get hours() | Returns the duration in hours of the playlist.
  * - get minutes() | Returns the minutes duration of the playlist.
+ * - get artists() | Returns the artists featured in the playlist (objects).
+ * - get artistsName() | Returns the names (strings) of the artists featured un the playlist.
  * - get genres() | Returns the genres on the playlist.
+ * - get genresName() | Returns the names (strings) of the genres in the playlist.
  * - set genres(genres) | Set the playlist genres.
  * - addGenre(genre) | Add a genre to the playlist.
  * - addSong(song) | Add a song to the playlist.
