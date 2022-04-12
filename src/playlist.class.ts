@@ -124,12 +124,17 @@ export default class Playlist {
   public addSong(newSong: Song): void {
     if (!this.songs.find((el) => el === newSong)) {
       this.songs.push(newSong);
-      if (!this.artists.find((artist) => artist === newSong.artist)) {
-        this.artists.push(newSong.artist);
+      if (!this.artists.find((artist) => artist.name === newSong.artist)) {
+        this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
       }
+      this.artists.forEach((artist) => {
+        if (!(newSong.artist === artist.name)) {
+          this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
+        }
+      });
       newSong.genres.forEach((genre) => {
-        if (!this.genres.find((el) => el === genre)) {
-          this.genres.push(genre);
+        if (!this.genres.find((el) => el.name === genre)) {
+          this.genres.push(new Genre(genre, []));
         }
       });
     }
