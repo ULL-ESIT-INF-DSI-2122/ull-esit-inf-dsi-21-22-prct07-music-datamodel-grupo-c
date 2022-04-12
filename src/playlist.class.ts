@@ -101,7 +101,7 @@ export default class Playlist {
 
   get durationString(): string {
     return `${Math.round(this.hours)} hr `
-         + `${Math.round(this.minutes)} min `
+         + `${Math.round(this.minutes % 60)} min `
          + `${Math.round(this.seconds % 60)} sec`;
   }
 
@@ -135,6 +135,13 @@ export default class Playlist {
 
   public removeSong(songName: string): void {
     if (this.songs.find((song) => song.name === songName)) {
+      // @ts-ignore
+      this.songs
+        .find((song) => song.name === songName)
+        .genres
+        .forEach((genre) => {
+          this._genres = this._genres.filter((el) => el !== genre);
+        });
       this._songs = this.songs.filter((song) => song.name !== songName);
     }
   }
@@ -142,7 +149,14 @@ export default class Playlist {
   public addAlbum(newAlbum: Album): void {
     if (!this.albums.find((album) => album === newAlbum)) {
       this.albums.push(newAlbum);
+      this.addArtist(newAlbum.artist);
       newAlbum.songs.forEach((song) => {
+        if (
+          this.songs.includes(song)
+          && this.searchAlbumBySong(song) === undefined
+        ) {
+          song.single = false; // eslint-disable-line
+        }
         this.addSong(song);
       });
     }
@@ -179,6 +193,152 @@ export default class Playlist {
     return this.albums.find((album) => album.songs.includes(song));
   }
 
+  public sortBySongName(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.name.toLowerCase();
+          const b = songB.name.toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.name.toLowerCase();
+          const b = songB.name.toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
+  public sortBySongDuration(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.seconds;
+          const b = songB.seconds;
+          return a - b;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.seconds;
+          const b = songB.seconds;
+          return a - b;
+        })
+        .reverse();
+  }
+
+  public sortByGenre(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.genres.join('').toLowerCase();
+          const b = songB.genres.join('').toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.genres.join('').toLowerCase();
+          const b = songB.genres.join('').toLowerCase();
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
+  public sortBySongViews(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.views;
+          const b = songB.views;
+          return a - b;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.views;
+          const b = songB.views;
+          return a - b;
+        })
+        .reverse();
+  }
+
+  public sortByAlbumName(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = this.searchAlbumBySong(songA) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).name;
+          const b = this.searchAlbumBySong(songB) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).name;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = this.searchAlbumBySong(songA) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).name;
+          const b = this.searchAlbumBySong(songB) === undefined
+            ? ''
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).name;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
+  public sortByAlbumRelease(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a: number = this.searchAlbumBySong(songA) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).year;
+          const b: number = this.searchAlbumBySong(songB) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).year;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a: number = this.searchAlbumBySong(songA) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songA).year;
+          const b: number = this.searchAlbumBySong(songB) === undefined
+            ? 0
+            // @ts-ignore
+            : this.searchAlbumBySong(songB).year;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+        .reverse();
+  }
+
   public toString(): string {
     let playListString: string = `${this.name.toUpperCase()}\n`;
     playListString += `\t(${this.genres.join(', ')})\n`;
@@ -187,7 +347,7 @@ export default class Playlist {
     this.songs.forEach((song, inx) => {
       playListString += `${inx + 1}\t${song.name}\t\t`
         + `${this.searchAlbumBySong(song) === undefined
-          ? 'no album'
+          ? song.name
           // @ts-ignore
           : this.searchAlbumBySong(song).name}\t`
         + `${song.durationString}\n`;

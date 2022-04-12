@@ -5,7 +5,18 @@ import { Song } from '../src/song.class';
 import { Album } from '../src/album.class';
 
 const goldAgeHipHop = new Playlist('Golden Age Hip Hop');
-
+const gettinUp: Song = new Song(
+  'Gettin Up',
+  'Q-Tip',
+  (3 * 60) + 18,
+  ['hip-hop'],
+);
+const goodDay: Song = new Song(
+  'It Was A Good Day',
+  'Ice Cube',
+  (4 * 60) + 20,
+  ['hip-hop'],
+);
 const albumIntro: Song = new Song(
   'Album Intro',
   'Nas',
@@ -69,11 +80,86 @@ const shoutouts: Song = new Song(
   ['hip-hop', 'RAP', 'urban'],
 );
 
+const theMorning: Song = new Song(
+  'The Morning',
+  'RIMMON',
+  (3 * 60) + 37,
+  ['soul', 'rnb'],
+);
+
+const iShine: Song = new Song(
+  'I Shine U Shine',
+  'RIMMON',
+  (4 * 60) + 26,
+  ['soul', 'rnb'],
+);
+
+const outOfMyWay: Song = new Song(
+  'Out Of My Way',
+  'RIMMON',
+  (3 * 60) + 28,
+  ['soul', 'rnb'],
+);
+
+const gotMyBack: Song = new Song(
+  'Got My Back',
+  'RIMMON',
+  (3 * 60) + 24,
+  ['soul', 'rnb'],
+);
+
+const never: Song = new Song(
+  'never learned how to coupe',
+  'RIMMON',
+  (4 * 60) + 50,
+  ['soul', 'rnb'],
+);
+
+const downtown: Song = new Song(
+  'Downtown',
+  'RIMMON',
+  (3 * 60) + 54,
+  ['soul', 'rnb'],
+);
+
 const theMessage: Song = new Song(
   'The Message',
   'Nas',
   (3 * 60) + 54,
   ['hip-hop', 'RAP', 'urban'],
+);
+
+const itWasWritten: Album = new Album(
+  'It Was Written',
+  'Nas',
+  1996,
+  ['RAP', 'hip-hop'],
+  [
+    shoutouts,
+    theMessage,
+    albumIntro,
+    streetDreams,
+    gaveYouPower,
+    watch,
+    takeItInBlood,
+    nasIsComing,
+    affirmative,
+    theSetUp,
+  ],
+);
+const iShineUShine: Album = new Album(
+  'I Shine U Shine',
+  'RIMMON',
+  2020,
+  ['RnB'],
+  [
+    theMorning,
+    iShine,
+    outOfMyWay,
+    gotMyBack,
+    never,
+    downtown,
+  ],
 );
 describe('Gold Age HipHop playlist test', () => {
   describe('Class build tests | props, getters and setters established', () => {
@@ -133,30 +219,14 @@ describe('Gold Age HipHop playlist test', () => {
         expect(goldAgeHipHop.songs).to.be.eql([theMessage]);
         expect(goldAgeHipHop.allSongsNames).to.be.eql(['The Message']);
         expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
-        expect(goldAgeHipHop.genres).to.be.eql(['hip-hop', 'RAP', 'urban']);
+        expect(goldAgeHipHop.genres).to.be.eql([]);
         goldAgeHipHop.removeSong('The Message');
       });
     });
     describe('Playlist add and remove album methods', () => {
-      const itWasWritten: Album = new Album(
-        'It Was Written',
-        'Nas',
-        1996,
-        ['RAP', 'hip-hop'],
-        [
-          albumIntro,
-          streetDreams,
-          gaveYouPower,
-          watch,
-          takeItInBlood,
-          nasIsComing,
-          affirmative,
-          theSetUp,
-        ],
-      );
       it('addAlbum method test', () => {
         goldAgeHipHop.addAlbum(itWasWritten);
-        expect(goldAgeHipHop.length).to.be.eq(8);
+        expect(goldAgeHipHop.length).to.be.eq(10);
         expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
         expect(goldAgeHipHop.allAlbumNames).to.be.eql(['It Was Written']);
       });
@@ -169,12 +239,12 @@ describe('Gold Age HipHop playlist test', () => {
 
       it('removeAlbum method test with other non album songs', () => {
         goldAgeHipHop.addAlbum(itWasWritten);
-        goldAgeHipHop.addSong(shoutouts);
-        goldAgeHipHop.addSong(theMessage);
-        expect(goldAgeHipHop.length).to.be.eq(10);
+        goldAgeHipHop.addSong(goodDay);
+        goldAgeHipHop.addSong(gettinUp);
+        expect(goldAgeHipHop.length).to.be.eq(12);
         goldAgeHipHop.removeAlbum('It Was Written');
         expect(goldAgeHipHop.length).to.be.eq(2);
-        expect(goldAgeHipHop.artists).to.be.eql(['Nas']);
+        expect(goldAgeHipHop.artists).to.be.eql(['Ice Cube', 'Q-Tip']);
         expect(goldAgeHipHop.allAlbumNames).to.be.eql([]);
       });
     });
@@ -182,18 +252,107 @@ describe('Gold Age HipHop playlist test', () => {
   describe('Playlist searching tests', () => {
   });
   describe('Playlist sorting tests', () => {
+    it('Playlist songs can be sorted by song name', () => {
+      goldAgeHipHop.sortBySongName();
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['Gettin Up', 'It Was A Good Day']);
+      expect(goldAgeHipHop.toString()).to.be.eql(
+        'GOLDEN AGE HIP HOP\n'
+        + '\t(hip-hop)\n'
+        + '2 songs | 0 hr 7 min 38 sec\n\n'
+        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
+        + '1\tGettin Up\t\tGettin Up\t3:18\n'
+        + ' \tQ-Tip\n'
+        + '2\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
+        + ' \tIce Cube\n'
+        + '\n',
+      );
+    });
+    it('Playlist songs can be sorted reversely by song name', () => {
+      goldAgeHipHop.sortBySongName(true);
+      expect(goldAgeHipHop.allSongsNames).to.be.eql(['It Was A Good Day', 'Gettin Up']);
+      expect(goldAgeHipHop.toString()).to.be.eql(
+        'GOLDEN AGE HIP HOP\n'
+        + '\t(hip-hop)\n'
+        + '2 songs | 0 hr 7 min 38 sec\n\n'
+        + '#\tTitle\t\t\tAlbum\t\tDuration\n'
+        + '1\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
+        + ' \tIce Cube\n'
+        + '2\tGettin Up\t\tGettin Up\t3:18\n'
+        + ' \tQ-Tip\n'
+        + '\n',
+      );
+      goldAgeHipHop.sortBySongName();
+    });
+    it('Playlist can be sorted by album name', () => {
+      goldAgeHipHop.addAlbum(itWasWritten);
+      goldAgeHipHop.addAlbum(iShineUShine);
+      goldAgeHipHop.sortByAlbumName();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Gettin Up');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Street Dreams');
+    });
+    it('Playlist can be sorted reversely by album name', () => {
+      goldAgeHipHop.sortByAlbumName(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('The Set Up (feat Havoc)');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('never learned how to coupe');
+    });
+    it('Playlist can be sorted by album release date', () => {
+      goldAgeHipHop.sortByAlbumRelease();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('It Was A Good Day');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Shoutouts');
+    });
+    it('Playlist can be sorted reversely by album release date', () => {
+      goldAgeHipHop.sortByAlbumRelease(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('The Morning');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Watch Them Niggas');
+    });
+
+    it('Playlist can be sorted by song duration', () => {
+      goldAgeHipHop.sortBySongDuration();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Album Intro');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Affirmative Action (feat AZ, Cormega & Foxy Brown)');
+    });
+    it('Playlist can be sorted reversely by song duration', () => {
+      goldAgeHipHop.sortBySongDuration(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Nas Is Coming (feat Dr.Dre)');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('I Gave You Power');
+      goldAgeHipHop.sortBySongDuration();
+    });
+    it('Playlist can be sorted by song genres', () => {
+      goldAgeHipHop.sortByGenre();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Album Intro');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('The Message');
+    });
+    it('Playlist can be sorted reversely by genres', () => {
+      goldAgeHipHop.sortByGenre(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('never learned how to coupe');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('It Was A Good Day');
+      goldAgeHipHop.sortBySongDuration();
+    });
+    it('Playlist can be sorted by song views', () => {
+      goldAgeHipHop.sortBySongViews();
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Album Intro');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('Affirmative Action (feat AZ, Cormega & Foxy Brown)');
+    });
+    it('Playlist can be sorted reversely by song views', () => {
+      goldAgeHipHop.sortBySongViews(true);
+      expect(goldAgeHipHop.allSongsNames[0]).to.be.eql('Nas Is Coming (feat Dr.Dre)');
+      expect(goldAgeHipHop.allSongsNames[11]).to.be.eql('I Gave You Power');
+      goldAgeHipHop.sortBySongDuration();
+      goldAgeHipHop.removeAlbum('It Was Written');
+      goldAgeHipHop.removeAlbum('I Shine U Shine');
+    });
   });
   describe('Playlist can be turned into string', () => {
     it('Playlist with two songs', () => {
       expect(goldAgeHipHop.toString()).to.be.eql(
         'GOLDEN AGE HIP HOP\n'
-        + '\t(hip-hop, RAP, urban)\n'
-        + '2 songs | 0 hr 7 min 40 sec\n\n'
+        + '\t(hip-hop)\n'
+        + '2 songs | 0 hr 7 min 38 sec\n\n'
         + '#\tTitle\t\t\tAlbum\t\tDuration\n'
-        + '1\tShoutouts\t\tno album\t3:46\n'
-        + ' \tNas\n'
-        + '2\tThe Message\t\tno album\t3:54\n'
-        + ' \tNas\n'
+        + '1\tGettin Up\t\tGettin Up\t3:18\n'
+        + ' \tQ-Tip\n'
+        + '2\tIt Was A Good Day\t\tIt Was A Good Day\t4:20\n'
+        + ' \tIce Cube\n'
         + '\n',
       );
     });
