@@ -147,7 +147,7 @@ export default class Playlist {
         .find((song) => song.name === songName)
         .genres
         .forEach((genre) => {
-          this._genres = this._genres.filter((el) => el !== genre);
+          this._genres = this._genres.filter((el) => el.name !== genre);
         });
       this._songs = this.songs.filter((song) => song.name !== songName);
     }
