@@ -72,7 +72,7 @@ export default class Playlist {
 
   get allAlbumNames(): string[] { return this.albums.map((el) => el.name); }
 
-  get genres(): string[] { return this._genres; }
+  get genres(): Genre[] { return this._genres; }
 
   get artists(): string[] { return this._artists; }
 
