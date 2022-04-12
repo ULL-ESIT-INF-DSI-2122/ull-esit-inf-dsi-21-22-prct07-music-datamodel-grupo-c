@@ -115,7 +115,7 @@ export default class Playlist {
     }
   }
 
-  private addGenre(genre: string): void {
+  private addGenre(genre: Genre): void {
     if (!this.genres.includes(genre)) {
       this.genres.push(genre);
     }
