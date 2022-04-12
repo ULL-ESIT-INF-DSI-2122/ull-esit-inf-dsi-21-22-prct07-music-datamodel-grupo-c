@@ -177,33 +177,6 @@ export default class Playlist {
     }
   }
 
-  // public removeAlbum(albumName: string): void {
-  //   if (this.albums.find((album) => album.name === albumName)) {
-  //     // @ts-ignore
-  //     this.albums
-  //       .find((album) => album.name === albumName)
-  //       .songs
-  //       .forEach((song) => {
-  //         this.removeSong(song.name);
-  //       });
-
-  //     this._artists = this.artists
-  //       .filter(// @ts-ignore
-  //         (artist) => artist !== this
-  //           .albums
-  //           .find((album) => album.name === albumName)
-  //           .artist,
-  //       );
-  //     this.songs.forEach((song) => {
-  //       this.addArtist(new Artist(song.artist, [], [], [], [], 0));
-  //       song.genres.forEach((genre) => {
-  //         this.addGenre(new Genre(genre, []));
-  //       });
-  //     });
-  //     this._albums = this.albums.filter((album) => album.name !== albumName);
-  //   }
-  // }
-
   public removeAlbum(albumName: string): void {
     if (this.albums.find((album) => album.name === albumName)) {
       // @ts-ignore
