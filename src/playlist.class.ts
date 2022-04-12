@@ -109,7 +109,7 @@ export default class Playlist {
 
   get length(): number { return this.songs.length; }
 
-  private addArtist(artist: string): void {
+  private addArtist(artist: Artist): void {
     if (!this.artists.includes(artist)) {
       this.artists.push(artist);
     }
