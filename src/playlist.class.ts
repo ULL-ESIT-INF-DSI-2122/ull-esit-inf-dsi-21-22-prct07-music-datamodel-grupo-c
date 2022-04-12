@@ -12,11 +12,11 @@ import { Artist } from './artist.class';
  * ## Properties
  * - name | Playlist name.
  * - songs | Name of the songs on the playlist.
- * - duration | Duration in seconds of the playlist.
  * - hours | Hours of the playlist duration (it updates automatically).
  * - minutes | Minutes of the playlist duration.
  * - genres | Genres that appears in the playlist.
- * - artists | Artits featured in the playlist.
+ * - artists | Artists featured in the playlist.
+ * - groups | Groups featured in the playlist.
  *
  * ## Methods
  * - get name() | Returns Playlist name.
@@ -28,6 +28,8 @@ import { Artist } from './artist.class';
  * - get hours() | Returns the duration in hours of the playlist.
  * - get minutes() | Returns the minutes duration of the playlist.
  * - get artists() | Returns the artists featured in the playlist (objects).
+ * - get groups() | Returns the groups featured in the playlist (objects).
+ * - get groupsName() | Returns the names (strings) of the groups featured in the playlist.
  * - get artistsName() | Returns the names (strings) of the artists featured un the playlist.
  * - get genres() | Returns the genres on the playlist.
  * - get genresName() | Returns the names (strings) of the genres in the playlist.
