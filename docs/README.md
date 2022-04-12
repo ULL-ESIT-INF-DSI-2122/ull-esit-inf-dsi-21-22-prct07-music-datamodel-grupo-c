@@ -4,13 +4,13 @@
 >
 >>**Grupo C** - **Última modificación**: 28/03/2022
 >>
->>>[Alejandro Martín de León](alu[]@ull.edu.es)
+>>>[Alejandro Martín de León](alu0101015941@ull.edu.es)
 >>>
 >>>[Eric Dürr Sierra](alu0101027005@ull.edu.es)
 >>>
->>>[Eric Fumero Arteaga](alu[]@ull.edu.es)
+>>>[Eric Fumero Arteaga](alu0101105741@ull.edu.es)
 >>>
->>>[Jeff Pérez Frade](alu[]@ull.edu.es)
+>>>[Jeff Pérez Frade](alu0101038520@ull.edu.es)
 
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-c/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/DSI-P06-Eric-Durr-?branch=master)
 
