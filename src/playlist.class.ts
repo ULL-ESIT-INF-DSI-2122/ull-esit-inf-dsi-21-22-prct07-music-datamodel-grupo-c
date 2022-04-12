@@ -120,7 +120,7 @@ export default class Playlist {
   }
 
   public addSong(newSong: Song): void {
-    if (!this.songs.find((el) => el === newSong)) {
+    if (!this.songs.find((el) => el.name === newSong.name)) {
       this.songs.push(newSong);
       if (!this.artists.find((artist) => artist === newSong.artist)) {
         this.artists.push(newSong.artist);
