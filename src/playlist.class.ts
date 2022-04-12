@@ -74,7 +74,7 @@ export default class Playlist {
 
   get genres(): Genre[] { return this._genres; }
 
-  get artists(): string[] { return this._artists; }
+  get artists(): Artist[] { return this._artists; }
 
   get groups(): Group[] { return this._groups; }
 
