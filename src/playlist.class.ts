@@ -187,9 +187,9 @@ export default class Playlist {
             .artist,
         );
       this.songs.forEach((song) => {
-        this.addArtist(song.artist);
+        this.addArtist(new Artist(song.artist, [], [], [], [], 0));
         song.genres.forEach((genre) => {
-          this.addGenre(genre);
+          this.addGenre(new Genre(genre, []));
         });
       });
       this._albums = this.albums.filter((album) => album.name !== albumName);
