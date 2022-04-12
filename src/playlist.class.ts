@@ -66,13 +66,7 @@ export default class Playlist {
 
   get songs(): Song[] { return this._songs; }
 
-  get songsName(): string[] {
-    const names: string [] = [];
-    this.songs.forEach((song) => {
-      names.push(song.name);
-    });
-    return names;
-  }
+  get songsName(): string[] { return this.songs.map((el) => el.name); }
 
   get allSongsNames(): string[] { return this.songs.map((el) => el.name); }
 
