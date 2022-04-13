@@ -52,10 +52,10 @@ Por último se ha manejado la pestaña de `Projects` de GitHub donde se ha inclu
 
 ![Projects screenshot](./img/projects.PNG)
 
-* `Coding`: Es parecido a Pivotal Tracker o Trello donde podemos tener una lista de tareas y clasificarlas entre `Backlog`, `In progress` y `Done`.
-* `Documentation`: Realiza la misma tarea solamente que este `Project` es solamente para la documentación de los códigos.
-
 ![Coding screenshot](./img/coding-img.PNG)
+
+- `Coding`: Es parecido a Pivotal Tracker o Trello donde podemos tener una lista de tareas y clasificarlas entre `Backlog`, `In progress` y `Done`.
+- `Documentation`: Realiza la misma tarea solamente que este `Project` es solamente para la documentación de los códigos.
 
 ## Conclusiones
 
