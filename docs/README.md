@@ -34,6 +34,10 @@
 ***
 
 ## Introduccion
+---
+En esta práctica se pretende crear un entorno de trabajo en grupo, realizando un ejercicio bastante extenso para así poder definir roles entre los integrantes del grupo. En nuestro caso hicimos uso de **GitHub Issues** donde cada uno tenía asignada una tarea, se creaba una rama de trabajo nueva y cuando estuviera terminada con los *tests* pasando se realizaba una **Pull Request**. A lo largo del informe se presentan las configuraciones iniciales y las características del diseño así como las decisiones tomadas para desarrollar la lógica de implementación de cada uno de los componentes del ejercicio.
+
+La ejercicio consiste en digitalizar la colección de música de los abuelos, esto es, crear una colección de *Playlists* donde se incluirán una serie de canciones. Toda la estructura estará conformada por *interfaces* y *clases* de Artistas, Grupos, Canciones, Álbumes y Géneros musicales.
 
 ## Objetivos
 
