@@ -49,8 +49,13 @@ A parte de las actividades comunes al resto de prácticas (asignación Github Cl
 Cabe recalcar la importancia del archivo `CONTRIBUTING.md` el cual contiene toda la información para que sea posible la programación colaborativa. Aquí aparecen una serie de reglas a seguir para la *estructura de ramas*, *flujo de trabajo*, *nomenclatura de ramas*, entre otras.
 
 Por último se ha manejado la pestaña de `Projects` de GitHub donde se ha incluido `Coding` y `Documentation`.
+
+![Projects screenshot](./img/projects.PNG)
+
 * `Coding`: Es parecido a Pivotal Tracker o Trello donde podemos tener una lista de tareas y clasificarlas entre `Backlog`, `In progress` y `Done`.
 * `Documentation`: Realiza la misma tarea solamente que este `Project` es solamente para la documentación de los códigos.
+
+![Coding screenshot](./img/coding-img.PNG)
 
 ## Conclusiones
 
