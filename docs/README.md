@@ -1,4 +1,4 @@
-# PRACTICA 7 - Digitalizando la coleccion de musica de los abuelos
+# PRACTICA 7 - Digitalizando la colección de música de los abuelos
 
 >Informe para la asignatura de Desarrollo de Sistemas Informáticos
 >
@@ -16,7 +16,7 @@
 
 ***
 
-## [Enlace a la documentacion generada con TypeDoc](http://---)
+## [Enlace a la documentación generada con TypeDoc](http://---)
 
 ## Indice
 
@@ -33,14 +33,15 @@
 
 ***
 
-## Introduccion
+## Introducción
 ---
-En esta práctica se pretende crear un entorno de trabajo en grupo, realizando un ejercicio bastante extenso para así poder definir roles entre los integrantes del grupo. En nuestro caso hicimos uso de **GitHub Issues** donde cada uno tenía asignada una tarea, se creaba una rama de trabajo nueva y cuando estuviera terminada con los *tests* pasando se realizaba una **Pull Request**. A lo largo del informe se presentan las configuraciones iniciales y las características del diseño así como las decisiones tomadas para desarrollar la lógica de implementación de cada uno de los componentes del ejercicio.
+En esta práctica se pretende crear un entorno de trabajo en grupo, realizando un ejercicio bastante extenso para así poder definir roles entre los integrantes del grupo. En nuestro caso hicimos uso de las **GitHub Issues** donde cada uno tenía asignada una tarea a realizar en una nueva rama.  Cuando la rama estuviera terminada (con los *tests* pasando) se realizaba una **Pull Request** a la rama *master*. A lo largo del informe se presentan las configuraciones iniciales y las características del diseño así como las decisiones tomadas para desarrollar la lógica de implementación de cada uno de los componentes del ejercicio.
 
-La ejercicio consiste en digitalizar la colección de música de los abuelos, esto es, crear una colección de *Playlists* donde se incluirán una serie de canciones. Toda la estructura estará conformada por *interfaces* y *clases* de Artistas, Grupos, Canciones, Álbumes y Géneros musicales.
+La ejercicio consiste en digitalizar la colección de música de los abuelos, esto es, crear una colección de *Playlists* donde se incluirán una serie de canciones. Toda la estructura estará conformada por *interfaces* y *clases* de Artistas, Grupos, Canciones, Álbumes, Géneros musicales además de un Gestor que permite gestionar el tratamiento avanzado de playlists.
 
 ## Objetivos
-
+---
+El objetivo de esta práctica es la familiarizarse con la programación cooperativa, aportar puntos de vista en grupo y realizar el ejercicio uniendo las ramas realizadas por cada integrante. Se dispondrá de un entorno de desarrollo donde se implementa el ejercicio comprobado y desarrollado mediante una filosofía dirigida por pruebas/comportamiento (BDD/TDD) y cuyo cubrimiento de código se refleje en un informe. El ejercicio también debe cumplir en la medida de lo posible los principios *SOLID*.
 ## Actividades previas
 
 ## Conclusiones
