@@ -6,7 +6,8 @@
       "albums": ["Digital Tears", "Todo el Tiempo..."],
       "genres": ["R&B", "Jazz Latino"],
       "artists": ["RIMON"],
-      "groups": []
+      "groups": [],
+      "origin": "System"
     },
     {
       "name": "Metal lover",
@@ -14,7 +15,8 @@
       "albums": ["Parrhesia", "All Hail", "Dissociation"],
       "genres": ["Progressive Metal", "Metalcore", "Mathcore"],
       "artists": [],
-      "groups": ["Animals As Leaders", "Norma Jean", "The Dillinger Escape Plan"]
+      "groups": ["Animals As Leaders", "Norma Jean", "The Dillinger Escape Plan"],
+      "origin": "System"
     },
     {
       "name": "Urban Lover",
@@ -22,7 +24,8 @@
       "albums": ["EL ÚLTIMO TOUR DEL MUNDO", "VISIÓN TÚNEL"],
       "genres": ["Trap Latino", "Hip-Hop"],
       "artists": ["Bad Bunny", "Cruz Cafuné"],
-      "groups": []
+      "groups": [],
+      "origin": "System"
     }
   ]
 }

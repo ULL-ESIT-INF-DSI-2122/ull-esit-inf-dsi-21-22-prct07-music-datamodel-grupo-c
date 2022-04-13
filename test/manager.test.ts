@@ -16,22 +16,51 @@ describe('Manager class tests', () => {
         + 'Metal lover\t\tProgressive Metal, Metalcore, Mathcore\t\t0 hr 48 min 17 sec\n'
         + 'Urban Lover\t\tTrap Latino, Hip-Hop\t\t0 hr 29 min 46 sec\n',
       );
-      console.log(systemManager.preview());
-      console.log(systemManager.playlists[0].toString());
-      console.log(systemManager.playlists[1].toString());
-      console.log(systemManager.playlists[2].toString());
     });
-    it('Manager can navigate to a single playlist and show by song title', () => {
+
+    it('Manager can navigate to a single playlist and show by song title, by default asc', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Been Around The Globe');
+    });
+    it('Manager can navigate to a single playlist and show by song title reversed', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortBySongName(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Sobre Una Tumba Rumba');
     });
     it('Manager can navigate to a single playlist and show by group/artist', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortByArtistName();
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Mountain Views');
+      systemManager.playlist(0).sortByArtistName(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Cuba Linda');
     });
     it('Manager can navigate to a single playlist and show by release year', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortByAlbumRelease();
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Cuba Linda');
+      systemManager.playlist(0).sortByAlbumRelease(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Mountain Views');
     });
     it('Manager can navigate to a single playlist and show by song duration', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortBySongDuration();
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('La Primera Piedra');
+      systemManager.playlist(0).sortBySongDuration(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Feed Me');
     });
     it('Manager can navigate to a single playlist and show by genre', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortByGenre();
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Cuba Linda');
+      systemManager.playlist(0).sortByGenre(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Mountain Views');
     });
     it('Manager can navigate to a single playlist and show by total views', () => {
+      expect(systemManager.playlist(0).name).to.be.eql('RnB/Jazz Latino lover');
+      systemManager.playlist(0).sortBySongViews();
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Sobre Una Tumba Rumba');
+      systemManager.playlist(0).sortBySongViews(true);
+      expect(systemManager.playlist(0).songs[0].name).to.be.eql('Hola Soledad');
     });
   });
   describe('Manager can create playlists from scratch', () => {

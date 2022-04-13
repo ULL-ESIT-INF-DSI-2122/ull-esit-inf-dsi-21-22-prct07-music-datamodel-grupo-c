@@ -1,7 +1,6 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import Playlist from './playlist.class';
-import { sortReflections } from 'typedoc/dist/lib/utils';
 import { Song } from './song.class';
 import { Album } from './album.class';
 
@@ -29,6 +28,7 @@ interface PlaylistInterface {
   genres: string[],
   artists: string[],
   groups: string[],
+  origin: string,
 }
 
 export default class PlaylistManager {
@@ -42,6 +42,10 @@ export default class PlaylistManager {
     this._playlists.forEach((playlist, i) => {
       this.loadAlbum(playlist, serialized[i].albums);
       this.loadSongs(playlist, serialized[i].songs);
+      // this.loadGenres(playlist, serialized[i].albums);
+      // this.loadArtists(playlist, serialized[i].songs);
+      // this.loadGroups(playlist, serialized[i].songs);
+      playlist.sortBySongName();
     });
   }
 
@@ -60,10 +64,14 @@ export default class PlaylistManager {
     let output = 'NAME\t\tGENRES\t\tDURATION\n\n';
     this.playlists.forEach((playlist) => {
       output += `${playlist.name}\t\t`;
-      output += `${playlist.genres.join(', ')}\t\t`;
+      output += `${playlist.genresName.join(', ')}\t\t`;
       output += `${playlist.durationString}\n`;
     });
     return output;
+  }
+
+  public playlist(inx: number = 0): Playlist {
+    return this.playlists[inx];
   }
 
   // public createPlaylist(playlist: Playlist) {
