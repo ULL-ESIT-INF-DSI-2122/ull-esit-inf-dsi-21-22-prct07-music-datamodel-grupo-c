@@ -66,6 +66,19 @@ export default class PlaylistManager {
     return output;
   }
 
+  // public createPlaylist(playlist: Playlist) {
+  //   const newPlaylist: Playlist = new Playlist(playlist.name);
+  //   // add songs queries
+  // }
+  //
+  // public deletePlaylist(playlist: string) {
+  //   // add songs queries
+  // }
+  //
+  // public savePlaylist(playlist: string) {
+  //   // add songs queries
+  // }
+
   private deserializePlaylists(playlists: PlaylistInterface[]) {
     playlists.forEach((playlist) => {
       const systemPlaylist = new Playlist(playlist.name);
