@@ -3,7 +3,7 @@ name: Sonar-Cloud Analysis
 
 on:
   push:
-    branches: [ master,  actions-config/sonar-cloud]
+    branches: [master,  actions-config/sonar-cloud]
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -27,7 +27,7 @@ jobs:
       - name: coverage info directory
         run: mkdir coverage
       - name: Coverage ☔
-        run: npm run get:coverage > coverage/lcov.info
+        run: npm run get:coverage
       - name: SonarCloud Scan 📈
         uses: SonarSource/sonarcloud-github-action@master
         env:
