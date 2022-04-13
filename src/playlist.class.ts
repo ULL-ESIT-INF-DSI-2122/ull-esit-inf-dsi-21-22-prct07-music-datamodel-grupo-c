@@ -2,6 +2,8 @@ import * as uuid from 'uuid';
 import { Song } from './song.class';
 import { Album } from './album.class';
 import { Group } from './group.class';
+import { Genre } from './genre.class';
+import { Artist } from './artist.class';
 
 /**
  * # Playlist class.
@@ -10,20 +12,27 @@ import { Group } from './group.class';
  * ## Properties
  * - name | Playlist name.
  * - songs | Name of the songs on the playlist.
- * - duration | Duration in seconds of the playlist.
  * - hours | Hours of the playlist duration (it updates automatically).
  * - minutes | Minutes of the playlist duration.
  * - genres | Genres that appears in the playlist.
+ * - artists | Artists featured in the playlist.
+ * - groups | Groups featured in the playlist.
  *
  * ## Methods
  * - get name() | Returns Playlist name.
  * - get songs() | Returns all the songs in the playlist.
+ * - get songsName() | Returns the names (strings) of the songs in the playlist.
  * - set songs() | Set the songs on the playlist.
  * - get duration() | Returns the playlist duration in seconds.
  * - set duration(duration) | Set the duration (updates the hours and minutes automatically).
  * - get hours() | Returns the duration in hours of the playlist.
  * - get minutes() | Returns the minutes duration of the playlist.
+ * - get artists() | Returns the artists featured in the playlist (objects).
+ * - get groups() | Returns the groups featured in the playlist (objects).
+ * - get groupsName() | Returns the names (strings) of the groups featured in the playlist.
+ * - get artistsName() | Returns the names (strings) of the artists featured un the playlist.
  * - get genres() | Returns the genres on the playlist.
+ * - get genresName() | Returns the names (strings) of the genres in the playlist.
  * - set genres(genres) | Set the playlist genres.
  * - addGenre(genre) | Add a genre to the playlist.
  * - addSong(song) | Add a song to the playlist.
@@ -40,9 +49,9 @@ export default class Playlist {
 
   private _albums: Album[];
 
-  private _genres: string[];
+  private _genres: Genre[];
 
-  private _artists: string[];
+  private _artists: Artist[];
 
   private _groups: Group[];
 
@@ -64,15 +73,21 @@ export default class Playlist {
 
   get songs(): Song[] { return this._songs; }
 
+  get songsName(): string[] { return this.songs.map((el) => el.name); }
+
   get allSongsNames(): string[] { return this.songs.map((el) => el.name); }
 
   get albums(): Album[] { return this._albums; }
 
   get allAlbumNames(): string[] { return this.albums.map((el) => el.name); }
 
-  get genres(): string[] { return this._genres; }
+  get genres(): Genre[] { return this._genres; }
 
-  get artists(): string[] { return this._artists; }
+  get genresName(): string[] { return this.genres.map((el) => el.name); }
+
+  get artists(): Artist[] { return this._artists; }
+
+  get artistsName(): string[] { return this.artists.map((el) => el.name); }
 
   get groups(): Group[] { return this._groups; }
 
@@ -107,14 +122,14 @@ export default class Playlist {
 
   get length(): number { return this.songs.length; }
 
-  private addArtist(artist: string): void {
-    if (!this.artists.includes(artist)) {
+  private addArtist(artist: Artist): void {
+    if (!this.artists.find((el) => el.name === artist.name)) {
       this.artists.push(artist);
     }
   }
 
-  private addGenre(genre: string): void {
-    if (!this.genres.includes(genre)) {
+  private addGenre(genre: Genre): void {
+    if (!this.genres.find((el) => el.name === genre.name)) {
       this.genres.push(genre);
     }
   }
@@ -122,12 +137,12 @@ export default class Playlist {
   public addSong(newSong: Song): void {
     if (!this.songs.find((el) => el.name === newSong.name)) {
       this.songs.push(newSong);
-      if (!this.artists.find((artist) => artist === newSong.artist)) {
-        this.artists.push(newSong.artist);
+      if (!this.artists.find((artist) => artist.name === newSong.artist)) {
+        this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
       }
       newSong.genres.forEach((genre) => {
-        if (!this.genres.find((el) => el === genre)) {
-          this.genres.push(genre);
+        if (!this.genres.find((el) => el.name === genre)) {
+          this.genres.push(new Genre(genre, []));
         }
       });
     }
@@ -140,7 +155,7 @@ export default class Playlist {
         .find((song) => song.name === songName)
         .genres
         .forEach((genre) => {
-          this._genres = this._genres.filter((el) => el !== genre);
+          this._genres = this._genres.filter((el) => el.name !== genre);
         });
       this._songs = this.songs.filter((song) => song.name !== songName);
     }
@@ -149,7 +164,7 @@ export default class Playlist {
   public addAlbum(newAlbum: Album): void {
     if (!this.albums.find((album) => album === newAlbum)) {
       this.albums.push(newAlbum);
-      this.addArtist(newAlbum.artist);
+      this.addArtist(new Artist(newAlbum.artist, [], [], [], [], 0));
       newAlbum.songs.forEach((song) => {
         if (
           this.songs.includes(song)
@@ -174,15 +189,15 @@ export default class Playlist {
 
       this._artists = this.artists
         .filter(// @ts-ignore
-          (artist) => artist !== this
+          (artist) => artist.name !== this
             .albums
             .find((album) => album.name === albumName)
             .artist,
         );
       this.songs.forEach((song) => {
-        this.addArtist(song.artist);
+        this.addArtist(new Artist(song.artist, [], [], [], [], 0));
         song.genres.forEach((genre) => {
-          this.addGenre(genre);
+          this.addGenre(new Genre(genre, []));
         });
       });
       this._albums = this.albums.filter((album) => album.name !== albumName);
@@ -341,7 +356,7 @@ export default class Playlist {
 
   public toString(): string {
     let playListString: string = `${this.name.toUpperCase()}\n`;
-    playListString += `\t(${this.genres.join(', ')})\n`;
+    playListString += `\t(${this.genresName.join(', ')})\n`;
     playListString += `${this.length} songs | ${this.durationString}\n\n`;
     playListString += '#\tTitle\t\t\tAlbum\t\tDuration\n';
     this.songs.forEach((song, inx) => {
