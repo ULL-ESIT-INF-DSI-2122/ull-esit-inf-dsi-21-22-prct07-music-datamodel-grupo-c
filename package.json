@@ -9,7 +9,7 @@
   "scripts": {
     "test": "mocha -r ts-node/register 'test/**/*.ts'",
     "test:coverage": "nyc mocha -r ts-node/register 'test/**/*.ts'",
-    "get:coverage": "nyc report --reporter=text-lcov",
+    "get:coverage": "nyc report --reporter=lcov",
     "test:watch": "mocha --watch",
     "build": "npm test && tsc",
     "docs": " typedoc --options typedoc.json --name \"P07 - Digitalizando la coleccion de musica de los abuelos\" --includeVersion"
