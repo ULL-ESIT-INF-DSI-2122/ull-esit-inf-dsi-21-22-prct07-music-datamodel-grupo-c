@@ -26,6 +26,15 @@ export default class SongsManager {
 
   public song(inx: number = 0): Song { return this.songs[inx]; }
 
+  public preview(): string {
+    let output = 'SONG\t\tARTIST\n\n';
+    this.songs.forEach((song) => {
+      output += `${song.name}\t`;
+      output += `${song.artist}\n`;
+    });
+    return output;
+  }
+
   public createSong(song: Song) {
     if (!this._songs.find((el: Song) => el.name === song.name)) {
       const newSong: Song = new Song(song.name);
@@ -70,7 +79,14 @@ export default class SongsManager {
 
   private deserializeSongs(songs: SongInterface[]) {
     songs.forEach((song) => {
-      const systemSong = new Song(song.name);
+      const systemSong = new Song(
+        song.name,
+        song.artist,
+        song.seconds,
+        song.genres,
+        song.single,
+        song.views,
+      );
       this._songs.push(systemSong);
     });
   }

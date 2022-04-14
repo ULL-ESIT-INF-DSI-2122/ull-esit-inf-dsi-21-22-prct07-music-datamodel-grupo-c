@@ -10,9 +10,10 @@ describe('Songs Manager class tests', () => {
     it('Manager object builds with 55 system songs', () => {
       expect(systemManager.songs.length).to.be.eq(55);
     });
+    console.log(systemManager.preview());
     // it('Manager can output and list songs', () => {
     //   expect(systemManager.preview()).to.be.eql(
-    //     'Songs\t\tArtist\n\n'
+    //     'SONG\t\tARTIST\n\n'
     //     + 'Monomyth\t\tAnimals As Leaders\n'
     //     + 'Red Miso\t\tAnimals As Leaders\n'
     //     + 'Gestaltzerfall\t\tAnimals As Leaders\n'
