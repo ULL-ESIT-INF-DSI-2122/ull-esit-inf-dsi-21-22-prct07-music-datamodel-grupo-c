@@ -9,6 +9,7 @@ interface SongInterface {
   genres: string[],
   single: boolean,
   views: number,
+  origin: string,
 }
 
 export default class SongsManager {
@@ -22,6 +23,13 @@ export default class SongsManager {
   }
 
   get songs(): Song[] { return this._songs; }
+
+  public createSong(song: Song) {
+    if (!this._songs.find((el: Song) => el.name === song.name)) {
+      const newSong: Song = new Song(song.name);
+      this._songs.push(newSong);
+    }
+  }
 
   private deserializeSongs(songs: SongInterface[]) {
     songs.forEach((song) => {
