@@ -125,15 +125,34 @@ describe('Manager class tests', () => {
       );
     });
   });
-  describe('Manager can create playlists by an existing one', () => {
-    it('Playlist cant be created if name already exists', () => {});
-    it('Created playlist from scratch outputs as expected', () => {});
-    it('Created playlist allow adding songs', () => {});
-    it('Created playlist allow removing songs', () => {});
-  });
   describe('Manager can store and delete playlists', () => {
-    it('system playlists cant be deleted', () => {});
-    it('user playlist can be stored', () => {});
-    it('user playlist can be deleted', () => {});
+    const systemManager: PlaylistManager = new PlaylistManager();
+    const extendedPlaylist: Playlist = new Playlist(
+      'RnB/Jazz Latino lover V2',
+    );
+    systemManager.playlist().songs.forEach((song) => {
+      extendedPlaylist.addSong(song);
+    });
+    const ghosteame: Song = new Song(
+      'GHOSTÉAME',
+      'Cruz Cafuné',
+      183,
+      ['Hip-Hop'],
+      false,
+      2632735,
+    );
+    systemManager.createPlaylist(extendedPlaylist, [ghosteame]);
+    it('Existing playlist wont show changes in database', () => {
+      systemManager.savePlaylist(0);
+    });
+    it('user playlist can be stored', () => {
+      systemManager.savePlaylist(3);
+    });
+    it('system playlists cant be deleted', () => {
+      expect(systemManager.deletePlaylist(0)).to.be.eql(false);
+    });
+    it('user playlist can be deleted', () => {
+      expect(systemManager.deletePlaylist(3)).to.be.eql(true);
+    });
   });
 });
