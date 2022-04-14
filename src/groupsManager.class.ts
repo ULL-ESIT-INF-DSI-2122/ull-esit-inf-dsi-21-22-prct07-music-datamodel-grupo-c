@@ -41,6 +41,24 @@ export default class GroupManager {
     }
   }
 
+  public saveGroup(index: number) {
+    const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
+    const groupToSave: Group = this.group(index);
+    const serialized = groupDb.get('groups').value();
+    if (!serialized.find((el: GroupInterface) => el.name === groupToSave.name)) {
+      serialized.push({
+        name: groupToSave.name,
+        artists: groupToSave.artists,
+        year: groupToSave.year,
+        genres: groupToSave.genres,
+        albums: groupToSave.albums,
+        monthlyListeners: groupToSave.monthlyListeners,
+        origin: 'User',
+      });
+      groupDb.set('groups', serialized).write();
+    }
+  }
+
   private deserializeGroups(groups: GroupInterface[]) {
     groups.forEach((group) => {
       const systemGroup = new Group(group.name);
