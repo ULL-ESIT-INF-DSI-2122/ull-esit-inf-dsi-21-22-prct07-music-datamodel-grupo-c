@@ -34,6 +34,13 @@ export default class GroupManager {
 
   public group(index: number = 0): Group { return this.groups[index]; }
 
+  public createGroup(group: Group) {
+    if (!this._groups.find((el: Group) => el.name === group.name)) {
+      const newGroup: Group = new Group(group.name);
+      this._groups.push(newGroup);
+    }
+  }
+
   private deserializeGroups(groups: GroupInterface[]) {
     groups.forEach((group) => {
       const systemGroup = new Group(group.name);
