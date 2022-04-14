@@ -53,13 +53,6 @@ export default class PlaylistManager {
 
   set playlists(value: Playlist[]) { this._playlists = value; }
 
-  public addPlaylist(newPlaylist: Playlist): void {
-    if (this._playlists
-      .find((el) => el.name === newPlaylist.name)) {
-      this._playlists.push(newPlaylist);
-    }
-  }
-
   public preview(): string {
     let output = 'NAME\t\tGENRES\t\tDURATION\n\n';
     this.playlists.forEach((playlist) => {
@@ -74,10 +67,30 @@ export default class PlaylistManager {
     return this.playlists[inx];
   }
 
-  // public createPlaylist(playlist: Playlist) {
-  //   const newPlaylist: Playlist = new Playlist(playlist.name);
-  //   // add songs queries
-  // }
+  public createPlaylist(playlist: Playlist, songList: Song[]) {
+    if (!this._playlists.find((el: Playlist) => el.name === playlist.name)) {
+      const newPlaylist: Playlist = new Playlist(playlist.name);
+      playlist.songs.forEach((song) => {
+        newPlaylist.addSong(song);
+      });
+      playlist.albums.forEach((album) => {
+        newPlaylist.albums.push(album);
+      });
+      playlist.genres.forEach((genre) => {
+        newPlaylist.addGenre(genre);
+      });
+      playlist.artists.forEach((artist) => {
+        newPlaylist.addArtist(artist);
+      });
+      playlist.groups.forEach((group) => {
+        newPlaylist.addGroup(group);
+      });
+      songList.forEach((song) => {
+        newPlaylist.addSong(song);
+      });
+      this._playlists.push(newPlaylist);
+    }
+  }
   //
   // public deletePlaylist(playlist: string) {
   //   // add songs queries

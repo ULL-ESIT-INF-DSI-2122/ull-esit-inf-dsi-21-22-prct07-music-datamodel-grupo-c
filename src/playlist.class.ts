@@ -122,13 +122,19 @@ export default class Playlist {
 
   get length(): number { return this.songs.length; }
 
-  private addArtist(artist: Artist): void {
+  public addArtist(artist: Artist): void {
     if (!this.artists.find((el) => el.name === artist.name)) {
       this.artists.push(artist);
     }
   }
 
-  private addGenre(genre: Genre): void {
+  public addGroup(group: Group): void {
+    if (!this.groups.find((el) => el.name === group.name)) {
+      this.groups.push(group);
+    }
+  }
+
+  public addGenre(genre: Genre): void {
     if (!this.genres.find((el) => el.name === genre.name)) {
       this.genres.push(genre);
     }

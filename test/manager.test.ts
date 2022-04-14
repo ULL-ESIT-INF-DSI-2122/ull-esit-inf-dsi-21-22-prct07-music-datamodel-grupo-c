@@ -1,6 +1,8 @@
 import { describe, it } from 'mocha';
 import PlaylistManager from '../src/manager.class';
 import { expect } from 'chai';
+import Playlist from "../src/playlist.class";
+import {Song} from "../src/song.class";
 // import { expect } from 'chai';
 
 describe('Manager class tests', () => {
@@ -64,7 +66,44 @@ describe('Manager class tests', () => {
     });
   });
   describe('Manager can create playlists from scratch', () => {
-    it('Playlist cant be created if name already exists', () => {});
+    const systemManager: PlaylistManager = new PlaylistManager();
+    const existingPlaylist: Playlist = systemManager.playlist();
+    const extendedPlaylist: Playlist = new Playlist(
+      'RnB/Jazz Latino lover V2',
+    );
+    systemManager.playlist().songs.forEach((song) => {
+      extendedPlaylist.addSong(song);
+    });
+    const ghosteame: Song = new Song(
+      'GHOSTÉAME',
+      'Cruz Cafuné',
+      183,
+      ['Hip-Hop'],
+      false,
+      2632735,
+    );
+    // const playlistFromScratch: Playlist = new Playlist('RnB/Jazz Latino lover');
+    it('Playlist cant be created if name already exists', () => {
+      systemManager.createPlaylist(existingPlaylist, []);
+      expect(systemManager.playlists.length).to.be.eq(3);
+      expect(systemManager.preview()).to.be.eql(
+        'NAME\t\tGENRES\t\tDURATION\n\n'
+        + 'RnB/Jazz Latino lover\t\tR&B, Jazz Latino\t\t0 hr 35 min 4 sec\n'
+        + 'Metal lover\t\tProgressive Metal, Metalcore, Mathcore\t\t0 hr 48 min 17 sec\n'
+        + 'Urban Lover\t\tTrap Latino, Hip-Hop\t\t0 hr 29 min 46 sec\n',
+      );
+    });
+    it('Created playlist from other outputs as expected', () => {
+      systemManager.createPlaylist(extendedPlaylist, [ghosteame]);
+      expect(systemManager.playlists.length).to.be.eq(4);
+      expect(systemManager.preview()).to.be.eql(
+        'NAME\t\tGENRES\t\tDURATION\n\n'
+        + 'RnB/Jazz Latino lover\t\tR&B, Jazz Latino\t\t0 hr 35 min 4 sec\n'
+        + 'Metal lover\t\tProgressive Metal, Metalcore, Mathcore\t\t0 hr 48 min 17 sec\n'
+        + 'Urban Lover\t\tTrap Latino, Hip-Hop\t\t0 hr 29 min 46 sec\n'
+        + 'RnB/Jazz Latino lover V2\t\tR&B, Jazz Latino, Hip-Hop\t\t0 hr 38 min 7 sec\n',
+      );
+    });
     it('Created playlist from scratch outputs as expected', () => {});
     it('Created playlist allow adding songs', () => {});
     it('Created playlist allow removing songs', () => {});
