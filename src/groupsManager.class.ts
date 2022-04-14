@@ -19,5 +19,13 @@ export default class GroupManager {
     this._groups = [];
     const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
     const serialized = groupDb.get('groups').value();
+    this.deserializeGroups(serialized);
+  }
+
+  private deserializeGroups(groups: GroupInterface[]) {
+    groups.forEach((group) => {
+      const systemGroup = new Group(group.name);
+      this._groups.push(systemGroup);
+    });
   }
 }
