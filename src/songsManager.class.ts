@@ -10,3 +10,23 @@ interface SongInterface {
   single: boolean,
   views: number,
 }
+
+export default class SongsManager {
+  private _songs: Song[];
+
+  constructor() {
+    this._songs = [];
+    const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+    const serialized = songsDb.get('songs').value();
+    this.deserializeSongs(serialized);
+  }
+
+  get songs(): Song[] { return this._songs; }
+
+  private deserializeSongs(songs: SongInterface[]) {
+    songs.forEach((song) => {
+      const systemSong = new Song(song.name);
+      this._songs.push(systemSong);
+    });
+  }
+}
