@@ -35,5 +35,9 @@ describe('Artists Manager class tests', () => {
       systemManager.createArtist(newArtist);
       expect(systemManager.artists.length).to.be.eql(7);
     });
+    it('Manager can not create existing artist', () => {
+      systemManager.createArtist(newArtist);
+      expect(systemManager.artists.length).to.be.eql(7);
+    });
   });
 });
