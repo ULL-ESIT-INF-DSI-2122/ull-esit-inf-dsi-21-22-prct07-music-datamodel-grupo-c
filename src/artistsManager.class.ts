@@ -36,6 +36,8 @@ export default class ArtistsManager {
     return output;
   }
 
+  public artist(inx: number = 0): Artist { return this.artists[inx]; }
+
   public createArtist(artist: Artist) {
     if (!this._artists.find((el: Artist) => el.name === artist.name)) {
       const newArtist: Artist = new Artist(
@@ -48,6 +50,10 @@ export default class ArtistsManager {
       );
       this._artists.push(newArtist);
     }
+  }
+
+  public updateArtist(inx: number, artist: Artist) {
+    this._artists[inx] = artist;
   }
 
   private deserializeArtists(artists: ArtistInterface[]) {

@@ -10,9 +10,8 @@ describe('Artists Manager class tests', () => {
     [''],
     ['Rap'],
     ['Recovery'],
-    ['Not Afraid', 'Love The Way You Lie', 'Seduction'],
+    ['Not Afraid', 'Love The Way You Lie'],
     52673522,
-
   );
   describe('Artists Manager starts with system default artists', () => {
     it('Artits manager can output and list artists', () => {
@@ -30,7 +29,7 @@ describe('Artists Manager class tests', () => {
       );
     });
   });
-  describe('Manager can operate through artists objects', () => {
+  describe('Artist Manager can operate through artists objects', () => {
     it('Manager can create new artist', () => {
       systemManager.createArtist(newArtist);
       expect(systemManager.artists.length).to.be.eql(7);
@@ -38,6 +37,18 @@ describe('Artists Manager class tests', () => {
     it('Manager can not create existing artist', () => {
       systemManager.createArtist(newArtist);
       expect(systemManager.artists.length).to.be.eql(7);
+    });
+    it('Manager can update an existing artist', () => {
+      const updatedArtist: Artist = new Artist(
+        'Eminem',
+        [''],
+        ['Rap'],
+        ['Recovery'],
+        ['Not Afraid', 'Love The Way You Lie', 'Seduction'],
+        52673522,
+      );
+      systemManager.updateArtist(6, updatedArtist);
+      expect(systemManager.artist(6).songs).to.be.eql(['Not Afraid', 'Love The Way You Lie', 'Seduction']);
     });
   });
 });
