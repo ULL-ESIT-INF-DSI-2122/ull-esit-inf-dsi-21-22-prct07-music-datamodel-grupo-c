@@ -40,26 +40,24 @@ describe('Group Manager class tests', () => {
     });
     it('Manager can update existing genre', () => {
       const updatedGroup: Group = new Group(
-        'The Rolling Stones',
+        'The Beatles',
         [],
         1990,
         ['Punk Rock'],
-        ['Aftermath'],
+        ['Abbey Road'],
         999999,
       );
-      systemManager.updateGroup(11, updatedGroup);
-      expect(systemManager.genre(11).name).to.be.eq('LO-FI');
+      systemManager.updateGroup(6, updatedGroup);
+      expect(systemManager.group(6).name).to.be.eq('The Beatles');
     });
-    it('Manager can save genre in database', () => {
-      systemManager.saveGenre(11);
+    it('Manager can save group in database', () => {
+      systemManager.saveGroup(6);
     });
-    it('Manager cant delete system genre from database', () => {
-      expect(systemManager.deleteGenre(1)).to.be.false;
+    it('Manager cant delete system Group from database', () => {
+      expect(systemManager.deleteGroup(1)).to.be.false;
     });
-    it('Manager can delete user genre from database', () => {
-      expect(systemManager.deleteGenre(11)).to.be.true;
+    it('Manager can delete user Group from database', () => {
+      expect(systemManager.deleteGroup(6)).to.be.true;
     });
   });
-
-
 });

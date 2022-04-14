@@ -2,46 +2,76 @@
   "groups": [
     {
       "name": "Animals As Leaders",
-      "artists": [""],
+      "artists": [
+        ""
+      ],
       "year": 2007,
-      "genres": ["Progressive Metal"],
-      "albums": ["Parrhesia"],
+      "genres": [
+        "Progressive Metal"
+      ],
+      "albums": [
+        "Parrhesia"
+      ],
       "monthlyListeners": 426947,
       "origin": "System"
     },
     {
       "name": "Norma Jean",
-      "artists": [""],
+      "artists": [
+        ""
+      ],
       "year": 1997,
-      "genres": ["Metalcore"],
-      "albums": ["All Hail"],
+      "genres": [
+        "Metalcore"
+      ],
+      "albums": [
+        "All Hail"
+      ],
       "monthlyListeners": 169607,
       "origin": "System"
     },
     {
       "name": "Artic Monkeys",
-      "artists": [""],
+      "artists": [
+        ""
+      ],
       "year": 2002,
-      "genres": ["Indie"],
-      "albums": ["Favourite Worst Nightmare"],
+      "genres": [
+        "Indie"
+      ],
+      "albums": [
+        "Favourite Worst Nightmare"
+      ],
       "monthlyListeners": 25329651,
       "origin": "System"
     },
     {
       "name": "Billy Talent",
-      "artists": [""],
+      "artists": [
+        ""
+      ],
       "year": 1993,
-      "genres": ["Punk Rock"],
-      "albums": ["Crisis Of Faith"],
+      "genres": [
+        "Punk Rock"
+      ],
+      "albums": [
+        "Crisis Of Faith"
+      ],
       "monthlyListeners": 2729095,
       "origin": "System"
     },
     {
       "name": "The Dillinger Escape Plan",
-      "artists": [""],
+      "artists": [
+        ""
+      ],
       "year": 1997,
-      "genres": ["Mathcore"],
-      "albums": ["Dissociation"],
+      "genres": [
+        "Mathcore"
+      ],
+      "albums": [
+        "Dissociation"
+      ],
       "monthlyListeners": 222786,
       "origin": "System"
     }
