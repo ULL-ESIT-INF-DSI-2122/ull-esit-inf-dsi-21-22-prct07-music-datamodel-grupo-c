@@ -5,7 +5,7 @@ import { Song } from '../src/song.class';
 
 describe('Songs Manager class tests', () => {
   const systemManager: SongsManager = new SongsManager();
-  // const newSong: Song = new Song('Lo-Fi');
+  const newSong: Song = new Song('Lo-Fi');
   describe('Manager starts with system default songs', () => {
     it('Manager object builds with 55 system songs', () => {
       expect(systemManager.songs.length).to.be.eq(55);
@@ -26,5 +26,12 @@ describe('Songs Manager class tests', () => {
     //     + 'Been Around The Globe\t\tRIMON\n'
     //     + 'Feed Me\t\t\n',
     //   );
+  });
+
+  describe('Songs Manager can operate through songs objects', () => {
+    it('Songs Manager can create new song', () => {
+      systemManager.createSong(newSong);
+      expect(systemManager.songs.length).to.be.eq(56);
+    });
   });
 });
