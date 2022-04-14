@@ -122,20 +122,26 @@ export default class Playlist {
 
   get length(): number { return this.songs.length; }
 
-  private addArtist(artist: Artist): void {
+  public addArtist(artist: Artist): void {
     if (!this.artists.find((el) => el.name === artist.name)) {
       this.artists.push(artist);
     }
   }
 
-  private addGenre(genre: Genre): void {
+  public addGroup(group: Group): void {
+    if (!this.groups.find((el) => el.name === group.name)) {
+      this.groups.push(group);
+    }
+  }
+
+  public addGenre(genre: Genre): void {
     if (!this.genres.find((el) => el.name === genre.name)) {
       this.genres.push(genre);
     }
   }
 
   public addSong(newSong: Song): void {
-    if (!this.songs.find((el) => el === newSong)) {
+    if (!this.songs.find((el) => el.name === newSong.name)) {
       this.songs.push(newSong);
       if (!this.artists.find((artist) => artist.name === newSong.artist)) {
         this.artists.push(new Artist(newSong.artist, [], [], [], [], 0));
@@ -280,6 +286,41 @@ export default class Playlist {
           const a = songA.views;
           const b = songB.views;
           return a - b;
+        })
+        .reverse();
+  }
+
+  public sortByArtistName(reverse: boolean = false): void {
+    this._songs = !reverse
+      ? this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.artist === undefined
+            ? ''
+            // @ts-ignore
+            : songA.artist;
+          const b = songB.artist === undefined
+            ? ''
+            // @ts-ignore
+            : songB.artist;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
+        })
+      : this._songs
+        .sort((songA: Song, songB: Song) => {
+          const a = songA.artist === undefined
+            ? ''
+            // @ts-ignore
+            : songA.artist;
+          const b = songB.artist === undefined
+            ? ''
+            // @ts-ignore
+            : songB.artist;
+
+          if (a < b) { return -1; }
+          if (a > b) { return 1; }
+          return 0;
         })
         .reverse();
   }

@@ -2,27 +2,97 @@
   "playlists": [
     {
       "name": "RnB/Jazz Latino lover",
-      "songs": ["Been Around The Globe", "Feed Me", "iClout", "Digital Tears", "Mountain Views", "Hola Soledad", "Cuba Linda", "Sobre Una Tumba Rumba", "La Primera Piedra", "La Palma De Coco"],
-      "albums": ["Digital Tears", "Todo el Tiempo..."],
-      "genres": ["R&B", "Jazz Latino"],
-      "artists": ["RIMON"],
-      "groups": []
+      "songs": [
+        "Been Around The Globe",
+        "Feed Me",
+        "iClout",
+        "Digital Tears",
+        "Mountain Views",
+        "Hola Soledad",
+        "Cuba Linda",
+        "Sobre Una Tumba Rumba",
+        "La Primera Piedra",
+        "La Palma De Coco"
+      ],
+      "albums": [
+        "Digital Tears",
+        "Todo el Tiempo..."
+      ],
+      "genres": [
+        "R&B",
+        "Jazz Latino"
+      ],
+      "artists": [
+        "RIMON"
+      ],
+      "groups": [],
+      "origin": "System"
     },
     {
       "name": "Metal lover",
-      "songs": ["Monomyth", "Red Miso", "Gestaltzerfall", "Asahi", "The Problem Of Other Minds", "Orphan Twin", "[Mind over Mind]", "Safety Last", "Volunteer Tooth Filing", "Landslide Defeater", "Limerent Death", "Symptom of Terminal Illness", "Wanting Not so Much to as To", "Fugue", "Low Feels Blvd"],
-      "albums": ["Parrhesia", "All Hail", "Dissociation"],
-      "genres": ["Progressive Metal", "Metalcore", "Mathcore"],
+      "songs": [
+        "Monomyth",
+        "Red Miso",
+        "Gestaltzerfall",
+        "Asahi",
+        "The Problem Of Other Minds",
+        "Orphan Twin",
+        "[Mind over Mind]",
+        "Safety Last",
+        "Volunteer Tooth Filing",
+        "Landslide Defeater",
+        "Limerent Death",
+        "Symptom of Terminal Illness",
+        "Wanting Not so Much to as To",
+        "Fugue",
+        "Low Feels Blvd"
+      ],
+      "albums": [
+        "Parrhesia",
+        "All Hail",
+        "Dissociation"
+      ],
+      "genres": [
+        "Progressive Metal",
+        "Metalcore",
+        "Mathcore"
+      ],
       "artists": [],
-      "groups": ["Animals As Leaders", "Norma Jean", "The Dillinger Escape Plan"]
+      "groups": [
+        "Animals As Leaders",
+        "Norma Jean",
+        "The Dillinger Escape Plan"
+      ],
+      "origin": "System"
     },
     {
       "name": "Urban Lover",
-      "songs": ["EL MUNDO ES MÍO", "TE MUDASTE", "HOY COBRÉ", "MALDITA POBREZA", "LA NOCHE DE ANOCHE", "VISIÓN TÚNEL", "GHOSTÉAME", "CARTIER DE MADERA", "STONE ISLAND", "TLC"],
-      "albums": ["EL ÚLTIMO TOUR DEL MUNDO", "VISIÓN TÚNEL"],
-      "genres": ["Trap Latino"],
-      "artists": ["Bad Bunny", "Cruz Cafuné"],
-      "groups": []
+      "songs": [
+        "EL MUNDO ES MÍO",
+        "TE MUDASTE",
+        "HOY COBRÉ",
+        "MALDITA POBREZA",
+        "LA NOCHE DE ANOCHE",
+        "VISIÓN TÚNEL",
+        "GHOSTÉAME",
+        "CARTIER DE MADERA",
+        "STONE ISLAND",
+        "TLC"
+      ],
+      "albums": [
+        "EL ÚLTIMO TOUR DEL MUNDO",
+        "VISIÓN TÚNEL"
+      ],
+      "genres": [
+        "Trap Latino",
+        "Hip-Hop"
+      ],
+      "artists": [
+        "Bad Bunny",
+        "Cruz Cafuné"
+      ],
+      "groups": [],
+      "origin": "System"
     }
   ]
 }
