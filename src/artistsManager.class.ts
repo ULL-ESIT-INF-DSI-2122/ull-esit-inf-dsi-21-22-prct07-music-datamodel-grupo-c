@@ -36,6 +36,20 @@ export default class ArtistsManager {
     return output;
   }
 
+  public createArtist(artist: Artist) {
+    if (!this._artists.find((el: Artist) => el.name === artist.name)) {
+      const newArtist: Artist = new Artist(
+        artist.name,
+        artist.groups,
+        artist.genres,
+        artist.albums,
+        artist.songs,
+        artist.listeners,
+      );
+      this._artists.push(newArtist);
+    }
+  }
+
   private deserializeArtists(artists: ArtistInterface[]) {
     artists.forEach((artist) => {
       const systemArtists = new Artist(
