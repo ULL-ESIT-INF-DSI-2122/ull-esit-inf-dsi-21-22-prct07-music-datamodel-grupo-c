@@ -55,6 +55,19 @@ export default class SongsManager {
     }
   }
 
+  public deleteSong(inx: number): boolean {
+    const songDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+    const songToDelete: Song = this.song(inx);
+    let serialized = songDb.get('songs').value();
+    if (serialized.find((el: SongInterface) => el.name === songToDelete.name)
+      && serialized.find((el: SongInterface) => el.name === songToDelete.name).origin === 'User') {
+      serialized = serialized.filter((el: SongInterface) => el.name !== songToDelete.name);
+      songDb.set('songs', serialized).write();
+      return true;
+    }
+    return false;
+  }
+
   private deserializeSongs(songs: SongInterface[]) {
     songs.forEach((song) => {
       const systemSong = new Song(song.name);

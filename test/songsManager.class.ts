@@ -45,5 +45,11 @@ describe('Songs Manager class tests', () => {
     it('Manager can save songs in database', () => {
       systemManager.saveSong(55);
     });
+    it('Manager can not delete system song from database', () => {
+      expect(systemManager.deleteSong(1)).to.be.false;
+    });
+    it('Manager can delete user song from database', () => {
+      expect(systemManager.deleteSong(55)).to.be.true;
+    });
   });
 });
