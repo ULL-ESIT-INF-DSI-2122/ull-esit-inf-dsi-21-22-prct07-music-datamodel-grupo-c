@@ -49,6 +49,23 @@ export default class AlbumsManager {
 
   public updateAlbum(index: number, album: Album) { this._albums[index] = album; }
 
+  public saveAlbum(index: number) {
+    const albumDb: lowdb.LowdbSync <AlbumInterface> = lowdb(new FileSync('database/database-albums.json'));
+    const albumToSave: Album = this.album(index);
+    const serialized = albumDb.get('albums').value();
+    if (!serialized.find((el: AlbumInterface) => el.name === albumToSave.name)) {
+      serialized.push({
+        name: albumToSave.name,
+        artists: albumToSave.artist,
+        year: albumToSave.year,
+        genres: albumToSave.genres,
+        songs: albumToSave.songs,
+        origin: 'User',
+      });
+      albumDb.set('albums', serialized).write();
+    }
+  }
+
   private deserializeAlbums(albums: AlbumInterface[]) {
     albums.forEach((album) => {
       const systemAlbum = new Album(
