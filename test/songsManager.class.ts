@@ -33,5 +33,9 @@ describe('Songs Manager class tests', () => {
       systemManager.createSong(newSong);
       expect(systemManager.songs.length).to.be.eq(56);
     });
+    it('Manager can not create existing song', () => {
+      systemManager.createSong(newSong);
+      expect(systemManager.songs.length).to.be.eq(56);
+    });
   });
 });
