@@ -22,6 +22,12 @@ export default class GroupManager {
     this.deserializeGroups(serialized);
   }
 
+  get groups(): Group[] { return this._groups; }
+
+
+
+  public group(index: number = 0): Group { return this.groups[index]; }
+
   private deserializeGroups(groups: GroupInterface[]) {
     groups.forEach((group) => {
       const systemGroup = new Group(group.name);
