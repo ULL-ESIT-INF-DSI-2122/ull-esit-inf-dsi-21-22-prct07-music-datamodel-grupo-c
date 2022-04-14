@@ -66,6 +66,19 @@ export default class AlbumsManager {
     }
   }
 
+  public deleteAlbum(index: number): boolean {
+    const albumDb: lowdb.LowdbSync <AlbumInterface> = lowdb(new FileSync('database/database-albums.json'));
+    const albumToDelete: Album = this.album(index);
+    let serialized = albumDb.get('albums').value();
+    if (serialized.find((el: AlbumInterface) => el.name === albumToDelete.name)
+    && serialized.find((el: AlbumInterface) => el.name === albumToDelete.name).origin === 'User') {
+      serialized = serialized.filter((el: AlbumInterface) => el.name !== albumToDelete.name);
+      albumDb.set('albums', serialized).write();
+      return true;
+    }
+    return false;
+  }
+
   private deserializeAlbums(albums: AlbumInterface[]) {
     albums.forEach((album) => {
       const systemAlbum = new Album(
