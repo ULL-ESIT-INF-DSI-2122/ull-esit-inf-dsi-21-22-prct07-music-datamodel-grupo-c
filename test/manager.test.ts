@@ -1,6 +1,6 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import PlaylistManager from '../src/manager.class';
+import PlaylistManager from '../src/playlitsManager.class';
 import Playlist from '../src/playlist.class';
 import { Song } from '../src/song.class';
 

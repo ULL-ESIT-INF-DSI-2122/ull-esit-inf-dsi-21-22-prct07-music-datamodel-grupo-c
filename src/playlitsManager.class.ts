@@ -67,7 +67,6 @@ export default class PlaylistManager {
     return this.playlists[inx];
   }
 
-
   public createPlaylist(playlist: Playlist, songList: Song[]) {
     if (!this._playlists.find((el: Playlist) => el.name === playlist.name)) {
       const newPlaylist: Playlist = new Playlist(playlist.name);
@@ -92,6 +91,7 @@ export default class PlaylistManager {
       this._playlists.push(newPlaylist);
     }
   }
+
   public savePlaylist(inx: number) {
     const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
     const playlistToSave: Playlist = this.playlist(inx);
@@ -116,13 +116,12 @@ export default class PlaylistManager {
     let serialized = playlistDb.get('playlists').value();
     if (serialized.find((el: PlaylistInterface) => el.name === playlistToDelete.name)
       && serialized.find((el: PlaylistInterface) => el.name === playlistToDelete.name).origin === 'User') {
-      serialized = serialized.filter((el: PlaylistInterface) => el.name !== playlistToDelete.name)
+      serialized = serialized.filter((el: PlaylistInterface) => el.name !== playlistToDelete.name);
       playlistDb.set('playlists', serialized).write();
       return true;
     }
     return false;
   }
-
 
   private deserializePlaylists(playlists: PlaylistInterface[]) {
     playlists.forEach((playlist) => {
