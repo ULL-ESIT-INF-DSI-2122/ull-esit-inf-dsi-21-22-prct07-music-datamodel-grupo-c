@@ -42,5 +42,8 @@ describe('Songs Manager class tests', () => {
       systemManager.updateSong(55, updatedGenre);
       expect(systemManager.song(55).name).to.be.eq('Nonstop');
     });
+    it('Manager can save songs in database', () => {
+      systemManager.saveSong(55);
+    });
   });
 });
