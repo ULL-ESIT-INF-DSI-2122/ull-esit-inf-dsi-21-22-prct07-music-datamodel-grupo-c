@@ -6,7 +6,8 @@
             "genres": ["Trap Latino"],
             "albums": ["EL ÚLTIMO TOUR DEL MUNDO"],
             "songs": ["EL MUNDO ES MÍO", "TE MUDASTE", "HOY COBRÉ", "MALDITA POBREZA", "LA NOCHE DE ANOCHE"],
-            "listeners": 47800001
+            "listeners": 47800001,
+            "origin": "System"
         },
         {
             "name": "RIMON",
@@ -14,7 +15,8 @@
             "genres": ["R&B"],
             "albums": ["Digital Tears"],
             "songs": ["Been Around The Globe", "Feed Me", "iClout", "Digital Tears", "Mountain Views"],
-            "listeners": 398666
+            "listeners": 398666,
+            "origin": "System"
         },
         {
             "name": "Cruz Cafuné",
@@ -22,7 +24,8 @@
             "genres": ["Hip-Hop"],
             "albums": ["VISIÓN TÚNEL"],
             "songs": ["VISIÓN TÚNEL", "GHOSTÉAME", "CARTIER DE MADERA", "STONE ISLAND", "TLC"],
-            "listeners": 778803
+            "listeners": 778803,
+            "origin": "System"
         },
         {
             "name": "Wax Doctor",
@@ -30,7 +33,8 @@
             "genres": ["Drum n Bass"],
             "albums": ["Selected Works 94-96"],
             "songs": ["Atmospheric Funk", "All I Need", "Step", "Spectrum", "Finer Things"],
-            "listeners": 30153
+            "listeners": 30153,
+            "origin": "System"
         },
         {
             "name": "Rolando Laserie",
@@ -38,7 +42,8 @@
             "genres": ["Jazz Latino"],
             "albums": ["Todo el Tiempo..."],
             "songs": ["Hola Soledad", "Cuba Linda", "Sobre Una Tumba Rumba", "La Primera Piedra", "La Palma De Coco"],
-            "listeners": 261460
+            "listeners": 261460,
+            "origin": "System"
         },
         {
             "name": "Daddy Yankee",
@@ -46,7 +51,8 @@
             "genres": ["Reggaeton"],
             "albums": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
             "songs": ["Adictiva", "MÉTELE AL PERREO", "Sal y Perrea (Remix)", "EL PONY", "Don Don (Remix)"],
-            "listeners": 43090002
+            "listeners": 43090002,
+            "origin": "System"
         }
     ]
 }
