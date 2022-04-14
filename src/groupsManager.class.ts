@@ -59,6 +59,19 @@ export default class GroupManager {
     }
   }
 
+  public deleteGroup(index: number): boolean {
+    const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
+    const groupToDelete: Group = this.group(index);
+    let serialized = groupDb.get('groups').value();
+    if (serialized.find((el: GroupInterface) => el.name === groupToDelete.name)
+    && serialized.find((el: GroupInterface) => el.name === groupToDelete.name).origin === 'User') {
+      serialized = serialized.filter((el: GroupInterface) => el.name !== groupToDelete.name);
+      groupDb.set('groups', serialized).write();
+      return true;
+    }
+    return false;
+  }
+
   private deserializeGroups(groups: GroupInterface[]) {
     groups.forEach((group) => {
       const systemGroup = new Group(group.name);
