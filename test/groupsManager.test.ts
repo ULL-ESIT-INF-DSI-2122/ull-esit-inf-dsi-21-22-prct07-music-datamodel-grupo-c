@@ -38,7 +38,7 @@ describe('Group Manager class tests', () => {
       systemManager.createGroup(newGroup);
       expect(systemManager.groups.length).to.be.eq(6);
     });
-    it('Manager can update existing genre', () => {
+    it('Manager can update existing group', () => {
       const updatedGroup: Group = new Group(
         'The Beatles',
         [],
