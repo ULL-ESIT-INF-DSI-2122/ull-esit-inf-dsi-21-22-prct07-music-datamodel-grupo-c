@@ -31,7 +31,40 @@ inquirer
     }
 
     if (answers.userChoice === 'Search a playlist') {
-      console.log('*Search a playlist and sort*');
+      inquirer
+        .prompt([
+          {
+            type: 'list',
+            name: 'sortMethod',
+            message: 'Choose a sorting method',
+            choices: [
+              'Sort by song title',
+              'Sort by artist/group name',
+              'Sort by year',
+              'Sort by song duration',
+              'Sort by genre',
+              'Sort by number of views',
+            ],
+          },
+        ])
+        .then((sortAnswers) => {
+          if (sortAnswers.sortMethod === 'Sort by song title') {
+            inquirer.prompt([
+              {
+                type: 'list',
+                name: 'ascDesc',
+                message: 'Ascending or Descending order?',
+                choices: [
+                  'Ascending',
+                  'Descending',
+                ],
+              },
+            ])
+              .then((ascDescAnswer) => {
+                console.log(ascDescAnswer);
+              });
+          }
+        });
     }
 
     if (answers.userChoice === 'Create a new playlist') {
