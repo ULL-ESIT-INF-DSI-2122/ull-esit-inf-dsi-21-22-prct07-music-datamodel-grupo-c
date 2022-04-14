@@ -32,6 +32,21 @@ export default class AlbumsManager {
     return output;
   }
 
+  public album(index: number = 0): Album { return this.albums[index]; }
+
+  public createAlbum(album: Album) {
+    if (!this._albums.find((el: Album) => el.name === album.name)) {
+      const newAlbum: Album = new Album(
+        album.name,
+        album.artist,
+        album.year,
+        album.genres,
+        album.songs,
+      );
+      this._albums.push(newAlbum);
+    }
+  }
+
   private deserializeAlbums(albums: AlbumInterface[]) {
     albums.forEach((album) => {
       const systemAlbum = new Album(
