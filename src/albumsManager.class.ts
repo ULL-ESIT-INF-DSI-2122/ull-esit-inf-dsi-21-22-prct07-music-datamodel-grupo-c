@@ -47,6 +47,8 @@ export default class AlbumsManager {
     }
   }
 
+  public updateAlbum(index: number, album: Album) { this._albums[index] = album; }
+
   private deserializeAlbums(albums: AlbumInterface[]) {
     albums.forEach((album) => {
       const systemAlbum = new Album(
