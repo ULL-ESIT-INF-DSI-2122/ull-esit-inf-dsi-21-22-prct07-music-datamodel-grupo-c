@@ -10,7 +10,7 @@
     "test": "mocha -r ts-node/register 'test/**/*.ts'",
     "test:coverage": "nyc mocha -r ts-node/register 'test/**/*.ts'",
     "get:coverage": "nyc report --reporter=text-lcov",
-    "test:watch": "mocha --watch",
+    "test:watch": "mocha ts-node/register 'test/**/*.ts' --watch",
     "build": "npm test && tsc",
     "docs": " typedoc --options typedoc.json --name \"P07 - Digitalizando la coleccion de musica de los abuelos\" --includeVersion",
     "main": "tsc-watch --onSuccess \"node dist/main.js\""
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "inquirer": "^8.2.2",
-    "lowdb": "^3.0.0",
+    "lowdb": "^1.0.0",
     "readline-sync": "^1.4.10",
     "surge": "^0.23.1",
     "typescript": "^4.6.3",
