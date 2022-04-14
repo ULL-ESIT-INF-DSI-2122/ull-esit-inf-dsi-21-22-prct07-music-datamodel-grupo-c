@@ -12,7 +12,7 @@ interface GroupInterface {
   origin: string[],
 }
 
-export default class GroupManager {
+export default class GroupsManager {
   private _groups: Group[];
 
   constructor() {
@@ -27,7 +27,7 @@ export default class GroupManager {
   public preview(): string {
     let output = 'GROUPS\n\n';
     this.groups.forEach((group) => {
-      output += `${group.name}`;
+      output += `${group.name}\n`;
     });
     return output;
   }
@@ -40,6 +40,8 @@ export default class GroupManager {
       this._groups.push(newGroup);
     }
   }
+
+  public updateGroup(index: number, group: Group) { this._groups[index] = group; }
 
   public saveGroup(index: number) {
     const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
