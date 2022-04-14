@@ -73,6 +73,19 @@ export default class ArtistsManager {
     }
   }
 
+  public deleteArtist(inx: number): boolean {
+    const artistDb: lowdb.LowdbSync <ArtistInterface> = lowdb(new FileSync('database/database-artists.json'));
+    const artistToDelete: Artist = this.artist(inx);
+    let serialized = artistDb.get('artists').value();
+    if (serialized.find((el: ArtistInterface) => el.name === artistToDelete.name)
+      && serialized.find((el: ArtistInterface) => el.name === artistToDelete.name).origin === 'User') {
+      serialized = serialized.filter((el: ArtistInterface) => el.name !== artistToDelete.name);
+      artistDb.set('artists', serialized).write();
+      return true;
+    }
+    return false;
+  }
+
   private deserializeArtists(artists: ArtistInterface[]) {
     artists.forEach((artist) => {
       const systemArtists = new Artist(

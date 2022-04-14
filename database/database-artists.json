@@ -129,24 +129,6 @@
       ],
       "listeners": 43090002,
       "origin": "System"
-    },
-    {
-      "name": "Eminem",
-      "groups": [
-        ""
-      ],
-      "genres": [
-        "Rap"
-      ],
-      "albums": [
-        "Recovery"
-      ],
-      "songs": [
-        "Not Afraid",
-        "Love The Way You Lie",
-        "Seduction"
-      ],
-      "origin": "User"
     }
   ]
 }

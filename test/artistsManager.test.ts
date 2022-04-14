@@ -53,5 +53,11 @@ describe('Artists Manager class tests', () => {
     it('Manager can save artist in database', () => {
       systemManager.saveArtist(6);
     });
+    it('Manager can not delete system artist from database', () => {
+      expect(systemManager.deleteArtist(1)).to.be.false;
+    });
+    it('Manager can delete user artist from database', () => {
+      expect(systemManager.deleteArtist(6)).to.be.true;
+    });
   });
 });
