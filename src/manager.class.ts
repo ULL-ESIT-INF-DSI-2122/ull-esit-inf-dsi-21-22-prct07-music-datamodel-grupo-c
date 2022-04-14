@@ -91,14 +91,14 @@ export default class PlaylistManager {
       this._playlists.push(newPlaylist);
     }
   }
+  // public savePlaylist(playlist: string) {
+  //   // add songs queries
+  // }
   //
   // public deletePlaylist(playlist: string) {
   //   // add songs queries
   // }
   //
-  // public savePlaylist(playlist: string) {
-  //   // add songs queries
-  // }
 
   private deserializePlaylists(playlists: PlaylistInterface[]) {
     playlists.forEach((playlist) => {

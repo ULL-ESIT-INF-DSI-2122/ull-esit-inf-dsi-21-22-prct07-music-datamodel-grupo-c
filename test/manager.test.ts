@@ -1,9 +1,8 @@
 import { describe, it } from 'mocha';
-import PlaylistManager from '../src/manager.class';
 import { expect } from 'chai';
-import Playlist from "../src/playlist.class";
-import {Song} from "../src/song.class";
-// import { expect } from 'chai';
+import PlaylistManager from '../src/manager.class';
+import Playlist from '../src/playlist.class';
+import { Song } from '../src/song.class';
 
 describe('Manager class tests', () => {
   describe('Manager starts with system default playlists', () => {
@@ -82,7 +81,7 @@ describe('Manager class tests', () => {
       false,
       2632735,
     );
-    // const playlistFromScratch: Playlist = new Playlist('RnB/Jazz Latino lover');
+    const playlistFromScratch: Playlist = new Playlist('My favourite songs');
     it('Playlist cant be created if name already exists', () => {
       systemManager.createPlaylist(existingPlaylist, []);
       expect(systemManager.playlists.length).to.be.eq(3);
@@ -104,9 +103,27 @@ describe('Manager class tests', () => {
         + 'RnB/Jazz Latino lover V2\t\tR&B, Jazz Latino, Hip-Hop\t\t0 hr 38 min 7 sec\n',
       );
     });
-    it('Created playlist from scratch outputs as expected', () => {});
-    it('Created playlist allow adding songs', () => {});
-    it('Created playlist allow removing songs', () => {});
+    it('Created playlist from scratch outputs as expected', () => {
+      systemManager.createPlaylist(existingPlaylist, []);
+      expect(systemManager.playlists.length).to.be.eq(4);
+      expect(systemManager.preview()).to.be.eql(
+        'NAME\t\tGENRES\t\tDURATION\n\n'
+        + 'RnB/Jazz Latino lover\t\tR&B, Jazz Latino\t\t0 hr 35 min 4 sec\n'
+        + 'Metal lover\t\tProgressive Metal, Metalcore, Mathcore\t\t0 hr 48 min 17 sec\n'
+        + 'Urban Lover\t\tTrap Latino, Hip-Hop\t\t0 hr 29 min 46 sec\n'
+        + 'RnB/Jazz Latino lover V2\t\tR&B, Jazz Latino, Hip-Hop\t\t0 hr 38 min 7 sec\n',
+      );
+      systemManager.createPlaylist(playlistFromScratch, []);
+      expect(systemManager.playlists.length).to.be.eq(5);
+      expect(systemManager.preview()).to.be.eql(
+        'NAME\t\tGENRES\t\tDURATION\n\n'
+        + 'RnB/Jazz Latino lover\t\tR&B, Jazz Latino\t\t0 hr 35 min 4 sec\n'
+        + 'Metal lover\t\tProgressive Metal, Metalcore, Mathcore\t\t0 hr 48 min 17 sec\n'
+        + 'Urban Lover\t\tTrap Latino, Hip-Hop\t\t0 hr 29 min 46 sec\n'
+        + 'RnB/Jazz Latino lover V2\t\tR&B, Jazz Latino, Hip-Hop\t\t0 hr 38 min 7 sec\n'
+        + 'My favourite songs\t\t\t\t0 hr 0 min 0 sec\n',
+      );
+    });
   });
   describe('Manager can create playlists by an existing one', () => {
     it('Playlist cant be created if name already exists', () => {});
