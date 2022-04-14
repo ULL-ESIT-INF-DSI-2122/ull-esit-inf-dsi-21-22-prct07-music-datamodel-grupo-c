@@ -56,6 +56,23 @@ export default class ArtistsManager {
     this._artists[inx] = artist;
   }
 
+  public saveArtist(inx: number) {
+    const artistDb: lowdb.LowdbSync <ArtistInterface> = lowdb(new FileSync('database/database-artists.json'));
+    const artistToSave: Artist = this.artist(inx);
+    const serialized = artistDb.get('artists').value();
+    if (!serialized.find((el: ArtistInterface) => el.name === artistToSave.name)) {
+      serialized.push({
+        name: artistToSave.name,
+        groups: artistToSave.groups,
+        genres: artistToSave.genres,
+        albums: artistToSave.albums,
+        songs: artistToSave.songs,
+        origin: 'User',
+      });
+      artistDb.set('artists', serialized).write();
+    }
+  }
+
   private deserializeArtists(artists: ArtistInterface[]) {
     artists.forEach((artist) => {
       const systemArtists = new Artist(

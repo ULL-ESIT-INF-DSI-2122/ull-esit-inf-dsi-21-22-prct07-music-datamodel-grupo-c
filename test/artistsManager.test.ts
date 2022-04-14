@@ -50,5 +50,8 @@ describe('Artists Manager class tests', () => {
       systemManager.updateArtist(6, updatedArtist);
       expect(systemManager.artist(6).songs).to.be.eql(['Not Afraid', 'Love The Way You Lie', 'Seduction']);
     });
+    it('Manager can save artist in database', () => {
+      systemManager.saveArtist(6);
+    });
   });
 });
