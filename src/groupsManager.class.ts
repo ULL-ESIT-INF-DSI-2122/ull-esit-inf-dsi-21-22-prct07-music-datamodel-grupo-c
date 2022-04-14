@@ -24,7 +24,13 @@ export default class GroupManager {
 
   get groups(): Group[] { return this._groups; }
 
-
+  public preview(): string {
+    let output = 'GROUPS\n\n';
+    this.groups.forEach((group) => {
+      output += `${group.name}`;
+    });
+    return output;
+  }
 
   public group(index: number = 0): Group { return this.groups[index]; }
 
