@@ -93,7 +93,7 @@ export default class Playlist {
 
   get allGroupNames(): string[] { return this.groups.map((el) => el.name); }
 
-  // Duration
+  // Duration test
   get seconds(): number {
     return this._songs.length === 0
       ? 0
