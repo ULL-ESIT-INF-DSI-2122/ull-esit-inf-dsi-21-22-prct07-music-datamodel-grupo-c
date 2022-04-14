@@ -1,7 +1,7 @@
-import lowdb from "lowdb";
-import FileSync from "lowdb/adapters/FileSync";
-import { Album } from "./album.class";
-import { Song } from "./song.class";
+import lowdb from 'lowdb';
+import FileSync from 'lowdb/adapters/FileSync';
+import { Album } from './album.class';
+import { Song } from './song.class';
 
 interface AlbumInterface {
   name: string;
