@@ -22,6 +22,16 @@ export default class AlbumsManager {
     this.deserializeAlbums(serialized);
   }
 
+  get albums(): Album[] { return this._albums; }
+
+  public preview(): string {
+    let output = 'ALBUMS\n\n';
+    this.albums.forEach((album) => {
+      output += `${album.name}\n`;
+    });
+    return output;
+  }
+
   private deserializeAlbums(albums: AlbumInterface[]) {
     albums.forEach((album) => {
       const systemAlbum = new Album(
