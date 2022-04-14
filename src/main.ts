@@ -1,9 +1,5 @@
 import inquirer = require('inquirer');
 
-function exit() {
-  console.log('Exit');
-}
-
 function run() {
   inquirer
     .prompt([
@@ -45,7 +41,7 @@ function run() {
           break;
         }
         case 'Exit': {
-          exit();
+          process.exit();
           break;
         }
 
@@ -66,7 +62,7 @@ function run() {
           if (ContinueAnswer.exitConfirm) {
             run();
           } else {
-            exit();
+            process.exit();
           }
         });
     });
