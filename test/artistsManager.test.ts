@@ -1,15 +1,25 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import ArtistsManager from '../src/artistsManager.class';
+import { Artist } from '../src/artist.class';
 
 describe('Artists Manager class tests', () => {
+  const systemManager: ArtistsManager = new ArtistsManager();
+  const newArtist: Artist = new Artist(
+    'Eminem',
+    [''],
+    ['Rap'],
+    ['Recovery'],
+    ['Not Afraid', 'Love The Way You Lie', 'Seduction'],
+    52673522,
+
+  );
   describe('Artists Manager starts with system default artists', () => {
-    const artistManager: ArtistsManager = new ArtistsManager();
     it('Artits manager can output and list artists', () => {
-      expect(artistManager.artists.length).to.be.eql(6);
+      expect(systemManager.artists.length).to.be.eql(6);
     });
     it('Artits manager can output and list artists', () => {
-      expect(artistManager.preview()).to.be.eql(
+      expect(systemManager.preview()).to.be.eql(
         'NAME\t\tGENRES\t\tLISTENERS\n\n'
         + 'Bad Bunny\t\tTrap Latino\t\t47800001\n'
         + 'RIMON\t\tR&B\t\t398666\n'
@@ -18,6 +28,12 @@ describe('Artists Manager class tests', () => {
         + 'Rolando Laserie\t\tJazz Latino\t\t261460\n'
         + 'Daddy Yankee\t\tReggaeton\t\t43090002\n',
       );
+    });
+  });
+  describe('Manager can operate through artists objects', () => {
+    it('Manager can create new artist', () => {
+      systemManager.createArtist(newArtist);
+      expect(systemManager.artists.length).to.be.eql(7);
     });
   });
 });
