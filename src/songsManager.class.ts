@@ -1,16 +1,7 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Song } from './song.class';
-
-export interface SongInterface {
-  name: string,
-  artist: string,
-  seconds: number,
-  genres: string[],
-  single: boolean,
-  views: number,
-  origin: string,
-}
+import { SongInterface } from './database.interfaces';
 
 export class SongsManager {
   private _songs: Song[];

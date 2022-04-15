@@ -3,33 +3,7 @@ import FileSync from 'lowdb/adapters/FileSync';
 import Playlist from './playlist.class';
 import { Song } from './song.class';
 import { Album } from './album.class';
-
-interface SongInterface {
-  name: string,
-  artist: string,
-  seconds: number,
-  genres: string[],
-  single: boolean,
-  views: number,
-}
-
-interface AlbumInterface {
-  name: string,
-  artist: string,
-  year: number,
-  genres: string[],
-  songs: string[],
-}
-
-interface PlaylistInterface {
-  name: string,
-  songs: string[],
-  albums: string[],
-  genres: string[],
-  artists: string[],
-  groups: string[],
-  origin: string,
-}
+import { AlbumInterface, SongInterface, PlaylistInterface } from './database.interfaces';
 
 export default class PlaylistManager {
   private _playlists: Playlist[];
@@ -130,7 +104,7 @@ export default class PlaylistManager {
     });
   }
 
-  private deserializeSongs(songs: SongInterface[], songsNames: string[]): Song[] {
+  private deserializeSongs(songs: SongInterface[], songsNames: string[]): Song[] { // eslint-disable-line
     const playlistSongs: Song[] = [];
     songs.forEach((song) => {
       if (songsNames.includes(song.name)) {

@@ -1,5 +1,5 @@
 import inquirer = require('inquirer');
-import { songMenu } from './song.menu';
+import { songMenu } from './song.menu'; // eslint-disable-line
 
 export function run() {
   inquirer
