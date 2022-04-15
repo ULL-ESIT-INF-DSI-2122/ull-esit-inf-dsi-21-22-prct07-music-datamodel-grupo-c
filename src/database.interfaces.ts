@@ -33,6 +33,7 @@ interface SongInterface {
   genres: string[],
   single: boolean,
   views: number,
+  origin: string,
 }
 
 interface AlbumInterface {

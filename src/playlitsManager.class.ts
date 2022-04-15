@@ -104,7 +104,7 @@ export default class PlaylistManager {
     });
   }
 
-  private deserializeSongs(songs: SongInterface[], songsNames: string[]): Song[] {
+  private deserializeSongs(songs: SongInterface[], songsNames: string[]): Song[] { // eslint-disable-line
     const playlistSongs: Song[] = [];
     songs.forEach((song) => {
       if (songsNames.includes(song.name)) {
