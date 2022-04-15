@@ -413,7 +413,7 @@ export function playlistMenu() {
                               });
                               playlistDb.set('playlists', serialized).write();
                               playlistManager = new PlaylistManager();
-                              console.log(`Added ${queryAnswer.addOneSong} to ${answerSearch.playlistSearch} successfully`)
+                              console.log(`Added ${queryAnswer.addOneSong} to ${answerSearch.playlistSearch} successfully`);
                               playlistMenu();
                               playlistDb.set('playlists', serialized).write();
                             }

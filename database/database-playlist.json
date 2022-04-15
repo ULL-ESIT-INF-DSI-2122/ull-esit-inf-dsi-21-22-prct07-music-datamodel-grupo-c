@@ -45,7 +45,8 @@
         "Symptom of Terminal Illness",
         "Wanting Not so Much to as To",
         "Fugue",
-        "Low Feels Blvd"
+        "Low Feels Blvd",
+        "TLC"
       ],
       "albums": [
         "Parrhesia",
@@ -68,18 +69,16 @@
     {
       "name": "Urban Lover",
       "songs": [
-        "EL MUNDO ES MÍO",
-        "TE MUDASTE",
-        "HOY COBRÉ",
-        "MALDITA POBREZA",
-        "LA NOCHE DE ANOCHE",
-        "VISIÓN TÚNEL",
-        "GHOSTÉAME",
         "CARTIER DE MADERA",
+        "EL MUNDO ES MÍO",
+        "GHOSTÉAME",
+        "HOY COBRÉ",
+        "LA NOCHE DE ANOCHE",
+        "MALDITA POBREZA",
         "STONE ISLAND",
+        "TE MUDASTE",
         "TLC",
-        "Mountain Views",
-        "Safety Last"
+        "VISIÓN TÚNEL"
       ],
       "albums": [
         "EL ÚLTIMO TOUR DEL MUNDO",
@@ -94,7 +93,7 @@
         "Cruz Cafuné"
       ],
       "groups": [],
-      "origin": "System"
+      "origin": "User"
     }
   ]
 }

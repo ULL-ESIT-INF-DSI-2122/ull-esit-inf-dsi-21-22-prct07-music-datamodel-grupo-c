@@ -3,7 +3,7 @@ interface GenreInterface {
   artists: string[],
   songs: string[],
   albums: string[],
-  origin: string[],
+  origin: string,
 }
 
 interface ArtistInterface {
@@ -23,7 +23,7 @@ interface GroupInterface {
   genres: string[],
   albums: string[];
   monthlyListeners: number,
-  origin: string[],
+  origin: string,
 }
 
 interface SongInterface {
@@ -42,6 +42,7 @@ interface AlbumInterface {
   year: number,
   genres: string[],
   songs: string[],
+  origin: string,
 }
 
 interface PlaylistInterface {

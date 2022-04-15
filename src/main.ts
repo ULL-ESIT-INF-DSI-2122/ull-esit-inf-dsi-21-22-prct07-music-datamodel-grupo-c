@@ -1,6 +1,10 @@
 import inquirer = require('inquirer');
+import { genreMenu } from './genre.menu'; // eslint-disable-line
 import { songMenu } from './song.menu'; // eslint-disable-line
 import { playlistMenu } from './playlist.menu';
+import { albumMenu } from './album.menu'; // eslint-disable-line
+import { groupMenu } from './group.menu'; // eslint-disable-line
+import { artistsMenu } from './artists.menu'; // eslint-disable-line
 
 export function run() {
   inquirer
@@ -11,6 +15,7 @@ export function run() {
         message: 'What do you want to do?',
         choices: [
           'Artists',
+          'Genres',
           'Groups',
           'Songs',
           'Albums',
@@ -23,11 +28,15 @@ export function run() {
     .then((answers) => {
       switch (answers.index) {
         case 'Artists': {
-          console.log('Artists');
+          artistsMenu();
+          break;
+        }
+        case 'Genres': {
+          genreMenu();
           break;
         }
         case 'Groups': {
-          console.log('Groups');
+          groupMenu();
           break;
         }
         case 'Songs': {
@@ -35,7 +44,7 @@ export function run() {
           break;
         }
         case 'Albums': {
-          console.log('Albums');
+          albumMenu();
           break;
         }
         case 'Playlists': {

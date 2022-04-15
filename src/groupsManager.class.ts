@@ -81,6 +81,67 @@ export default class GroupsManager {
     return output;
   }
 
+  public groupSongs(inx: number): string[] {
+    const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+    const serialized = songsDb.get('songs').value();
+    return serialized
+      .filter((song: SongInterface) => song.artist === this.group(inx).name)
+      .map((song: SongInterface) => song.name);
+  }
+
+  public viewGroupSongs(inx: number, desc: boolean = false): string {
+    let output = `${this.group(inx).name} songs:\n`;
+
+    if (desc) {
+      this.groupSongs(inx)
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        }).reverse()
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    } else {
+      this.groupSongs(inx)
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        })
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    }
+    return output;
+  }
+
+  public viewGroupSongsbyListeners(inx: number, desc: boolean = false): string {
+    const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+    const serialized = songsDb.get('songs').value();
+    let output = `${this.group(inx).name} songs:\n`;
+
+    if (desc) {
+      serialized
+        .filter((el: SongInterface) => el.artist === this.groups[inx].name)
+        .sort((a: SongInterface, b: SongInterface) => a.views - b.views)
+        .map((el: SongInterface) => el.name)
+        .reverse()
+        .forEach((song: string) => {
+          output += `${song}\n`;
+        });
+    } else {
+      serialized
+        .filter((el: SongInterface) => el.artist === this.groups[inx].name)
+        .sort((a: SongInterface, b: SongInterface) => a.views - b.views)
+        .map((el: SongInterface) => el.name)
+        .forEach((song: string) => {
+          output += `${song}\n`;
+        });
+    }
+    return output;
+  }
+
   public groupPlaylists(inx: number): string[] {
     const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
     const serialized = playlistDb.get('playlists').value();
@@ -99,8 +160,8 @@ export default class GroupsManager {
           if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
           return 0;
         }).reverse()
-        .forEach((song) => {
-          output += `${song}\n`;
+        .forEach((playlist) => {
+          output += `${playlist}\n`;
         });
     } else {
       this.groupPlaylists(inx)
@@ -109,8 +170,8 @@ export default class GroupsManager {
           if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
           return 0;
         })
-        .forEach((song) => {
-          output += `${song}\n`;
+        .forEach((playlist) => {
+          output += `${playlist}\n`;
         });
     }
     return output;
@@ -120,17 +181,40 @@ export default class GroupsManager {
 
   public createGroup(group: Group) {
     if (!this._groups.find((el: Group) => el.name === group.name)) {
-      const newGroup: Group = new Group(group.name);
+      const newGroup: Group = new Group(
+        group.name,
+        group.artists,
+        group.year,
+        group.genres,
+        group.albums,
+        group.monthlyListeners,
+      );
       this._groups.push(newGroup);
     }
   }
 
   public updateGroup(index: number, group: Group) { this._groups[index] = group; }
 
-  public saveGroup(index: number) {
+  public saveGroup(index: number, force: boolean = false) {
     const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
     const groupToSave: Group = this.group(index);
-    const serialized = groupDb.get('groups').value();
+    let serialized = groupDb.get('groups').value();
+    if (force) {
+      serialized = serialized.map((group: GroupInterface) => {
+        if (group.name === groupToSave.name) {
+          return {
+            name: groupToSave.name,
+            artists: groupToSave.artists,
+            year: groupToSave.year,
+            genres: groupToSave.genres,
+            albums: groupToSave.albums,
+            monthlyListeners: groupToSave.monthlyListeners,
+            origin: 'User',
+          };
+        }
+        return group;
+      });
+    }
     if (!serialized.find((el: GroupInterface) => el.name === groupToSave.name)) {
       serialized.push({
         name: groupToSave.name,
@@ -141,8 +225,8 @@ export default class GroupsManager {
         monthlyListeners: groupToSave.monthlyListeners,
         origin: 'User',
       });
-      groupDb.set('groups', serialized).write();
     }
+    groupDb.set('groups', serialized).write();
   }
 
   public deleteGroup(index: number): boolean {
