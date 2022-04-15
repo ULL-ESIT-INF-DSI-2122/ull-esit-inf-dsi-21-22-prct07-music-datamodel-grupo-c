@@ -42,6 +42,7 @@ interface AlbumInterface {
   year: number,
   genres: string[],
   songs: string[],
+  origin: string,
 }
 
 interface PlaylistInterface {

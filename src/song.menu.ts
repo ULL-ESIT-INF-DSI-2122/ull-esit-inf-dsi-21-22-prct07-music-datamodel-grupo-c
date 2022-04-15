@@ -97,7 +97,6 @@ export function songMenu() {
               );
               songsManager.createSong(newSong);
               songArray.push(newSong);
-              console.log(newSong);
               songMenu();
             });
           break;
@@ -131,7 +130,6 @@ export function songMenu() {
                 const inx: number = songsManager.songs
                   .map((song) => song.name)
                   .indexOf(editSongAnswer.songEdit);
-                console.log(inx);
                 songsManager.saveSong(inx);
                 songMenu();
               }
@@ -280,6 +278,10 @@ export function songMenu() {
                   songMenu();
                 }
               });
+          } else {
+            console.clear();
+            console.log('No user song in database, System albums are prohibited');
+            songMenu();
           }
           break;
         }

@@ -41,21 +41,36 @@ export default class AlbumsManager {
 
   public updateAlbum(index: number, album: Album) { this._albums[index] = album; }
 
-  public saveAlbum(index: number) {
+  public saveAlbum(index: number, force: boolean = false) {
     const albumDb: lowdb.LowdbSync <AlbumInterface> = lowdb(new FileSync('database/database-albums.json'));
     const albumToSave: Album = this.album(index);
-    const serialized = albumDb.get('albums').value();
+    let serialized = albumDb.get('albums').value();
+    if (force) {
+      serialized = serialized.map((album: AlbumInterface) => {
+        if (album.name === albumToSave.name) {
+          return {
+            name: albumToSave.name,
+            artist: albumToSave.artist,
+            year: albumToSave.year,
+            genres: albumToSave.genres,
+            songs: albumToSave.songs.map((el) => el.name),
+            origin: 'User',
+          };
+        }
+        return album;
+      });
+    }
     if (!serialized.find((el: AlbumInterface) => el.name === albumToSave.name)) {
       serialized.push({
         name: albumToSave.name,
         artists: albumToSave.artist,
         year: albumToSave.year,
         genres: albumToSave.genres,
-        songs: albumToSave.songs,
+        songs: albumToSave.songs.map((el) => el.name),
         origin: 'User',
       });
-      albumDb.set('albums', serialized).write();
     }
+    albumDb.set('albums', serialized).write();
   }
 
   public deleteAlbum(index: number): boolean {
