@@ -5,6 +5,9 @@ import Playlist from './playlist.class';
 import { run } from './main'; // eslint-disable-line
 import PlaylistManager from './playlitsManager.class';
 import { PlaylistInterface } from './database.interfaces';
+import SongsManager from './songsManager.class';
+import { SongInterface } from './database.interfaces';
+import { Song } from './song.class';
 
 export const playlistManager: PlaylistManager = new PlaylistManager();
 
@@ -385,9 +388,37 @@ export function playlistMenu() {
                       // case 'Add Song to a playlist': {
                       //   break;
                       // }
-                      // case 'Delete Song from a playlist': {
-                      //   break;
-                      // }
+                      case 'Delete Song from a playlist': {
+                        const inx: number = playlistManager.playlists
+                          .map((playlist) => playlist.name)
+                          .indexOf(answerSearch.playlistSearch);
+                        const songOptions = playlistManager.playlist(inx).allSongsNames;
+                        inquirer
+                          .prompt([
+                            {
+                              type: 'list',
+                              name: 'deleteOneSong',
+                              message: 'Choose a song to delete:',
+                              choices: [
+                                ...songOptions,
+                                new inquirer.Separator(),
+                                'Go Back',
+                              ],
+                            },
+                          ])
+                          .then((deleteOneSongAnswer) => {
+                            if (deleteOneSongAnswer.deleteOneSong === 'Go back') {
+                              console.clear();
+                              playlistMenu();
+                            } else {
+                              playlistManager.playlist(inx)
+                                .removeSong(deleteOneSongAnswer.deleteOneSong);
+                              console.log(playlistManager.playlist(inx));
+                              playlistManager.savePlaylist(inx, true);
+                            }
+                          });
+                        break;
+                      }
                       case 'Go Back': {
                         playlistMenu();
                         break;
