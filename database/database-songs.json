@@ -604,17 +604,6 @@
       "single": true,
       "reproductions": 6050114,
       "origin": "System"
-    },
-    {
-      "name": "asd",
-      "artists": "asd",
-      "seconds": 456,
-      "genres": [
-        "asd"
-      ],
-      "single": true,
-      "views": 456,
-      "origin": "User"
     }
   ]
 }
