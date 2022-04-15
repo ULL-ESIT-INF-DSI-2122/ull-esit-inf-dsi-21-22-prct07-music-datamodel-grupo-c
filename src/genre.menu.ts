@@ -45,17 +45,17 @@ export function genreMenu() {
               {
                 type: 'input',
                 name: 'addArtists',
-                message: 'Type new artist:',
+                message: 'Type new artists:',
               },
               {
                 type: 'input',
                 name: 'addSongs',
-                message: 'Type new song:',
+                message: 'Type new songs:',
               },
               {
                 type: 'input',
                 name: 'addAlbums',
-                message: 'Type new genres:',
+                message: 'Type new albums:',
               },
             ])
             .then((newGenreAnswers: any) => {
@@ -67,7 +67,6 @@ export function genreMenu() {
               );
               genresManager.createGenre(newGenre);
               genreArray.push(newGenre);
-              console.log(newGenre);
               genreMenu();
             });
           break;
@@ -101,7 +100,6 @@ export function genreMenu() {
                 const inx: number = genresManager.genres
                   .map((genre) => genre.name)
                   .indexOf(editGenreAnswer.genreEdit);
-                console.log(inx);
                 genresManager.saveGenre(inx);
                 genreMenu();
               }

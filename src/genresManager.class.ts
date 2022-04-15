@@ -27,7 +27,12 @@ export default class GenresManager {
 
   public createGenre(genre: Genre) {
     if (!this._genres.find((el: Genre) => el.name === genre.name)) {
-      const newGenre: Genre = new Genre(genre.name);
+      const newGenre: Genre = new Genre(
+        genre.name,
+        genre.artists,
+        genre.songs,
+        genre.albums,
+      );
       this._genres.push(newGenre);
     }
   }
