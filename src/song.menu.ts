@@ -51,24 +51,33 @@ export function songMenu() {
                 message: 'Type new genres:',
               },
               {
-                type: 'input',
+                type: 'confirm',
                 name: 'addSingle',
-                message: 'Type new single:',
+                message: 'Is a single?:',
               },
               {
                 type: 'input',
                 name: 'addViews',
                 message: 'Type new views:',
+                validate(value) {
+                  const pass = value.match(
+                    /^[0-9]*$/,
+                  );
+                  if (pass) {
+                    return true;
+                  }
+                  return 'Please enter a valid phone number';
+                },
               },
             ])
             .then((newSongAnswers) => {
               const newSong: Song = new Song(
                 newSongAnswers.addName,
                 newSongAnswers.addArtist,
-                newSongAnswers.addSeconds,
-                newSongAnswers.addGenre,
+                Number(newSongAnswers.addSeconds),
+                [newSongAnswers.addGenres],
                 newSongAnswers.addSingle,
-                newSongAnswers.addViews,
+                Number(newSongAnswers.addViews),
               );
               songsManager.createSong(newSong);
               songArray.push(newSong);
@@ -98,6 +107,7 @@ export function songMenu() {
                 .map((song) => song.name)
                 .indexOf(saveSongAnswer.songSave);
               songsManager.saveSong(inx);
+              songMenu();
             });
           break;
         }

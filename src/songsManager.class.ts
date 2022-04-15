@@ -37,7 +37,14 @@ export class SongsManager {
 
   public createSong(song: Song) {
     if (!this._songs.find((el: Song) => el.name === song.name)) {
-      const newSong: Song = new Song(song.name);
+      const newSong: Song = new Song(
+        song.name,
+        song.artist,
+        song.seconds,
+        song.genres,
+        song.single,
+        song.views,
+      );
       this._songs.push(newSong);
     }
   }
