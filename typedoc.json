@@ -3,10 +3,10 @@
     "./src/main.ts",
     "./src/album.class.ts",
     "./src/album.menu.ts",
-    "./src/albumManager.class.ts",
+    "./src/albumsManager.class.ts",
     "./src/artist.class.ts",
-    "./src/artist.menu.ts",
-    "./src/artistManager.class.ts",
+    "./src/artists.menu.ts",
+    "./src/artistsManager.class.ts",
     "./src/database.interfaces.ts",
     "./src/genre.class.ts",
     "./src/genre.menu.ts",
@@ -21,15 +21,7 @@
     "./src/song.menu.ts",
     "./src/songsManager.class.ts",
     "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts",
-    "./src/index.ts"
+    "./src/main.ts"
   ],
   "out": "doc"
 }
