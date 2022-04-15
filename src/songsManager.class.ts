@@ -2,7 +2,7 @@ import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Song } from './song.class';
 
-interface SongInterface {
+export interface SongInterface {
   name: string,
   artist: string,
   seconds: number,
@@ -12,7 +12,7 @@ interface SongInterface {
   origin: string,
 }
 
-export default class SongsManager {
+export class SongsManager {
   private _songs: Song[];
 
   constructor() {

@@ -1,6 +1,7 @@
 import inquirer = require('inquirer');
+import { songMenu } from './song.menu';
 
-function run() {
+export function run() {
   inquirer
     .prompt([
       {
@@ -29,7 +30,7 @@ function run() {
           break;
         }
         case 'Songs': {
-          console.log('Songs');
+          songMenu();
           break;
         }
         case 'Albums': {
@@ -44,28 +45,28 @@ function run() {
           process.exit();
           break;
         }
-
         default: {
           break;
         }
       }
-      inquirer
-        .prompt([
-          {
-            type: 'confirm',
-            name: 'exitConfirm',
-            message: 'Continue?',
-            default: true,
-          },
-        ])
-        .then((ContinueAnswer) => {
-          if (ContinueAnswer.exitConfirm) {
-            run();
-          } else {
-            process.exit();
-          }
-        });
     });
+
+  // inquirer
+  //   .prompt([
+  //     {
+  //       type: 'confirm',
+  //       name: 'exitConfirm',
+  //       message: 'Continue?',
+  //       default: true,
+  //     },
+  //   ])
+  //   .then((ContinueAnswer) => {
+  //     if (ContinueAnswer.exitConfirm) {
+  //       run();
+  //     } else {
+  //       process.exit();
+  //     }
+  //   });
 }
 
 run();
