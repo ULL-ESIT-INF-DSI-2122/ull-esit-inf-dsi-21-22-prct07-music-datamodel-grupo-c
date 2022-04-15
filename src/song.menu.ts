@@ -57,7 +57,7 @@ export function songMenu() {
                   if (pass) {
                     return true;
                   }
-                  return 'Please enter a valid phone number';
+                  return 'Please enter a number';
                 },
               },
               {
@@ -81,7 +81,7 @@ export function songMenu() {
                   if (pass) {
                     return true;
                   }
-                  return 'Please enter a valid phone number';
+                  return 'Please enter a number';
                 },
               },
             ])
@@ -108,7 +108,7 @@ export function songMenu() {
             .prompt([
               {
                 type: 'list',
-                name: 'songSave',
+                name: 'songEdit',
                 message: 'Select a song to save:',
                 choices: songsManager
                   .songs
@@ -117,16 +117,99 @@ export function songMenu() {
                     .includes(song.name))
                   .map((el) => el.name),
               },
-            ]).then((saveSongAnswer) => {
+            ]).then((editSongAnswer) => {
               const inx: number = songsManager.songs
                 .map((song) => song.name)
-                .indexOf(saveSongAnswer.songSave);
+                .indexOf(editSongAnswer.songEdit);
               songsManager.saveSong(inx);
               songMenu();
             });
           break;
         }
         case 'Edit song': {
+          const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+          const serialized = songsDb.get('songs').value();
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'songEdit',
+                message: 'Select a song to Edit:',
+                choices: songsManager
+                  .songs
+                  .filter((song) => !serialized
+                    .map((el: SongInterface) => el.name)
+                    .includes(song.name))
+                  .map((el) => el.name),
+              },
+            ]).then((editSongAnswer) => {
+              const inx: number = songsManager.songs
+                .map((song) => song.name)
+                .indexOf(editSongAnswer.songEdit);
+              inquirer
+                .prompt([
+                  {
+                    type: 'input',
+                    name: 'editName',
+                    message: 'Edit name:',
+                  },
+                  {
+                    type: 'input',
+                    name: 'editArtist',
+                    message: 'Edit artist:',
+                  },
+                  {
+                    type: 'input',
+                    name: 'editSeconds',
+                    message: 'Edit seconds:',
+                    validate(value) {
+                      const pass = value.match(
+                        /^[0-9]*$/,
+                      );
+                      if (pass) {
+                        return true;
+                      }
+                      return 'Please enter a number';
+                    },
+                  },
+                  {
+                    type: 'input',
+                    name: 'editGenres',
+                    message: 'Edit genres:',
+                  },
+                  {
+                    type: 'confirm',
+                    name: 'editSingle',
+                    message: 'Is a single?:',
+                  },
+                  {
+                    type: 'input',
+                    name: 'editViews',
+                    message: 'Edit views:',
+                    validate(value) {
+                      const pass = value.match(
+                        /^[0-9]*$/,
+                      );
+                      if (pass) {
+                        return true;
+                      }
+                      return 'Please enter a number';
+                    },
+                  },
+                ])
+                .then((editSongAnswers) => {
+                  const newSong: Song = new Song(
+                    editSongAnswers.editName,
+                    editSongAnswers.editArtist,
+                    Number(editSongAnswers.editSeconds),
+                    [editSongAnswers.editGenres],
+                    editSongAnswers.editSingle,
+                    Number(editSongAnswers.editViews),
+                  );
+                  songsManager.updateSong(inx, newSong);
+                  songMenu();
+                });
+            });
           break;
         }
         case 'Delete song': {
