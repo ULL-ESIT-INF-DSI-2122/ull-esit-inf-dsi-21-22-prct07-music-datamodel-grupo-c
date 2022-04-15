@@ -132,6 +132,10 @@ export function playlistMenu() {
                                         playlistMenu();
                                         break;
                                       }
+                                      case 'Go Back': {
+                                        playlistMenu();
+                                        break;
+                                      }
                                       default: {
                                         break;
                                       }
@@ -169,6 +173,10 @@ export function playlistMenu() {
                                       case 'Desc': {
                                         playlistAux.sortBySongDuration(true);
                                         console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Go Back': {
                                         playlistMenu();
                                         break;
                                       }
@@ -212,6 +220,10 @@ export function playlistMenu() {
                                         playlistMenu();
                                         break;
                                       }
+                                      case 'Go Back': {
+                                        playlistMenu();
+                                        break;
+                                      }
                                       default: {
                                         break;
                                       }
@@ -249,6 +261,10 @@ export function playlistMenu() {
                                       case 'Desc': {
                                         playlistAux.sortByAlbumRelease(true);
                                         console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Go Back': {
                                         playlistMenu();
                                         break;
                                       }
@@ -292,6 +308,10 @@ export function playlistMenu() {
                                         playlistMenu();
                                         break;
                                       }
+                                      case 'Go Back': {
+                                        playlistMenu();
+                                        break;
+                                      }
                                       default: {
                                         break;
                                       }
@@ -332,6 +352,10 @@ export function playlistMenu() {
                                         playlistMenu();
                                         break;
                                       }
+                                      case 'Go Back': {
+                                        playlistMenu();
+                                        break;
+                                      }
                                       default: {
                                         break;
                                       }
@@ -359,9 +383,10 @@ export function playlistMenu() {
                       // case 'Delete Song from a playlist': {
                       //   break;
                       // }
-                      // case 'Go Back': {
-                      //   break;
-                      // }
+                      case 'Go Back': {
+                        playlistMenu();
+                        break;
+                      }
                       default:
                         break;
                     }
@@ -375,11 +400,75 @@ export function playlistMenu() {
           break;
         }
         case 'Save playlist': {
-          playlistMenu();
+          const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
+          const serialized = playlistDb.get('playlists').value();
+          const options = playlistManager
+            .playlists
+            .filter((playlist) => !serialized
+              .map((el: PlaylistInterface) => el.name)
+              .includes(playlist.name))
+            .map((el) => el.name);
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'playlistSave',
+                message: 'Select a playlist to save:',
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
+              },
+            ]).then((savePlaylistAnswer) => {
+              if (savePlaylistAnswer.playlistSave === 'Go Back') {
+                console.clear();
+                playlistMenu();
+              } else {
+                const inx: number = playlistManager.playlists
+                  .map((playlist) => playlist.name)
+                  .indexOf(savePlaylistAnswer.playlistSave);
+                playlistManager.savePlaylist(inx);
+                playlistMenu();
+              }
+            });
           break;
         }
         case 'Delete playlist': {
-          playlistMenu();
+          const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
+          const serialized = playlistDb.get('playlists').value();
+          const numberOfPlaylists: number = serialized.filter((playlist: PlaylistInterface) => playlist.origin === 'User').length;
+          if (numberOfPlaylists > 0) {
+            const options = serialized
+              .filter((playlist: PlaylistInterface) => playlist.origin === 'User')
+              .map((el: PlaylistInterface) => el.name);
+            inquirer
+              .prompt([
+                {
+                  type: 'list',
+                  name: 'playlistDelete',
+                  message: 'Select a song to Delete:',
+                  choices: [
+                    ...options,
+                    new inquirer.Separator(),
+                    'Go back',
+                  ],
+                },
+              ])
+              .then((deletePlaylistAnswer) => {
+                if (deletePlaylistAnswer.playlistDelete === 'Go back') {
+                  console.clear();
+                  playlistMenu();
+                } else {
+                  const inx: number = playlistManager.playlists
+                    .map((playlist) => playlist.name)
+                    .indexOf(deletePlaylistAnswer.playlistDelete);
+                  playlistManager.deletePlaylist(inx);
+                  console.clear();
+                  playlistMenu();
+                }
+              });
+          }
           break;
         }
         case 'Go Back': {
