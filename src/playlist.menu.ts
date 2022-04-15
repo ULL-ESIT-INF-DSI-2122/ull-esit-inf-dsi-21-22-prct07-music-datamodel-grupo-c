@@ -4,10 +4,12 @@ import FileSync from 'lowdb/adapters/FileSync';
 import Playlist from './playlist.class';
 import { run } from './main'; // eslint-disable-line
 import PlaylistManager from './playlitsManager.class';
-import { PlaylistInterface } from './database.interfaces';
-import { SongInterface } from './database.interfaces';
+import { PlaylistInterface, SongInterface } from './database.interfaces';
+import SongsManager from './songsManager.class';
+import { Song } from './song.class';
 
-export let playlistManager: PlaylistManager = new PlaylistManager();
+let playlistManager: PlaylistManager = new PlaylistManager();
+const songManager: SongsManager = new SongsManager();
 
 export function playlistMenu() {
   inquirer
@@ -406,6 +408,9 @@ export function playlistMenu() {
                               console.clear();
                               playlistMenu();
                             } else {
+                              const inx: number = playlistManager.playlists
+                                .map((playlist) => playlist.name)
+                                .indexOf(answerSearch.playlistSearch);
                               serialized.forEach((playlist: PlaylistInterface) => {
                                 if (playlist.name === answerSearch.playlistSearch) {
                                   playlist.songs.push(queryAnswer.addOneSong);
@@ -413,7 +418,11 @@ export function playlistMenu() {
                               });
                               playlistDb.set('playlists', serialized).write();
                               playlistManager = new PlaylistManager();
+                              const songToAdd: Song | undefined = songManager.songs.find((song) => song.name === queryAnswer.addOneSong);
                               console.log(`Added ${queryAnswer.addOneSong} to ${answerSearch.playlistSearch} successfully`);
+                              if (typeof songToAdd !== 'undefined') {
+                                playlistManager.playlist(inx).addSong(songToAdd);
+                              }
                               playlistMenu();
                               playlistDb.set('playlists', serialized).write();
                             }

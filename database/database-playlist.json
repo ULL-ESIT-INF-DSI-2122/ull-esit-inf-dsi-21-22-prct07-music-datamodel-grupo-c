@@ -4,15 +4,15 @@
       "name": "RnB/Jazz Latino lover",
       "songs": [
         "Been Around The Globe",
-        "Feed Me",
-        "iClout",
-        "Digital Tears",
-        "Mountain Views",
-        "Hola Soledad",
         "Cuba Linda",
-        "Sobre Una Tumba Rumba",
+        "Digital Tears",
+        "Feed Me",
+        "Hola Soledad",
+        "iClout",
+        "La Palma De Coco",
         "La Primera Piedra",
-        "La Palma De Coco"
+        "Mountain Views",
+        "Sobre Una Tumba Rumba"
       ],
       "albums": [
         "Digital Tears",
@@ -23,10 +23,12 @@
         "Jazz Latino"
       ],
       "artists": [
-        "RIMON"
+        "RIMON",
+        "Rolando Laserie",
+        "Animals As Leaders"
       ],
       "groups": [],
-      "origin": "System"
+      "origin": "User"
     },
     {
       "name": "Metal lover",
