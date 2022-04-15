@@ -67,7 +67,6 @@ export function genreMenu() {
               );
               genresManager.createGenre(newGenre);
               genreArray.push(newGenre);
-              console.log(newGenre);
               genreMenu();
             });
           break;
@@ -101,7 +100,6 @@ export function genreMenu() {
                 const inx: number = genresManager.genres
                   .map((genre) => genre.name)
                   .indexOf(editGenreAnswer.genreEdit);
-                console.log(inx);
                 genresManager.saveGenre(inx);
                 genreMenu();
               }

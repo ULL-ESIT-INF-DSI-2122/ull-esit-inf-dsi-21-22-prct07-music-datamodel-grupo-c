@@ -18,6 +18,9 @@ export function groupMenu() {
         message: 'Choose an action:',
         choices: [
           'List all groups',
+          'List group albums',
+          'List group songs',
+          'List group playlists',
           'Add new group',
           'Save group',
           'Edit group',
@@ -32,6 +35,228 @@ export function groupMenu() {
         case 'List all groups': {
           console.log(groupsManager.preview());
           groupMenu();
+          break;
+        }
+        case 'List group albums': {
+          const groupsDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
+          const serialized = groupsDb.get('groups').value();
+          const options = serialized
+            .map((el: GroupInterface) => el.name);
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'selection',
+                message: 'Select a group to display his albums:',
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
+              },
+            ]).then((groupOption) => {
+              if (groupOption.selection === 'Go Back') {
+                console.clear();
+                groupMenu();
+              } else {
+                inquirer
+                  .prompt([
+                    {
+                      type: 'list',
+                      name: 'displayOption',
+                      message: 'Select an option display for the albums list:',
+                      choices: [
+                        'Alphabetically (asc)',
+                        'Alphabetically (desc)',
+                        'By number release year (asc)',
+                        'By number release year (desc)',
+                        'Only singles',
+                        new inquirer.Separator(),
+                        'Go Back',
+                      ],
+                    },
+                  ]).then((albumOption) => {
+                    const inx: number = groupsManager.groups
+                      .map((group) => group.name)
+                      .indexOf(groupOption.selection);
+                    switch (albumOption.displayOption) {
+                      case 'Go Back': {
+                        console.clear();
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (asc)': {
+                        console.log(groupsManager.viewGroupAlbums(inx));
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (desc)': {
+                        console.log(groupsManager.viewGroupAlbums(inx, true));
+                        groupMenu();
+                        break;
+                      }
+                      case 'By number release year (asc)': {
+                        console.log(groupsManager.viewGroupAlbumsByRelease(inx));
+                        groupMenu();
+                        break;
+                      }
+                      case 'By number release year (desc)': {
+                        console.log(groupsManager.viewGroupAlbumsByRelease(inx, true));
+                        groupMenu();
+                        break;
+                      }
+                      default: {
+                        console.clear();
+                        groupMenu();
+                      }
+                    }
+                  });
+              }
+            });
+          break;
+        }
+        case 'List group songs': {
+          const groupsDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
+          const serialized = groupsDb.get('groups').value();
+          const options = serialized
+            .map((el: GroupInterface) => el.name);
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'selection',
+                message: 'Select a group to display his albums:',
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
+              },
+            ]).then((groupOption) => {
+              if (groupOption.selection === 'Go Back') {
+                console.clear();
+                groupMenu();
+              } else {
+                inquirer
+                  .prompt([
+                    {
+                      type: 'list',
+                      name: 'displayOption',
+                      message: 'Select an option display for the albums list:',
+                      choices: [
+                        'Alphabetically (asc)',
+                        'Alphabetically (desc)',
+                        'By number of views (asc)',
+                        'By number of views (desc)',
+                        'Only singles',
+                        new inquirer.Separator(),
+                        'Go Back',
+                      ],
+                    },
+                  ]).then((albumOption) => {
+                    const inx: number = groupsManager.groups
+                      .map((group) => group.name)
+                      .indexOf(groupOption.selection);
+                    switch (albumOption.displayOption) {
+                      case 'Go Back': {
+                        console.clear();
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (asc)': {
+                        console.log(groupsManager.viewGroupSongs(inx));
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (desc)': {
+                        console.log(groupsManager.viewGroupSongs(inx, true));
+                        groupMenu();
+                        break;
+                      }
+                      case 'By number of views (asc)': {
+                        console.log(groupsManager.viewGroupSongsbyListeners(inx));
+                        groupMenu();
+                        break;
+                      }
+                      case 'By number of views (desc)': {
+                        console.log(groupsManager.viewGroupSongsbyListeners(inx, true));
+                        groupMenu();
+                        break;
+                      }
+                      default: {
+                        console.clear();
+                        groupMenu();
+                      }
+                    }
+                  });
+              }
+            });
+          break;
+        }
+        case 'List group playlists': {
+          const groupsDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
+          const serialized = groupsDb.get('groups').value();
+          const options = serialized
+            .map((el: GroupInterface) => el.name);
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'selection',
+                message: 'Select a group to display his albums:',
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
+              },
+            ]).then((groupOption) => {
+              if (groupOption.selection === 'Go Back') {
+                console.clear();
+                groupMenu();
+              } else {
+                inquirer
+                  .prompt([
+                    {
+                      type: 'list',
+                      name: 'displayOption',
+                      message: 'Select an option display for the albums list:',
+                      choices: [
+                        'Alphabetically (asc)',
+                        'Alphabetically (desc)',
+                        'Only singles',
+                        new inquirer.Separator(),
+                        'Go Back',
+                      ],
+                    },
+                  ]).then((albumOption) => {
+                    const inx: number = groupsManager.groups
+                      .map((group) => group.name)
+                      .indexOf(groupOption.selection);
+                    switch (albumOption.displayOption) {
+                      case 'Go Back': {
+                        console.clear();
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (asc)': {
+                        console.log(groupsManager.viewGroupPlaylists(inx));
+                        groupMenu();
+                        break;
+                      }
+                      case 'Alphabetically (desc)': {
+                        console.log(groupsManager.viewGroupPlaylists(inx, true));
+                        groupMenu();
+                        break;
+                      }
+                      default: {
+                        console.clear();
+                        groupMenu();
+                      }
+                    }
+                  });
+              }
+            });
           break;
         }
         case 'Add new group': {
