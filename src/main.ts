@@ -1,4 +1,5 @@
 import inquirer = require('inquirer');
+import { genreMenu } from './genre.menu'; // eslint-disable-line
 import { songMenu } from './song.menu'; // eslint-disable-line
 import {albumMenu} from './album.menu'; // eslint-disable-line
 
@@ -11,6 +12,7 @@ export function run() {
         message: 'What do you want to do?',
         choices: [
           'Artists',
+          'Genres',
           'Groups',
           'Songs',
           'Albums',
@@ -24,6 +26,10 @@ export function run() {
       switch (answers.index) {
         case 'Artists': {
           console.log('Artists');
+          break;
+        }
+        case 'Genres': {
+          genreMenu();
           break;
         }
         case 'Groups': {
