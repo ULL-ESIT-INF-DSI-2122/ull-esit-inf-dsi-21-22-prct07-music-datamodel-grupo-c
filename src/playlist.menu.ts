@@ -36,6 +36,7 @@ export function playlistMenu() {
         case 'Search playlist': {
           const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
           const serialized = playlistDb.get('playlists').value();
+          let playlistAux;
           const options = playlistManager
             .playlists
             .filter((playlist) => serialized
@@ -117,18 +118,18 @@ export function playlistMenu() {
                                     const inx: number = playlistManager.playlists
                                       .map((playlist) => playlist.name)
                                       .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
                                     switch (nameSortAnswers.nameAscDesc) {
                                       case 'Asc': {
-                                        const playlistAux = playlistManager
-                                          .playlist(inx);
                                         playlistAux.sortBySongName(false);
                                         console.log(playlistAux.toString());
+                                        playlistMenu();
                                         break;
                                       }
                                       case 'Desc': {
-                                        const playlistAux = playlistManager.playlist(inx);
                                         playlistAux.sortBySongName(true);
                                         console.log(playlistAux.toString());
+                                        playlistMenu();
                                         break;
                                       }
                                       default: {
@@ -139,23 +140,209 @@ export function playlistMenu() {
                                 break;
                               }
                               case 'By duration': {
+                                inquirer
+                                  .prompt([
+                                    {
+                                      type: 'list',
+                                      name: 'durationAscDesc',
+                                      message: 'Asc or Desc?:',
+                                      choices: [
+                                        'Asc',
+                                        'Desc',
+                                        new inquirer.Separator(),
+                                        'Go Back',
+                                      ],
+                                    },
+                                  ])
+                                  .then((durationSortAnswers) => {
+                                    const inx: number = playlistManager.playlists
+                                      .map((playlist) => playlist.name)
+                                      .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
+                                    switch (durationSortAnswers.durationAscDesc) {
+                                      case 'Asc': {
+                                        playlistAux.sortBySongDuration(false);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Desc': {
+                                        playlistAux.sortBySongDuration(true);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      default: {
+                                        break;
+                                      }
+                                    }
+                                  });
                                 break;
                               }
-                              // case 'By artist': {
-                              //   break;
-                              // }
-                              // case 'By year': {
-                              //   break;
-                              // }
-                              // case 'By genre': {
-                              //   break;
-                              // }
-                              // case 'By number of listeners': {
-                              //   break;
-                              // }
-                              // case 'Go Back': {
-                              //   break;
-                              // }
+                              case 'By artist': {
+                                inquirer
+                                  .prompt([
+                                    {
+                                      type: 'list',
+                                      name: 'artistAscDesc',
+                                      message: 'Asc or Desc?:',
+                                      choices: [
+                                        'Asc',
+                                        'Desc',
+                                        new inquirer.Separator(),
+                                        'Go Back',
+                                      ],
+                                    },
+                                  ])
+                                  .then((artistSortAnswers) => {
+                                    const inx: number = playlistManager.playlists
+                                      .map((playlist) => playlist.name)
+                                      .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
+                                    switch (artistSortAnswers.artistAscDesc) {
+                                      case 'Asc': {
+                                        playlistAux.sortByArtistName(false);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Desc': {
+                                        playlistAux.sortByArtistName(true);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      default: {
+                                        break;
+                                      }
+                                    }
+                                  });
+                                break;
+                              }
+                              case 'By year': {
+                                inquirer
+                                  .prompt([
+                                    {
+                                      type: 'list',
+                                      name: 'yearAscDesc',
+                                      message: 'Asc or Desc?:',
+                                      choices: [
+                                        'Asc',
+                                        'Desc',
+                                        new inquirer.Separator(),
+                                        'Go Back',
+                                      ],
+                                    },
+                                  ])
+                                  .then((yearSortAnswers) => {
+                                    const inx: number = playlistManager.playlists
+                                      .map((playlist) => playlist.name)
+                                      .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
+                                    switch (yearSortAnswers.yearAscDesc) {
+                                      case 'Asc': {
+                                        playlistAux.sortByAlbumRelease(false);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Desc': {
+                                        playlistAux.sortByAlbumRelease(true);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      default: {
+                                        break;
+                                      }
+                                    }
+                                  });
+                                break;
+                              }
+                              case 'By genre': {
+                                inquirer
+                                  .prompt([
+                                    {
+                                      type: 'list',
+                                      name: 'genreAscDesc',
+                                      message: 'Asc or Desc?:',
+                                      choices: [
+                                        'Asc',
+                                        'Desc',
+                                        new inquirer.Separator(),
+                                        'Go Back',
+                                      ],
+                                    },
+                                  ])
+                                  .then((genreSortAnswers) => {
+                                    const inx: number = playlistManager.playlists
+                                      .map((playlist) => playlist.name)
+                                      .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
+                                    switch (genreSortAnswers.genreAscDesc) {
+                                      case 'Asc': {
+                                        playlistAux.sortByGenre(false);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Desc': {
+                                        playlistAux.sortByGenre(true);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      default: {
+                                        break;
+                                      }
+                                    }
+                                  });
+                                break;
+                              }
+                              case 'By number of listeners': {
+                                inquirer
+                                  .prompt([
+                                    {
+                                      type: 'list',
+                                      name: 'listenersAscDesc',
+                                      message: 'Asc or Desc?:',
+                                      choices: [
+                                        'Asc',
+                                        'Desc',
+                                        new inquirer.Separator(),
+                                        'Go Back',
+                                      ],
+                                    },
+                                  ])
+                                  .then((listenersSortAnswers) => {
+                                    const inx: number = playlistManager.playlists
+                                      .map((playlist) => playlist.name)
+                                      .indexOf(answerSearch.playlistSearch);
+                                    playlistAux = playlistManager.playlist(inx);
+                                    switch (listenersSortAnswers.listenersAscDesc) {
+                                      case 'Asc': {
+                                        playlistAux.sortBySongViews(false);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      case 'Desc': {
+                                        playlistAux.sortBySongViews(true);
+                                        console.log(playlistAux.toString());
+                                        playlistMenu();
+                                        break;
+                                      }
+                                      default: {
+                                        break;
+                                      }
+                                    }
+                                  });
+                                break;
+                              }
+                              case 'Go Back': {
+                                playlistMenu();
+                                break;
+                              }
                               default: {
                                 break;
                               }
