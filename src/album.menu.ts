@@ -74,7 +74,6 @@ export function albumMenu() {
                 [...newAlbumAnswers.addGenres.split(' ')],
               );
               albumsManager.createAlbum(newAlbum);
-              console.log(newAlbum);
               albumMenu();
             });
           break;
@@ -108,7 +107,6 @@ export function albumMenu() {
                 const inx: number = albumsManager.albums
                   .map((album) => album.name)
                   .indexOf(editAlbumAnswers.albumEdit);
-                console.log(inx);
                 albumsManager.saveAlbum(inx);
                 albumMenu();
               }
