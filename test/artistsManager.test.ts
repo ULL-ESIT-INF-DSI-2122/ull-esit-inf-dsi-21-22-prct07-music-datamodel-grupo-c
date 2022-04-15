@@ -13,10 +13,95 @@ describe('Artists Manager class tests', () => {
     ['Not Afraid', 'Love The Way You Lie'],
     52673522,
   );
-  console.log(systemManager.preview());
-  console.log(systemManager.viewArtistSongs(1));
-  console.log(systemManager.viewArtistAlbums(1));
-  console.log(systemManager.viewArtistPlaylists(1));
+  describe('Single artist songs can be sorted and outputed', () => {
+    it('Alphabetically asc', () => {
+      expect(systemManager.viewArtistSongs(0)).to.be.eql(
+        'Bad Bunny songs:\n'
+        + 'EL MUNDO ES MÍO\n'
+        + 'HOY COBRÉ\n'
+        + 'LA NOCHE DE ANOCHE\n'
+        + 'MALDITA POBREZA\n'
+        + 'TE MUDASTE\n',
+      );
+    });
+    it('Alphabetically desc', () => {
+      expect(systemManager.viewArtistSongs(0, true)).to.be.eql(
+        'Bad Bunny songs:\n'
+        + 'TE MUDASTE\n'
+        + 'MALDITA POBREZA\n'
+        + 'LA NOCHE DE ANOCHE\n'
+        + 'HOY COBRÉ\n'
+        + 'EL MUNDO ES MÍO\n',
+      );
+    });
+    it('By views asc', () => {
+      expect(systemManager.viewArtistSongsByViews(0)).to.be.eql(
+        'Bad Bunny songs:\n'
+        + 'EL MUNDO ES MÍO\n'
+        + 'MALDITA POBREZA\n'
+        + 'HOY COBRÉ\n'
+        + 'TE MUDASTE\n'
+        + 'LA NOCHE DE ANOCHE\n',
+      );
+    });
+    it('By views desc', () => {
+      expect(systemManager.viewArtistSongsByViews(0, true)).to.be.eql(
+        'Bad Bunny songs:\n'
+        + 'LA NOCHE DE ANOCHE\n'
+        + 'TE MUDASTE\n'
+        + 'HOY COBRÉ\n'
+        + 'MALDITA POBREZA\n'
+        + 'EL MUNDO ES MÍO\n',
+      );
+    });
+    it('Only singles', () => {
+      expect(systemManager.viewArtistSongsSingles(0)).to.be.eql(
+        'Bad Bunny songs:\n',
+      );
+    });
+  });
+
+  describe('Single artist albums can be sorted and outputed', () => {
+    it('Alphabetically asc', () => {
+      expect(systemManager.viewArtistAlbums(0)).to.be.eql(
+        'Bad Bunny albums:\n'
+        + 'EL ÚLTIMO TOUR DEL MUNDO\n',
+      );
+    });
+    it('Alphabetically desc', () => {
+      expect(systemManager.viewArtistAlbums(0, true)).to.be.eql(
+        'Bad Bunny albums:\n'
+        + 'EL ÚLTIMO TOUR DEL MUNDO\n',
+      );
+    });
+    it('By release year asc', () => {
+      expect(systemManager.viewArtistAlbumsByRelease(0)).to.be.eql(
+        'Bad Bunny albums:\n'
+        + 'EL ÚLTIMO TOUR DEL MUNDO\n',
+      );
+    });
+    it('By release year desc', () => {
+      expect(systemManager.viewArtistAlbumsByRelease(0, true)).to.be.eql(
+        'Bad Bunny albums:\n'
+        + 'EL ÚLTIMO TOUR DEL MUNDO\n',
+      );
+    });
+  });
+
+  describe('Single artist playlist can be sorted and outputed', () => {
+    it('Alphabetically asc', () => {
+      expect(systemManager.viewArtistPlaylists(0)).to.be.eql(
+        'Bad Bunny playlists:\n'
+        + 'Urban Lover\n',
+      );
+    });
+    it('Alphabetically desc', () => {
+      expect(systemManager.viewArtistPlaylists(0, true)).to.be.eql(
+        'Bad Bunny playlists:\n'
+        + 'Urban Lover\n',
+      );
+    });
+  });
   describe('Artists Manager starts with system default artists', () => {
     it('Artits manager can output and list artists', () => {
       expect(systemManager.artists.length).to.be.eql(6);
