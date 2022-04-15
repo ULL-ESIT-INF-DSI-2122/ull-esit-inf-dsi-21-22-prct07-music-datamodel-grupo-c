@@ -1,7 +1,12 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Artist } from './artist.class';
-import { ArtistInterface, PlaylistInterface, SongInterface, AlbumInterface } from './database.interfaces';
+import {
+  ArtistInterface,
+  PlaylistInterface,
+  SongInterface,
+  AlbumInterface,
+} from './database.interfaces';
 
 export default class ArtistsManager {
   private _artists: Artist[];
@@ -202,10 +207,26 @@ export default class ArtistsManager {
     this._artists[inx] = artist;
   }
 
-  public saveArtist(inx: number) {
+  public saveArtist(inx: number, force: boolean = true) {
     const artistDb: lowdb.LowdbSync <ArtistInterface> = lowdb(new FileSync('database/database-artists.json'));
     const artistToSave: Artist = this.artist(inx);
-    const serialized = artistDb.get('artists').value();
+    let serialized = artistDb.get('artists').value();
+    if (force) {
+      serialized = serialized.map((artist: ArtistInterface) => {
+        if (artist.name === artistToSave.name) {
+          return {
+            name: artistToSave.name,
+            groups: artistToSave.groups,
+            genres: artistToSave.genres,
+            albums: artistToSave.albums,
+            songs: artistToSave.songs,
+            listeners: artistToSave.listeners,
+            origin: 'User',
+          };
+        }
+        return artist;
+      });
+    }
     if (!serialized.find((el: ArtistInterface) => el.name === artistToSave.name)) {
       serialized.push({
         name: artistToSave.name,
