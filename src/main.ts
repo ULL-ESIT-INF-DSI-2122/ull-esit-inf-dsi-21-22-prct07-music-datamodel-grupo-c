@@ -1,6 +1,7 @@
 import inquirer = require('inquirer');
 import { genreMenu } from './genre.menu'; // eslint-disable-line
 import { songMenu } from './song.menu'; // eslint-disable-line
+import { playlistMenu } from './playlist.menu';
 import { albumMenu } from './album.menu'; // eslint-disable-line
 import { groupMenu } from './group.menu'; // eslint-disable-line
 import { artistsMenu } from './artists.menu'; // eslint-disable-line
@@ -47,7 +48,7 @@ export function run() {
           break;
         }
         case 'Playlists': {
-          console.log('Playlists');
+          playlistMenu();
           break;
         }
         case 'Exit': {
