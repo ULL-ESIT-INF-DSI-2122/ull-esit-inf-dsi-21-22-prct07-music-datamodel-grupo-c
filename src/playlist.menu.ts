@@ -8,6 +8,7 @@ import { PlaylistInterface } from './database.interfaces';
 import SongsManager from './songsManager.class';
 import { SongInterface } from './database.interfaces';
 import { Song } from './song.class';
+import {songMenu} from "./song.menu";
 
 export const playlistManager: PlaylistManager = new PlaylistManager();
 
@@ -432,6 +433,115 @@ export function playlistMenu() {
           break;
         }
         case 'Create playlist': {
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'default',
+                message: 'From scratch or from an existing one?:',
+                choices: [
+                  'Scratch',
+                  'Existing',
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
+              },
+            ]).then((modeOption) => {
+              if (modeOption.default === 'Go Back') {
+                console.clear();
+                playlistMenu();
+              } else {
+                if (modeOption.default === 'Scratch') {
+                  inquirer
+                    .prompt([
+                      {
+                        type: 'input',
+                        name: 'addName',
+                        message: 'Pick a name for your playlist:',
+                        validate(value) {
+                          const pass = !playlistManager
+                            .playlists
+                            .map((p) => p.name).includes(value) && value !== '';
+                          if (pass) {
+                            return true;
+                          }
+                          return 'Please enter valid name, no duplicate playlists allowed and no empty names';
+                        },
+                      },
+                    ])
+                    .then((queryAnswers) => {
+                      const newPlaylist: Playlist = new Playlist(
+                        queryAnswers.addName,
+                      );
+                      playlistManager.createPlaylist(newPlaylist, []);
+                      console.clear();
+                      console.log(`Playlist ${queryAnswers.addName} created, its time to fill it with songs`);
+                      playlistMenu();
+                    });
+                }
+                if (modeOption.default === 'Existing') {
+                  const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
+                  const serialized = playlistDb.get('playlists').value();
+                  const options = serialized.map((el: PlaylistInterface) => el.name);
+                  inquirer
+                    .prompt([
+                      {
+                        type: 'input',
+                        name: 'addName',
+                        message: 'Pick a name for your playlist:',
+                        validate(value) {
+                          const pass = !playlistManager
+                            .playlists
+                            .map((p) => p.name).includes(value) && value !== '';
+                          if (pass) {
+                            return true;
+                          }
+                          return 'Please enter valid name, no duplicate playlists allowed and no empty names';
+                        },
+                      },
+                      {
+                        type: 'list',
+                        name: 'parentPlaylist',
+                        message: 'Select a playlist to copy:',
+                        choices: [
+                          ...options,
+                        ],
+                      },
+                    ])
+                    .then((queryAnswers) => {
+                      const inx: number = playlistManager.playlists
+                        .map((playlist) => playlist.name)
+                        .indexOf(queryAnswers.parentPlaylist);
+                      const newPlaylist: Playlist = new Playlist(
+                        queryAnswers.addName,
+                      );
+                      playlistManager.playlist(inx).songs.forEach((song) => {
+                        newPlaylist.addSong(song);
+                      });
+
+                      playlistManager.playlist(inx).albums.forEach((album) => {
+                        newPlaylist.addAlbum(album);
+                      });
+
+                      playlistManager.playlist(inx).genres.forEach((genre) => {
+                        newPlaylist.addGenre(genre);
+                      });
+
+                      playlistManager.playlist(inx).artists.forEach((artist) => {
+                        newPlaylist.addArtist(artist);
+                      });
+
+                      playlistManager.playlist(inx).groups.forEach((group) => {
+                        newPlaylist.addGroup(group);
+                      });
+                      playlistManager.createPlaylist(newPlaylist, []);
+                      console.clear();
+                      console.log(`Playlist ${queryAnswers.addName} created, its time to fill it with songs`);
+                      playlistMenu();
+                    });
+                }
+              }
+            });
           break;
         }
         case 'Save playlist': {
