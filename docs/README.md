@@ -198,6 +198,10 @@ Como se puede observar en el caso anterior, se puede ver como han sido reflejado
 
 Finalmente, se comprueba el uso del comando Delete. Como ya se ha realizado con otros, al seleccionar la opcion **Delete Song**, se mostrará un listado de las canciones que se permite borrar por el usuario. Una vez seleccionada, se puede observar como la canción ha desaparecido de la base de datos. 
 
+El resto de opciones a utilizar en esencia son bastante similares. Sin embargo, esto cambia con el tratamiento de PLAYLISTS. Sobre ella se han volcado muchas mas opciones, donde destacan las de ordenación de contenidos de playlists o la de editar, eliminar u otras operaciones del estilo.
+
+
+
 ## Conclusiones
 ***
 Como futuras mejoras en la practica se podría utilizar un índice para distinguir las canciones en vez de los nombres para poder distinguir cuando una canción se modifica.
