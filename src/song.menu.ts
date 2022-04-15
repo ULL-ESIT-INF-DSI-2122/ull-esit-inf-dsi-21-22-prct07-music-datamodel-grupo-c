@@ -215,19 +215,28 @@ export function songMenu() {
         case 'Delete song': {
           const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
           const serialized = songsDb.get('songs').value();
-          inquirer
-            .prompt([
-              {
-                type: 'list',
-                name: 'songDelete',
-                message: 'Select a song to Delete:',
-                choices: serialized.map,
-              },
-            ])
-            .then((deleteAnswer) => {
-              console.log(deleteAnswer);
-              songMenu();
-            });
+          const numberOfUserSongs: number = serialized.filter((song: any) => song.origin === 'User').length;
+          console.log(numberOfUserSongs);
+          if (numberOfUserSongs > 0) {
+            inquirer
+              .prompt([
+                {
+                  type: 'list',
+                  name: 'songDelete',
+                  message: 'Select a song to Delete:',
+                  choices:
+                    serialized
+                      .filter((song: any) => song.origin === 'User'),
+                },
+              ])
+              .then((deleteSongAnswer) => {
+                const inx: number = songsManager.songs
+                  .map((song) => song.name)
+                  .indexOf(deleteSongAnswer.songDelete);
+                songsManager.deleteSong(inx);
+                songMenu();
+              });
+          }
           break;
         }
         case 'Go Back': {
