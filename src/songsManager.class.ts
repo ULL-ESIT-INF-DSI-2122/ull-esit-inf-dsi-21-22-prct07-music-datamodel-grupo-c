@@ -3,7 +3,7 @@ import FileSync from 'lowdb/adapters/FileSync';
 import { Song } from './song.class';
 import { SongInterface } from './database.interfaces';
 
-export class SongsManager {
+export default class SongsManager {
   private _songs: Song[];
 
   constructor() {

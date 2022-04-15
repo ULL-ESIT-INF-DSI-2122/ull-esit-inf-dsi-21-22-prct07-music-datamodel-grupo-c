@@ -3,7 +3,7 @@ import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Song } from './song.class';
 import { run } from './main'; // eslint-disable-line
-import { SongsManager } from './songsManager.class';
+import SongsManager from './songsManager.class';
 import { SongInterface } from './database.interfaces';
 
 const songsManager: SongsManager = new SongsManager();
