@@ -67,17 +67,28 @@ Con esto claro se ha empezado a realizar la práctica, las decisiones de diseño
 - Clases Song, Album, Genre, Artist y Group: Se tratan de clases estructurales que nos servirán para darle forma a objetos sencillos que contendrán la información básica de cada uno y nos permitirán acceder a ellas con mayor facilidad.
 - Clase Playlist: Esta se trata de una clase más compleja ya que contendrá instancias de las clases mencionadas anteriormente para poder simular de una manera más cercana a la realidad una playlist que contiene canciones, artistas, géneros, etc. Además, aparte de ayudarnos a trabajar con la playlist, nos permitirá ordenarla siguiendo diferentes métodos lo que nos facilitará el trabajo más adelante.
 - Clase Gestor: En un principio esta iba a tratarse de una clase individual que gestionase el paso de la base de datos (lowdb) a las diferentes clases mencionadas anteriormente, al darnos cuenta de la complejidad de esta clase decidimos realizar una clase gestor para cada clase existente en nuestro proyecto, para así poder gestionar de manera individual la conexión de la base de datos con cada componente de nuestro proyecto.
-- Programa principal: Hemos decidido crear un programa principal el cual será el que utilice el módulo Inquirer para mostrar las diferentes opciones que tiene un usuario de navegar por nuestras playlist y diferentes canciones y artistas. Además, este programa será lo único que el usuario podrá "ver" del funcionamiento de nuestro proyecto.
+- Programa principal: Hemos decidido crear un programa principal el cual será el que utilice el módulo Inquirer para mostrar las diferentes opciones que tiene un usuario de navegar por nuestras playlist y diferentes canciones y artistas. Además, este programa será lo único que el usuario podrá "ver" del funcionamiento de nuestro proyecto. Además separaremos este programa en diferentes archivos (por ejemplo: *song.menu.ts*) para poder manejar los menús de Inquirer de una manera más cómoda, limpia y más fácil de comprender.
 
+Tambien hemos añadido un fichero denominado *database.interfaces.ts* que contiene todas las interfaces que utilizamos en nuestro proyecto y así tener nuestro código de la manera más ordenada y organizada posible para facilitar la lectura y comprensión del mismo.
+
+Cabe a destacar que hemos decidido esta estructura de clases para tener nuestro código orientado a objetos de la manera más limpia y robusta que hemos logrado. Además de esta manera conseguimos que el código sea lo menos vulnerable a errores posible y comseguimos una interconexión real entre las clases realizadas.
 ## Conclusiones
 ***
+Como futuras mejoras en la practica se podría utilizar un índice para distinguir las canciones en vez de los nombres para poder distinguir cuando una canción se modifica.
 
+Además, nos hemos encontrado con varias dificultades a medida que realizamos la práctica, el primer problema que nos encontramos fue que al usar lowdb@3.0.0 los imports nos daban fallos, aunque lo conseguimos solventar, finalmente nos dimos cuenta que al ejecutar los test seguía existiendo esos fallos por lo que tuvimos que trabajar con la version 1.0.0 de lowdb.
+
+También nos hemos encontrado dificultades a la hora de desarrollar la práctica a la hora de planter cómo ibamos a estructurar nuestras clases y sus funcionalidades ya que aunque no se trate de un proyecto tan complicado intentamos buscar siempre la mejor solución orientada a objetos que podíamos por lo que empleamos mucho tiempo únicamente a plantear el ejercicio.
+
+Además otro problema que nos hemos encontrado es la falta de tiempo efectivo para poder desarrollar de manera limpia y optimizada la práctica del modo que hemos planteado, es decir, nos hubiese gustado añadir alguna opción extra como la mencionada al principio de este punto pero por la falta de tiempo nos hemos visto obligados a descartar dichas opciones.
+
+Finalmente, también ha habido momentos en los que han quedado pocos aspectos en el desarrollo por lo que en algunos momentos hemos optado por realizar *Pair Programming* para que todos podamos trabajar a la vez contrastando ideas y agilizando el desarrollo de nuestra aplicación.
 ## Referencias
-
+***
 [Guión de la práctica](https://ull-esit-inf-dsi-2122.github.io/prct07-music-dataModel/)
 
 ## Estructura del directorio
-
+***
 ```txt
 P06/
 |____.github/         (Github actions workflow files)
