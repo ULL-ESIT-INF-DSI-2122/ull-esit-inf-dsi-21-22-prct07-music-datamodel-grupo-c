@@ -105,111 +105,144 @@ export function songMenu() {
         case 'Save song': {
           const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
           const serialized = songsDb.get('songs').value();
+          const options = songsManager
+            .songs
+            .filter((song) => !serialized
+              .map((el: SongInterface) => el.name)
+              .includes(song.name))
+            .map((el) => el.name);
           inquirer
             .prompt([
               {
                 type: 'list',
                 name: 'songEdit',
                 message: 'Select a song to save:',
-                choices: songsManager
-                  .songs
-                  .filter((song) => !serialized
-                    .map((el: SongInterface) => el.name)
-                    .includes(song.name))
-                  .map((el) => el.name),
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go Back',
+                ],
               },
             ]).then((editSongAnswer) => {
-              const inx: number = songsManager.songs
-                .map((song) => song.name)
-                .indexOf(editSongAnswer.songEdit);
-              songsManager.saveSong(inx);
-              songMenu();
+              if (editSongAnswer.songEdit === 'Go Back') {
+                console.clear();
+                songMenu();
+              } else {
+                const inx: number = songsManager.songs
+                  .map((song) => song.name)
+                  .indexOf(editSongAnswer.songEdit);
+                console.log(inx);
+                songsManager.saveSong(inx);
+                songMenu();
+              }
             });
           break;
         }
         case 'Edit song': {
           const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
           const serialized = songsDb.get('songs').value();
+          const options = serialized
+            .filter((song: SongInterface) => song.origin === 'User')
+            .map((el: SongInterface) => el.name);
           inquirer
             .prompt([
               {
                 type: 'list',
                 name: 'songEdit',
                 message: 'Select a song to Edit:',
-                choices: songsManager
-                  .songs
-                  .filter((song) => !serialized
-                    .map((el: SongInterface) => el.name)
-                    .includes(song.name))
-                  .map((el) => el.name),
+                choices: [
+                  ...options,
+                  new inquirer.Separator(),
+                  'Go back',
+                ],
               },
             ]).then((editSongAnswer) => {
-              const inx: number = songsManager.songs
-                .map((song) => song.name)
-                .indexOf(editSongAnswer.songEdit);
-              inquirer
-                .prompt([
-                  {
-                    type: 'input',
-                    name: 'editName',
-                    message: 'Edit name:',
-                  },
-                  {
-                    type: 'input',
-                    name: 'editArtist',
-                    message: 'Edit artist:',
-                  },
-                  {
-                    type: 'input',
-                    name: 'editSeconds',
-                    message: 'Edit seconds:',
-                    validate(value) {
-                      const pass = value.match(
-                        /^[0-9]*$/,
-                      );
-                      if (pass) {
-                        return true;
-                      }
-                      return 'Please enter a number';
+              if (editSongAnswer.songEdit === 'Go back') {
+                console.clear();
+                songMenu();
+              } else {
+                const inx: number = songsManager.songs
+                  .map((song) => song.name)
+                  .indexOf(editSongAnswer.songEdit);
+                inquirer
+                  .prompt([
+                    {
+                      type: 'input',
+                      name: 'editArtist',
+                      message: 'Edit artist:',
                     },
-                  },
-                  {
-                    type: 'input',
-                    name: 'editGenres',
-                    message: 'Edit genres:',
-                  },
-                  {
-                    type: 'confirm',
-                    name: 'editSingle',
-                    message: 'Is a single?:',
-                  },
-                  {
-                    type: 'input',
-                    name: 'editViews',
-                    message: 'Edit views:',
-                    validate(value) {
-                      const pass = value.match(
-                        /^[0-9]*$/,
-                      );
-                      if (pass) {
-                        return true;
-                      }
-                      return 'Please enter a number';
+                    {
+                      type: 'input',
+                      name: 'editSeconds',
+                      message: 'Edit seconds:',
+                      validate(value) {
+                        const pass = value.match(
+                          /^[0-9]*$/,
+                        );
+                        if (pass) {
+                          return true;
+                        }
+                        return 'Please enter a number';
+                      },
                     },
-                  },
-                ])
-                .then((editSongAnswers) => {
-                  const newSong: Song = new Song(
-                    editSongAnswers.editName,
-                    editSongAnswers.editArtist,
-                    Number(editSongAnswers.editSeconds),
-                    [editSongAnswers.editGenres],
-                    editSongAnswers.editSingle,
-                    Number(editSongAnswers.editViews),
-                  );
-                  songsManager.updateSong(inx, newSong);
-                  songMenu();
-                });
+                    {
+                      type: 'input',
+                      name: 'editGenres',
+                      message: 'Edit genres:',
+                    },
+                    {
+                      type: 'confirm',
+                      name: 'editSingle',
+                      message: 'Is a single?:',
+                    },
+                    {
+                      type: 'input',
+                      name: 'editViews',
+                      message: 'Edit views:',
+                      validate(value) {
+                        const pass = value.match(
+                          /^[0-9]*$/,
+                        );
+                        if (pass) {
+                          return true;
+                        }
+                        return 'Please enter a number';
+                      },
+                    },
+                  ])
+                  .then((editSongAnswers) => {
+                    let newArtistEdit: string = editSongAnswers.editArtist;
+                    const auxSeconds: string = editSongAnswers.editSeconds;
+                    let newSecondsEdit: number = Number(auxSeconds);
+                    let newGenresEdit: string[] = [editSongAnswer.editGenres];
+                    const auxViews: string = editSongAnswers.editViews;
+                    let newViewsEdit: number = Number(auxViews);
+
+                    if (newArtistEdit === '') {
+                      newArtistEdit = songsManager.song(inx).artist;
+                    }
+                    if (auxSeconds === '') {
+                      newSecondsEdit = Number(songsManager.song(inx).seconds);
+                    }
+                    if (newGenresEdit.length === 0) {
+                      newGenresEdit = songsManager.song(inx).genres;
+                    }
+                    if (auxViews === '') {
+                      newViewsEdit = Number(songsManager.song(inx).views);
+                    }
+                    const newSong: Song = new Song(
+                      songsManager.song(inx).name,
+                      newArtistEdit,
+                      newSecondsEdit,
+                      newGenresEdit,
+                      editSongAnswers.editSingle,
+                      newViewsEdit,
+                    );
+                    songsManager.updateSong(inx, newSong);
+                    songsManager.saveSong(inx, true);
+                    songMenu();
+                  });
+              }
             });
           break;
         }
@@ -217,25 +250,35 @@ export function songMenu() {
           const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
           const serialized = songsDb.get('songs').value();
           const numberOfUserSongs: number = serialized.filter((song: any) => song.origin === 'User').length;
-          console.log(numberOfUserSongs);
           if (numberOfUserSongs > 0) {
+            const options = serialized
+              .filter((song: SongInterface) => song.origin === 'User')
+              .map((el: SongInterface) => el.name);
             inquirer
               .prompt([
                 {
                   type: 'list',
                   name: 'songDelete',
                   message: 'Select a song to Delete:',
-                  choices:
-                    serialized
-                      .filter((song: any) => song.origin === 'User'),
+                  choices: [
+                    ...options,
+                    new inquirer.Separator(),
+                    'Go back',
+                  ],
                 },
               ])
               .then((deleteSongAnswer) => {
-                const inx: number = songsManager.songs
-                  .map((song) => song.name)
-                  .indexOf(deleteSongAnswer.songDelete);
-                songsManager.deleteSong(inx);
-                songMenu();
+                if (deleteSongAnswer.songDelete === 'Go back') {
+                  console.clear();
+                  songMenu();
+                } else {
+                  const inx: number = songsManager.songs
+                    .map((song) => song.name)
+                    .indexOf(deleteSongAnswer.songDelete);
+                  songsManager.deleteSong(inx);
+                  console.clear();
+                  songMenu();
+                }
               });
           }
           break;
