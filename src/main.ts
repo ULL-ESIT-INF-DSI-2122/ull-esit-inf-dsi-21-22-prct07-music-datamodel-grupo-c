@@ -1,5 +1,6 @@
 import inquirer = require('inquirer');
 import { songMenu } from './song.menu'; // eslint-disable-line
+import {albumMenu} from './album.menu'; // eslint-disable-line
 
 export function run() {
   inquirer
@@ -34,7 +35,7 @@ export function run() {
           break;
         }
         case 'Albums': {
-          console.log('Albums');
+          albumMenu();
           break;
         }
         case 'Playlists': {
