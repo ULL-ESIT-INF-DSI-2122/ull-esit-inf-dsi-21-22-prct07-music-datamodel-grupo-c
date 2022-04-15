@@ -16,6 +16,7 @@ export function songMenu() {
         name: 'songMenu',
         message: 'Choose an action:',
         choices: [
+          'List all songs',
           'Add new song',
           'Save song',
           'Edit song',
@@ -27,6 +28,11 @@ export function songMenu() {
     ])
     .then((answers) => {
       switch (answers.songMenu) {
+        case 'List all songs': {
+          console.log(songsManager.preview());
+          songMenu();
+          break;
+        }
         case 'Add new song': {
           inquirer
             .prompt([
@@ -44,6 +50,15 @@ export function songMenu() {
                 type: 'input',
                 name: 'addSeconds',
                 message: 'Type new seconds:',
+                validate(value) {
+                  const pass = value.match(
+                    /^[0-9]*$/,
+                  );
+                  if (pass) {
+                    return true;
+                  }
+                  return 'Please enter a valid phone number';
+                },
               },
               {
                 type: 'input',
