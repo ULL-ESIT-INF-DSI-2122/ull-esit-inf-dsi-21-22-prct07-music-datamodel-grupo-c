@@ -5,12 +5,9 @@ import Playlist from './playlist.class';
 import { run } from './main'; // eslint-disable-line
 import PlaylistManager from './playlitsManager.class';
 import { PlaylistInterface } from './database.interfaces';
-import SongsManager from './songsManager.class';
 import { SongInterface } from './database.interfaces';
-import { Song } from './song.class';
-import {songMenu} from "./song.menu";
 
-export const playlistManager: PlaylistManager = new PlaylistManager();
+export let playlistManager: PlaylistManager = new PlaylistManager();
 
 export function playlistMenu() {
   inquirer
@@ -386,9 +383,43 @@ export function playlistMenu() {
                         playlistMenu();
                         break;
                       }
-                      // case 'Add Song to a playlist': {
-                      //   break;
-                      // }
+                      case 'Add Song to a playlist': {
+                        const songDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+                        const serializedSongs = songDb.get('songs').value();
+                        const songOptions = serializedSongs.map((song: SongInterface) => song.name);
+
+                        inquirer
+                          .prompt([
+                            {
+                              type: 'list',
+                              name: 'addOneSong',
+                              message: 'Choose a song to add:',
+                              choices: [
+                                ...songOptions,
+                                new inquirer.Separator(),
+                                'Go Back',
+                              ],
+                            },
+                          ])
+                          .then((queryAnswer) => {
+                            if (queryAnswer.addOneSong === 'Go back') {
+                              console.clear();
+                              playlistMenu();
+                            } else {
+                              serialized.forEach((playlist: PlaylistInterface) => {
+                                if (playlist.name === answerSearch.playlistSearch) {
+                                  playlist.songs.push(queryAnswer.addOneSong);
+                                }
+                              });
+                              playlistDb.set('playlists', serialized).write();
+                              playlistManager = new PlaylistManager();
+                              console.log(`Added ${queryAnswer.addOneSong} to ${answerSearch.playlistSearch} successfully`)
+                              playlistMenu();
+                              playlistDb.set('playlists', serialized).write();
+                            }
+                          });
+                        break;
+                      }
                       case 'Delete Song from a playlist': {
                         const inx: number = playlistManager.playlists
                           .map((playlist) => playlist.name)

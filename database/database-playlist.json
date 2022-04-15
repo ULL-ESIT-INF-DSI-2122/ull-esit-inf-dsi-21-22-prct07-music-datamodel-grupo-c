@@ -77,7 +77,9 @@
         "GHOSTÉAME",
         "CARTIER DE MADERA",
         "STONE ISLAND",
-        "TLC"
+        "TLC",
+        "Mountain Views",
+        "Safety Last"
       ],
       "albums": [
         "EL ÚLTIMO TOUR DEL MUNDO",
@@ -93,35 +95,6 @@
       ],
       "groups": [],
       "origin": "System"
-    },
-    {
-      "name": "Prueba",
-      "songs": [
-        "EL MUNDO ES MÍO",
-        "TE MUDASTE",
-        "HOY COBRÉ",
-        "MALDITA POBREZA",
-        "LA NOCHE DE ANOCHE",
-        "VISIÓN TÚNEL",
-        "GHOSTÉAME",
-        "CARTIER DE MADERA",
-        "STONE ISLAND",
-        "TLC"
-      ],
-      "albums": [
-        "EL ÚLTIMO TOUR DEL MUNDO",
-        "VISIÓN TÚNEL"
-      ],
-      "genres": [
-        "Trap Latino",
-        "Hip-Hop"
-      ],
-      "artists": [
-        "Bad Bunny",
-        "Cruz Cafuné"
-      ],
-      "groups": [],
-      "origin": "User"
     }
   ]
 }
