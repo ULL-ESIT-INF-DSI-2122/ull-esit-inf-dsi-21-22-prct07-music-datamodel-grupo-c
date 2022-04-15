@@ -4,6 +4,23 @@ import { Album } from './album.class';
 import { AlbumInterface, SongInterface } from './database.interfaces';
 import { Song } from './song.class';
 
+/**
+* # AlbumManager Class.
+* Album class that manage all the Albums sets and gets from db
+ *
+ * ## Properties
+ * - _albums | Album collection.
+ *
+ * ## Methods
+ * -  get albums() | Returns the album collection.
+ * -  preview() | Returns console print of ALBUM collection.
+ * -  album(inx) | Returns the album indicated by a index.
+ * -  createAlbum(index, album) | Creates a new album and push it to album collection.
+ * -  updateAlbum(index, force) | saves an album into database.
+ * -  get deleteAlbum(index) | delete an album indicated by index from database.
+ * -  getSongs() | Get the songs of the album.
+ * -  deserializeAlbum(albums) |
+ */
 export default class AlbumsManager {
   private _albums: Album[];
 

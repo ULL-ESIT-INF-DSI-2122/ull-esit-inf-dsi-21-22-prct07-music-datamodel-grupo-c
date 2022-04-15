@@ -6,6 +6,10 @@ import { AlbumInterface } from './database.interfaces';
 import AlbumsManager from './albumsManager.class';
 import { Album } from './album.class';
 
+/**
+* # Album Menu.
+* Contains all the menu options for ALBUM.
+ */
 const albumsManager: AlbumsManager = new AlbumsManager();
 
 export function albumMenu() {
