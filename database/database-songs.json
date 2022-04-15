@@ -604,17 +604,6 @@
       "single": true,
       "reproductions": 6050114,
       "origin": "System"
-    },
-    {
-      "name": "dasd",
-      "artists": "",
-      "seconds": 0,
-      "genres": [
-        ""
-      ],
-      "single": true,
-      "views": 0,
-      "origin": "User"
     }
   ]
 }
