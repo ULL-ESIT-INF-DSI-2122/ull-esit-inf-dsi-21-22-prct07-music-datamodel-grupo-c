@@ -114,7 +114,7 @@ export function songMenu() {
             .prompt([
               {
                 type: 'list',
-                name: 'songEdit',
+                name: 'songSave',
                 message: 'Select a song to save:',
                 choices: [
                   ...options,
@@ -122,14 +122,14 @@ export function songMenu() {
                   'Go Back',
                 ],
               },
-            ]).then((editSongAnswer) => {
-              if (editSongAnswer.songEdit === 'Go Back') {
+            ]).then((saveSongAnswer) => {
+              if (saveSongAnswer.songSave === 'Go Back') {
                 console.clear();
                 songMenu();
               } else {
                 const inx: number = songsManager.songs
                   .map((song) => song.name)
-                  .indexOf(editSongAnswer.songEdit);
+                  .indexOf(saveSongAnswer.songSave);
                 songsManager.saveSong(inx);
                 songMenu();
               }
