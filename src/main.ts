@@ -3,6 +3,7 @@ import { genreMenu } from './genre.menu'; // eslint-disable-line
 import { songMenu } from './song.menu'; // eslint-disable-line
 import { albumMenu } from './album.menu'; // eslint-disable-line
 import { groupMenu } from './group.menu'; // eslint-disable-line
+import { artistsMenu } from './artists.menu'; // eslint-disable-line
 
 export function run() {
   inquirer
@@ -26,7 +27,7 @@ export function run() {
     .then((answers) => {
       switch (answers.index) {
         case 'Artists': {
-          console.log('Artists');
+          artistsMenu();
           break;
         }
         case 'Genres': {
