@@ -71,7 +71,7 @@ Con esto claro se ha empezado a realizar la práctica, las decisiones de diseño
 
 Tambien hemos añadido un fichero denominado *database.interfaces.ts* que contiene todas las interfaces que utilizamos en nuestro proyecto y así tener nuestro código de la manera más ordenada y organizada posible para facilitar la lectura y comprensión del mismo.
 
-Cabe a destacar que hemos decidido esta estructura de clases para tener nuestro código orientado a objetos de la manera más limpia y robusta que hemos logrado. Además de esta manera conseguimos que el código sea lo menos vulnerable a errores posible y comseguimos una interconexión real entre las clases realizadas.
+Cabe a destacar que hemos decidido estas decisiones de diseño para tener nuestro código orientado a objetos de la manera más limpia y robusta que posible. Además de esta manera conseguimos que el código sea lo menos vulnerable a errores posible y comseguimos una interconexión real entre las clases realizadas.
 ## Conclusiones
 ***
 Como futuras mejoras en la practica se podría utilizar un índice para distinguir las canciones en vez de los nombres para poder distinguir cuando una canción se modifica.
