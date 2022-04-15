@@ -413,8 +413,8 @@ export function playlistMenu() {
                             } else {
                               playlistManager.playlist(inx)
                                 .removeSong(deleteOneSongAnswer.deleteOneSong);
-                              console.log(playlistManager.playlist(inx));
                               playlistManager.savePlaylist(inx, true);
+                              playlistMenu();
                             }
                           });
                         break;
@@ -432,7 +432,6 @@ export function playlistMenu() {
           break;
         }
         case 'Create playlist': {
-          playlistMenu();
           break;
         }
         case 'Save playlist': {
