@@ -20,12 +20,13 @@
 
 ## Indice
 
-- [PRACTICA 7 - Digitalizando la coleccion de musica de los abuelos](#practica-7---digitalizando-la-coleccion-de-musica-de-los-abuelos)
-  - [Enlace a la documentacion generada con TypeDoc](#enlace-a-la-documentacion-generada-con-typedoc)
+- [PRACTICA 7 - Digitalizando la colección de música de los abuelos](#practica-7---digitalizando-la-colección-de-música-de-los-abuelos)
+  - [Enlace a la documentación generada con TypeDoc](#enlace-a-la-documentación-generada-con-typedoc)
   - [Indice](#indice)
-  - [Introduccion](#introduccion)
+  - [Introducción](#introducción)
   - [Objetivos](#objetivos)
   - [Actividades previas](#actividades-previas)
+  - [Elaboración de la práctica](#elaboración-de-la-práctica)
   - [Conclusiones](#conclusiones)
   - [Referencias](#referencias)
   - [Estructura del directorio](#estructura-del-directorio)
@@ -34,16 +35,16 @@
 ***
 
 ## Introducción
----
+***
 En esta práctica se pretende crear un entorno de trabajo en grupo, realizando un ejercicio bastante extenso para así poder definir roles entre los integrantes del grupo. En nuestro caso hicimos uso de las **GitHub Issues** donde cada uno tenía asignada una tarea a realizar en una nueva rama.  Cuando la rama estuviera terminada (con los *tests* pasando) se realizaba una **Pull Request** a la rama *master*. A lo largo del informe se presentan las configuraciones iniciales y las características del diseño así como las decisiones tomadas para desarrollar la lógica de implementación de cada uno de los componentes del ejercicio.
 
 La ejercicio consiste en digitalizar la colección de música de los abuelos, esto es, crear una colección de *Playlists* donde se incluirán una serie de canciones. Toda la estructura estará conformada por *interfaces* y *clases* de Artistas, Grupos, Canciones, Álbumes, Géneros musicales además de un Gestor que permite gestionar el tratamiento avanzado de playlists.
 
 ## Objetivos
----
+***
 El objetivo de esta práctica es la familiarizarse con la programación cooperativa, aportar puntos de vista en grupo y realizar el ejercicio uniendo las ramas realizadas por cada integrante. Se dispondrá de un entorno de desarrollo donde se implementa el ejercicio comprobado y desarrollado mediante una filosofía dirigida por pruebas/comportamiento (BDD/TDD) y cuyo cubrimiento de código se refleje en un informe. El ejercicio también debe cumplir en la medida de lo posible los principios *SOLID*.
 ## Actividades previas
----
+***
 A parte de las actividades comunes al resto de prácticas (asignación Github Classroom, configuración del repositorio, etc.) en este ejercicio se han incluido **GitHub Actions** para el análisis de Sonar Cloud, el Coverage y el despliegue automático de la **GitHub Page** en la rama `gh-pages`, la cual contiene solo la carpeta `docs`.
 
 Cabe recalcar la importancia del archivo `CONTRIBUTING.md` el cual contiene toda la información para que sea posible la programación colaborativa. Aquí aparecen una serie de reglas a seguir para la *estructura de ramas*, *flujo de trabajo*, *nomenclatura de ramas*, entre otras.
@@ -57,7 +58,19 @@ Por último se ha manejado la pestaña de `Projects` de GitHub donde se ha inclu
 - `Coding`: Es parecido a Pivotal Tracker o Trello donde podemos tener una lista de tareas y clasificarlas entre `Backlog`, `In progress` y `Done`.
 - `Documentation`: Realiza la misma tarea solamente que este `Project` es solamente para la documentación de los códigos.
 
+## Elaboración de la práctica
+***
+Para realizar esta práctica lo primero que hemos hecho ha sido plantearnos toda la jerarquía de clases necesarias para el correcto funcionamiento de estas, para ello se han compartido diferentes puntos de vista entre los integrantes del grupo hasta encontrar la opción más óptima.
+
+Con esto claro se ha empezado a realizar la práctica, las decisiones de diseño que se han tomado finalmente han sido estas:
+
+- Clases Song, Album, Genre, Artist y Group: Se tratan de clases estructurales que nos servirán para darle forma a objetos sencillos que contendrán la información básica de cada uno y nos permitirán acceder a ellas con mayor facilidad.
+- Clase Playlist: Esta se trata de una clase más compleja ya que contendrá instancias de las clases mencionadas anteriormente para poder simular de una manera más cercana a la realidad una playlist que contiene canciones, artistas, géneros, etc. Además, aparte de ayudarnos a trabajar con la playlist, nos permitirá ordenarla siguiendo diferentes métodos lo que nos facilitará el trabajo más adelante.
+- Clase Gestor: En un principio esta iba a tratarse de una clase individual que gestionase el paso de la base de datos (lowdb) a las diferentes clases mencionadas anteriormente, al darnos cuenta de la complejidad de esta clase decidimos realizar una clase gestor para cada clase existente en nuestro proyecto, para así poder gestionar de manera individual la conexión de la base de datos con cada componente de nuestro proyecto.
+- Programa principal: Hemos decidido crear un programa principal el cual será el que utilice el módulo Inquirer para mostrar las diferentes opciones que tiene un usuario de navegar por nuestras playlist y diferentes canciones y artistas. Además, este programa será lo único que el usuario podrá "ver" del funcionamiento de nuestro proyecto.
+
 ## Conclusiones
+***
 
 ## Referencias
 
