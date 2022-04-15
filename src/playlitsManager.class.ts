@@ -3,23 +3,7 @@ import FileSync from 'lowdb/adapters/FileSync';
 import Playlist from './playlist.class';
 import { Song } from './song.class';
 import { Album } from './album.class';
-
-interface SongInterface {
-  name: string,
-  artist: string,
-  seconds: number,
-  genres: string[],
-  single: boolean,
-  views: number,
-}
-
-interface AlbumInterface {
-  name: string,
-  artist: string,
-  year: number,
-  genres: string[],
-  songs: string[],
-}
+import { AlbumInterface, SongInterface } from './database.interfaces';
 
 interface PlaylistInterface {
   name: string,

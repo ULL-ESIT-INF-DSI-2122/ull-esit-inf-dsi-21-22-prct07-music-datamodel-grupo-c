@@ -1,16 +1,7 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Artist } from './artist.class';
-
-interface ArtistInterface {
-  name: string,
-  groups: string[],
-  genres: string[],
-  albums: string[],
-  songs: string[],
-  listeners: number,
-  origin: string,
-}
+import { ArtistInterface } from './database.interfaces';
 
 export default class ArtistsManager {
   private _artists: Artist[];
