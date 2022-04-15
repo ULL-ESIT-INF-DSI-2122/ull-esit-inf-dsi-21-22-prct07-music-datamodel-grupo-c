@@ -120,17 +120,40 @@ export default class GroupsManager {
 
   public createGroup(group: Group) {
     if (!this._groups.find((el: Group) => el.name === group.name)) {
-      const newGroup: Group = new Group(group.name);
+      const newGroup: Group = new Group(
+        group.name,
+        group.artists,
+        group.year,
+        group.genres,
+        group.albums,
+        group.monthlyListeners,
+      );
       this._groups.push(newGroup);
     }
   }
 
   public updateGroup(index: number, group: Group) { this._groups[index] = group; }
 
-  public saveGroup(index: number) {
+  public saveGroup(index: number, force: boolean = false) {
     const groupDb: lowdb.LowdbSync <GroupInterface> = lowdb(new FileSync('database/database-groups.json'));
     const groupToSave: Group = this.group(index);
-    const serialized = groupDb.get('groups').value();
+    let serialized = groupDb.get('groups').value();
+    if (force) {
+      serialized = serialized.map((group: GroupInterface) => {
+        if (group.name === groupToSave.name) {
+          return {
+            name: groupToSave.name,
+            artists: groupToSave.artists,
+            year: groupToSave.year,
+            genres: groupToSave.genres,
+            albums: groupToSave.albums,
+            monthlyListeners: groupToSave.monthlyListeners,
+            origin: 'User',
+          };
+        }
+        return group;
+      });
+    }
     if (!serialized.find((el: GroupInterface) => el.name === groupToSave.name)) {
       serialized.push({
         name: groupToSave.name,
@@ -141,8 +164,8 @@ export default class GroupsManager {
         monthlyListeners: groupToSave.monthlyListeners,
         origin: 'User',
       });
-      groupDb.set('groups', serialized).write();
     }
+    groupDb.set('groups', serialized).write();
   }
 
   public deleteGroup(index: number): boolean {

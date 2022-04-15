@@ -45,17 +45,17 @@ export function genreMenu() {
               {
                 type: 'input',
                 name: 'addArtists',
-                message: 'Type new artist:',
+                message: 'Type new artists:',
               },
               {
                 type: 'input',
                 name: 'addSongs',
-                message: 'Type new song:',
+                message: 'Type new songs:',
               },
               {
                 type: 'input',
                 name: 'addAlbums',
-                message: 'Type new genres:',
+                message: 'Type new albums:',
               },
             ])
             .then((newGenreAnswers: any) => {

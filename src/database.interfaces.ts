@@ -23,7 +23,7 @@ interface GroupInterface {
   genres: string[],
   albums: string[];
   monthlyListeners: number,
-  origin: string[],
+  origin: string,
 }
 
 interface SongInterface {
