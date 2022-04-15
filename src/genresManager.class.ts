@@ -1,14 +1,7 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Genre } from './genre.class';
-
-interface GenreInterface {
-  name: string,
-  artists: string[],
-  songs: string[],
-  albums: string[],
-  origin: string[],
-}
+import { GenreInterface } from './database.interfaces';
 
 export default class GenresManager {
   private _genres: Genre[];
