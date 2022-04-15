@@ -213,6 +213,21 @@ export function songMenu() {
           break;
         }
         case 'Delete song': {
+          const songsDb: lowdb.LowdbSync <SongInterface> = lowdb(new FileSync('database/database-songs.json'));
+          const serialized = songsDb.get('songs').value();
+          inquirer
+            .prompt([
+              {
+                type: 'list',
+                name: 'songDelete',
+                message: 'Select a song to Delete:',
+                choices: ['homero'],
+              },
+            ])
+            .then((deleteAnswer) => {
+              console.log(deleteAnswer);
+              songMenu();
+            });
           break;
         }
         case 'Go Back': {
