@@ -16,6 +16,16 @@ interface ArtistInterface {
   origin: string,
 }
 
+interface GroupInterface {
+  name: string,
+  artists: string[],
+  year: number,
+  genres: string[],
+  albums: string[];
+  monthlyListeners: number,
+  origin: string[],
+}
+
 interface SongInterface {
   name: string,
   artist: string,
@@ -48,5 +58,6 @@ export {
   AlbumInterface,
   SongInterface,
   ArtistInterface,
+  GroupInterface,
   PlaylistInterface,
 };

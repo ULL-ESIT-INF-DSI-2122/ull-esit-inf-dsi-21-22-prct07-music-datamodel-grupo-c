@@ -13,7 +13,6 @@ describe('Group Manager class tests', () => {
     ['Aftermath'],
     123456,
   );
-
   describe('Manager starts with system default groups', () => {
     it('Manager object builds with 3 system playlists', () => {
       expect(systemManager.groups.length).to.be.eql(5);
@@ -26,6 +25,48 @@ describe('Group Manager class tests', () => {
         + 'Artic Monkeys\n'
         + 'Billy Talent\n'
         + 'The Dillinger Escape Plan\n',
+      );
+    });
+  });
+
+  describe('Single group albums can be sorted and outputed', () => {
+    it('Alphabetically asc', () => {
+      expect(systemManager.viewGroupAlbums(0)).to.be.eql(
+        'Animals As Leaders albums:\n'
+        + 'Parrhesia\n',
+      );
+    });
+    it('Alphabetically desc', () => {
+      expect(systemManager.viewGroupAlbums(0, true)).to.be.eql(
+        'Animals As Leaders albums:\n'
+        + 'Parrhesia\n',
+      );
+    });
+    it('By release year asc', () => {
+      expect(systemManager.viewGroupAlbumsByRelease(0)).to.be.eql(
+        'Animals As Leaders albums:\n'
+        + 'Parrhesia\n',
+      );
+    });
+    it('By release year desc', () => {
+      expect(systemManager.viewGroupAlbumsByRelease(0, true)).to.be.eql(
+        'Animals As Leaders albums:\n'
+        + 'Parrhesia\n',
+      );
+    });
+  });
+
+  describe('Single group playlist can be sorted and outputed', () => {
+    it('Alphabetically asc', () => {
+      expect(systemManager.viewGroupPlaylists(0)).to.be.eql(
+        'Animals As Leaders playlists:\n'
+        + 'Metal lover\n',
+      );
+    });
+    it('Alphabetically desc', () => {
+      expect(systemManager.viewGroupPlaylists(0, true)).to.be.eql(
+        'Animals As Leaders playlists:\n'
+        + 'Metal lover\n',
       );
     });
   });
