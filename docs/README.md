@@ -16,7 +16,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2122_ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-c&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2122_ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo-c)
 ***
 
-## [Enlace a la documentación generada con TypeDoc](http://---)
+## [Enlace a la documentación generada con TypeDoc](http://dsi-p07-code-docs.surge.sh/)
 
 ## Indice
 
@@ -120,6 +120,84 @@ Siguiendo el ejemplo anterior, si se accede al elemento **Song**, se muestra la 
 ```
 
 Como se puede observar, se crea una nueva pregunta al usuario. En este caso, se trata de las diferentes operaciones que se permiten realizar con las canciones. Abajo, se encuentra la anteriormente comentada opción (Go Back). El resto del menú trabaja de forma similar al ejemplo expuesto en este apartado. 
+
+Para continuar con el funcionamiento del menú, en este caso se va a añadir una nueva canción al listado de Canciones. A continuación seleccionando la opción **Add new song**, se muestra un formulario que una vez rellenado, creará una nueva canción: 
+
+```bash
+23:11:40 - Found 0 errors. Watching for file changes.
+? What do you want to do? Songs
+? Choose an action: Add new song
+? Type new name: Mucho
+? Type new artist: Bejo
+? Type new seconds: 231
+? Type new genres: Hip-Hop
+? Is a single?: No
+? Type new views: 500500
+```
+
+La canción creada de momento no ha sido almacenada en la base de datos. Para que esto suceda será necesario usar la opción **save song**. De forma automática se redirigirá al usuario a la pantalla anterior, donde se ha de poder seleccionar dicha opción.
+
+Una vez seleccionada, se podrá ver como aparece la canción creada. Se ha controlado de forma que sólamente aparezca un listado de las canciones que no han sido guardadas en la base de datos.
+
+```bash
+? Choose an action: Save song
+? Select a song to save: (Use arrow keys)
+❯ Mucho 
+  ──────────────
+  Go Back 
+
+```
+Al seleccionar esta canción, se confirmará el almacenamiento en la base de datos. Dentro del fichero **database-songs.json** se podrá observar cómo se ha añadido una nueva canción: 
+
+```bash
+    [...]
+    {
+      "name": "Mucho",
+      "artists": "Bejo",
+      "seconds": 231,
+      "genres": [
+        "Hip-Hop"
+      ],
+      "single": false,
+      "views": 500500,
+      "origin": "User"
+    }
+```
+
+Como se puede observar, no sólo se han cargado los datos introducidos por el usuario, sino que, además, se ha determinado a través de la clave "origin" el dato "User", determinando de esta manera que el ha sido creado por el usuario. En este mismo fichero se encuentran el resto de canciones que han sido creadas por defecto. Para estas canciones, se ha establecido la clave origin con "system". Esta misma idea se ha trasladado al resto de elementos.
+
+Continuando con el ejemplo práctico del proyecto, se procede a hacer uso de la opción **edit song**. Seleccionando esta opción se muestra un formulario similar al ya visto en el momento de añadir una canción. Se muestra un listado de las canciones que tienen permitido ser editadas (Las etiquetadas como User), y, seleccionando la deseada a editar, se muestra el formulario: 
+
+```bash
+
+
+```
+? Select a song to Edit: Mucho
+? Edit artist: Bejo
+? Edit seconds: 99
+? Edit genres: Rap
+? Is a single?: Yes
+? Edit views: 9090909090
+
+```bash
+
+    {
+      "name": "Mucho",
+      "artists": "Bejo",
+      "seconds": 99,
+      "genres": [
+        null
+      ],
+      "single": true,
+      "views": 9090909090,
+      "origin": "User"
+    }
+```
+
+Como se puede observar en el caso anterior, se puede ver como han sido reflejados los cambios en la base de datos. 
+
+Finalmente, se comprueba el uso del comando Delete. Como ya se ha realizado con otros, al seleccionar la opcion **Delete Song**, se mostrará un listado de las canciones que se permite borrar por el usuario. Una vez seleccionada, se puede observar como la canción ha desaparecido de la base de datos. 
+
 ## Conclusiones
 ***
 Como futuras mejoras en la practica se podría utilizar un índice para distinguir las canciones en vez de los nombres para poder distinguir cuando una canción se modifica.
