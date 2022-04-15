@@ -5,6 +5,7 @@ interface GenreInterface {
   albums: string[],
   origin: string[],
 }
+
 interface ArtistInterface {
   name: string,
   groups: string[],
@@ -32,9 +33,20 @@ interface AlbumInterface {
   songs: string[],
 }
 
+interface PlaylistInterface {
+  name: string,
+  songs: string[],
+  albums: string[],
+  genres: string[],
+  artists: string[],
+  groups: string[],
+  origin: string,
+}
+
 export {
   GenreInterface,
   AlbumInterface,
   SongInterface,
   ArtistInterface,
+  PlaylistInterface,
 };

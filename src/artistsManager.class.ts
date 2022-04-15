@@ -1,7 +1,7 @@
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 import { Artist } from './artist.class';
-import { ArtistInterface } from './database.interfaces';
+import { ArtistInterface, PlaylistInterface } from './database.interfaces';
 
 export default class ArtistsManager {
   private _artists: Artist[];
@@ -24,6 +24,94 @@ export default class ArtistsManager {
       output += `${artist.genres.join(', ')}\t\t`;
       output += `${artist.listeners}\n`;
     });
+    return output;
+  }
+
+  public viewArtistSongs(inx: number, desc: boolean = false): string {
+    let output = `${this.artist(inx).name} songs:\n`;
+    if (!desc) {
+      this.artist(inx).songs
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        })
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    } else {
+      this.artist(inx).songs
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        }).reverse()
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    }
+    return output;
+  }
+
+  public viewArtistAlbums(inx: number, desc: boolean = false): string {
+    let output = `${this.artist(inx).name} albums:\n`;
+    if (!desc) {
+      this.artist(inx).albums
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        })
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    } else {
+      this.artist(inx).albums
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        }).reverse()
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    }
+
+    return output;
+  }
+
+  public artistPlaylists(inx: number): string[] {
+    const playlistDb: lowdb.LowdbSync <PlaylistInterface> = lowdb(new FileSync('database/database-playlist.json'));
+    const serialized = playlistDb.get('playlists').value();
+    return serialized
+      .filter((playlist: PlaylistInterface) => playlist.artists.includes(this.artist(inx).name))
+      .map((playlist: PlaylistInterface) => playlist.name);
+  }
+
+  public viewArtistPlaylists(inx: number, desc: boolean = false): string {
+    let output = `${this.artist(inx).name} playlists:\n`;
+
+    if (!desc) {
+      this.artistPlaylists(inx)
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        })
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    } else {
+      this.artistPlaylists(inx)
+        .sort((a, b) => {
+          if (a.toLocaleLowerCase() < b.toLocaleLowerCase()) { return -1; }
+          if (a.toLocaleLowerCase() > b.toLocaleLowerCase()) { return 1; }
+          return 0;
+        }).reverse()
+        .forEach((song) => {
+          output += `${song}\n`;
+        });
+    }
     return output;
   }
 

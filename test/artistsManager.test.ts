@@ -13,6 +13,10 @@ describe('Artists Manager class tests', () => {
     ['Not Afraid', 'Love The Way You Lie'],
     52673522,
   );
+  console.log(systemManager.preview());
+  console.log(systemManager.viewArtistSongs(1));
+  console.log(systemManager.viewArtistAlbums(1));
+  console.log(systemManager.viewArtistPlaylists(1));
   describe('Artists Manager starts with system default artists', () => {
     it('Artits manager can output and list artists', () => {
       expect(systemManager.artists.length).to.be.eql(6);
