@@ -374,9 +374,14 @@ export function playlistMenu() {
                           });
                         break;
                       }
-                      // case 'List playlist': {
-                      //   break;
-                      // }
+                      case 'List playlist': {
+                        const inx: number = playlistManager.playlists
+                          .map((playlist) => playlist.name)
+                          .indexOf(answerSearch.playlistSearch);
+                        console.log(playlistManager.playlist(inx).toString());
+                        playlistMenu();
+                        break;
+                      }
                       // case 'Add Song to a playlist': {
                       //   break;
                       // }
