@@ -221,7 +221,7 @@ export function songMenu() {
                 type: 'list',
                 name: 'songDelete',
                 message: 'Select a song to Delete:',
-                choices: ['homero'],
+                choices: serialized.map,
               },
             ])
             .then((deleteAnswer) => {
