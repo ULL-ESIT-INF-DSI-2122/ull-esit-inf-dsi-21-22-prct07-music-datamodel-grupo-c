@@ -3,7 +3,7 @@ interface GenreInterface {
   artists: string[],
   songs: string[],
   albums: string[],
-  origin: string[],
+  origin: string,
 }
 
 interface ArtistInterface {

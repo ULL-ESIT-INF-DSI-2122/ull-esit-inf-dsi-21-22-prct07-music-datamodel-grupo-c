@@ -36,10 +36,24 @@ export default class GenresManager {
     this._genres[inx] = genre;
   }
 
-  public saveGenre(inx: number) {
+  public saveGenre(inx: number, force: boolean = false) {
     const genreDb: lowdb.LowdbSync <GenreInterface> = lowdb(new FileSync('database/database-genres.json'));
     const genreToSave: Genre = this.genre(inx);
-    const serialized = genreDb.get('genres').value();
+    let serialized = genreDb.get('genres').value();
+    if (force) {
+      serialized = serialized.map((genre: GenreInterface) => {
+        if (genre.name === genreToSave.name) {
+          return {
+            name: genreToSave.name,
+            artists: genreToSave.artists,
+            songs: genreToSave.songs,
+            albums: genreToSave.albums,
+            origin: 'User',
+          };
+        }
+        return genre;
+      });
+    }
     if (!serialized.find((el: GenreInterface) => el.name === genreToSave.name)) {
       serialized.push({
         name: genreToSave.name,
@@ -48,8 +62,8 @@ export default class GenresManager {
         albums: genreToSave.albums,
         origin: 'User',
       });
-      genreDb.set('genres', serialized).write();
     }
+    genreDb.set('genres', serialized).write();
   }
 
   public deleteGenre(inx: number): boolean {
